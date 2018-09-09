@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  
+  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <span class="bckg"></span>
+<header>
+  <h1 style="font-size: 0.9em;">Welcome Nishant!</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="javascript:void(0);" data-title="Projects">Train Model</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="title">
+    <h2>Select available models and data</h2>
+    <a href="javascript:void(0);">Hello Bob !</a>
+  </div>
+
+  <article class="larg">
+    <form style="background:#f7f7f7;border: 1px solid #E2E2E2;" method="POST" action="/trainModel" enctype="multipart/form-data">
+      <div class="form-group"  style="border: none;">
+        <label for="exampleInputPassword1">Select available models:</label><br>
+        <select>
+          <option value="0">Choose available model:</option>
+          <option value="1">Model1</option>
+        </select>
+      </div>
+      <div class="form-group" style="border: none;">
+        <label for="exampleInputPassword1">Input Data:</label>
+        <input type="file" class="form-control" id="exampleInputPassword1" name="inpData" />
+      </div>
+      <button type="submit" class="btn btn-default" style="margin: 10px 200px;">Submit</button>
+    </form>
+  </article>
+</main>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

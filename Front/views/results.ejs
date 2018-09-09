@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  
+  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/style.css">
+
+      <style type="text/css">
+        td{
+          padding: 15px 5px;
+        }
+        tr{
+          height: 30px;
+          border: 1px solid #888;
+        }
+      </style>
+  
+</head>
+
+<body>
+
+  <span class="bckg"></span>
+<header>
+  <h1 style="font-size: 0.9em;">Welcome Nishant!</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="/create" data-title="Create New Model">Add Model</a>
+      </li>
+      <li>
+        <a href="/results" data-title="Create New Model">View Results</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="title">
+    <h2>Create New Model</h2>
+    <a href="javascript:void(0);">Hello Nishant !</a>
+  </div>
+
+  <article class="larg" style="text-align: center;">
+    
+    <table style="width:100%; text-align: left;">
+      <thead>
+        <th>Model Name</th>
+        <th>User Name</th>
+        <th>Score</th>
+        <th>Threshold</th>
+      </thead>
+      <% for(var i=0;i<names.length;++i) {%>
+        <% if(thresh[i]<=vals[i]) {%>
+        <tr style="background: #33ffad;">
+        <% }else{ %>
+        <tr style="background: #ff6666;">
+        <% } %>
+          <td><%= names[i] %> </td>
+          <td><%= unames[i] %> </td>
+          <td><%= vals[i] %> </td>
+          <td><%= thresh[i] %> </td>
+        </tr>
+      <% }%>
+    </table>
+    
+  </article>
+</main>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
