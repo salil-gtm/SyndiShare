@@ -17,7 +17,7 @@ Model training
 
 The process is illustrated in the architecture diagram below.
 
-![](https://github.com/Riksi/chAIn/blob/master/architecture.jpeg)
+![](https://github.com/salil-gtm/SyndiShare/blob/master/Syndi-share.jpg)
 
 
 ## Why blockchain?
