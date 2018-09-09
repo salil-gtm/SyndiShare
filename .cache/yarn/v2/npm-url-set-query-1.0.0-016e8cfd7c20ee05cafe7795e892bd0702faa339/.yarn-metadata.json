@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "url-set-query",
+    "version": "1.0.0",
+    "description": "small function to append a query string to a URL",
+    "main": "index.js",
+    "license": "MIT",
+    "author": {
+      "name": "Matt DesLauriers",
+      "email": "dave.des@gmail.com",
+      "url": "https://github.com/mattdesl"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "tape": "^4.0.1"
+    },
+    "scripts": {
+      "test": "node test.js"
+    },
+    "keywords": [
+      "query",
+      "string",
+      "url",
+      "hash",
+      "querystring",
+      "qs",
+      "browser",
+      "node",
+      "queries",
+      "uri"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/mattdesl/url-set-query.git"
+    },
+    "homepage": "https://github.com/mattdesl/url-set-query",
+    "bugs": {
+      "url": "https://github.com/mattdesl/url-set-query/issues"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-url-set-query-1.0.0-016e8cfd7c20ee05cafe7795e892bd0702faa339/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# url-set-query\n\n[![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)\n\nSmall standalone function to set a query string on a URL, replacing the existing query and leaving the hash in place.\n\n## Example\n\n```js\nvar setQuery = require('url-set-query')\n\nsetQuery('http://foo.com/index.html?state=open', 'beep=true')\n//=> 'http://foo.com/index.html?beep=true'\n\nsetQuery('http://foo.com/some/path#about', '?foo=5&open=true')\n//=> 'http://foo.com/some/path?foo=5&open=true#about'\n\nsetQuery('http://foo.com', 'foo=5')\n//=> 'http://foo.com/?foo=5'\n\n// clears the query\nsetQuery('http://foo.com/index.html?filter=closed#about', '?')\n//=> 'http://foo.com/index.html#about'\n```\n\n## Install\n\n```sh\nnpm install url-set-query --save\n```\n\n## Usage\n\n[![NPM](https://nodei.co/npm/url-set-query.png)](https://www.npmjs.com/package/url-set-query)\n\n#### `url = setQuery(url, [query])`\n\nAppends the given `query` String onto the URL, before the hash. If a query already exists, it will be replaced. Returns the new URL.\n\nIf `query` is `'?'`, it is the same as clearing the query string from the `url`.\n\nIf `query` is an empty string or undefined, no change will be made to `url`. \n\n## See Also\n\nTo encode/decode from an object, see one of:\n\n- [querystring](https://www.npmjs.com/package/querystring)\n- [query-string](https://www.npmjs.com/package/query-string)\n- [qs](https://www.npmjs.com/package/qs)\n\n\n## License\n\nMIT, see [LICENSE.md](http://github.com/mattdesl/url-set-query/blob/master/LICENSE.md) for details.\n",
+    "licenseText": "The MIT License (MIT)\nCopyright (c) 2015 Matt DesLauriers\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\nOR OTHER DEALINGS IN THE SOFTWARE.\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/url-set-query/-/url-set-query-1.0.0.tgz#016e8cfd7c20ee05cafe7795e892bd0702faa339",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/url-set-query/-/url-set-query-1.0.0.tgz",
+    "hash": "016e8cfd7c20ee05cafe7795e892bd0702faa339",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "016e8cfd7c20ee05cafe7795e892bd0702faa339"
+}

@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "prepend-http",
+    "version": "2.0.0",
+    "description": "Prepend `http://` to humanized URLs like todomvc.com and localhost",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/prepend-http.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "prepend",
+      "protocol",
+      "scheme",
+      "url",
+      "uri",
+      "http",
+      "https",
+      "humanized"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-prepend-http-2.0.0-e92434bfa5ea8c19f41cdfd401d741a3c819d897/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# prepend-http [![Build Status](https://travis-ci.org/sindresorhus/prepend-http.svg?branch=master)](https://travis-ci.org/sindresorhus/prepend-http)\n\n> Prepend `http://` to humanized URLs like `todomvc.com` and `localhost`\n\n\n## Install\n\n```\n$ npm install prepend-http\n```\n\n\n## Usage\n\n```js\nconst prependHttp = require('prepend-http');\n\nprependHttp('todomvc.com');\n//=> 'http://todomvc.com'\n\nprependHttp('localhost');\n//=> 'http://localhost'\n\nprependHttp('http://todomvc.com');\n//=> 'http://todomvc.com'\n\nprependHttp('todomvc.com', {https: true});\n//=> 'https://todomvc.com'\n```\n\n\n## API\n\n### prependHttp(url, [options])\n\n#### url\n\nType: `string`\n\nURL to prepend `http://` on.\n\n#### options\n\nType: `Object`\n\n##### https\n\nType: `boolean`<br>\nDefault: `false`\n\nPrepend `https://` instead of `http://`.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz",
+    "hash": "e92434bfa5ea8c19f41cdfd401d741a3c819d897",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e92434bfa5ea8c19f41cdfd401d741a3c819d897"
+}

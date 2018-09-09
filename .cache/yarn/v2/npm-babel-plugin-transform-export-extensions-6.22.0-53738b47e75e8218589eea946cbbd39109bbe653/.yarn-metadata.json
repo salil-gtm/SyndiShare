@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "name": "babel-plugin-transform-export-extensions",
+    "version": "6.22.0",
+    "description": "Compile export extensions to ES2015",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-export-extensions"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {
+      "babel-plugin-syntax-export-extensions": "^6.8.0",
+      "babel-runtime": "^6.22.0"
+    },
+    "devDependencies": {
+      "babel-helper-plugin-test-runner": "^6.22.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-transform-export-extensions-6.22.0-53738b47e75e8218589eea946cbbd39109bbe653/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-transform-export-extensions\n\n> Compile additional export-from statements to ES2015\n\n## Example\n\n```js\nexport * as ns from 'mod';\nexport v from 'mod';\n```\n[Try in REPL](http://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-0&code=export%20*%20as%20ns%20from%20'mod'%3B%0Aexport%20v%20from%20'mod'%3B)\n\n## Installation\n\n```sh\nnpm install --save-dev babel-plugin-transform-export-extensions\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"transform-export-extensions\"]\n}\n```\n\n### Via CLI\n\n```sh\nbabel --plugins transform-export-extensions script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"transform-export-extensions\"]\n});\n```\n## References\n\n* ~~[Proposal: Additional export-from statements in ES7](https://github.com/leebyron/ecmascript-more-export-from)~~ (Withdrawn)\n* [ECMAScript Proposal: export ns from](https://github.com/leebyron/ecmascript-export-ns-from)\n* [ECMAScript Proposal: export default from](https://github.com/leebyron/ecmascript-export-default-from)\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-transform-export-extensions/-/babel-plugin-transform-export-extensions-6.22.0.tgz#53738b47e75e8218589eea946cbbd39109bbe653",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-transform-export-extensions/-/babel-plugin-transform-export-extensions-6.22.0.tgz",
+    "hash": "53738b47e75e8218589eea946cbbd39109bbe653",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "53738b47e75e8218589eea946cbbd39109bbe653"
+}

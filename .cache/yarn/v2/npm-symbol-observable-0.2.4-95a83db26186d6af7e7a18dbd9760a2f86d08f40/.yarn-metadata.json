@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "name": "symbol-observable",
+    "version": "0.2.4",
+    "description": "Symbol.observable ponyfill",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/blesh/symbol-observable.git"
+    },
+    "author": {
+      "name": "Ben Lesh",
+      "email": "ben@benlesh.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "mocha"
+    },
+    "files": [
+      "index.js",
+      "ponyfill.js",
+      "index.d.ts"
+    ],
+    "keywords": [
+      "symbol",
+      "observable",
+      "observables",
+      "ponyfill",
+      "polyfill",
+      "shim"
+    ],
+    "devDependencies": {
+      "chai": "^3.5.0",
+      "mocha": "^2.4.5"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-symbol-observable-0.2.4-95a83db26186d6af7e7a18dbd9760a2f86d08f40/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# symbol-observable [![Build Status](https://travis-ci.org/blesh/symbol-observable.svg?branch=master)](https://travis-ci.org/blesh/symbol-observable)\n\n> [Symbol.observable](https://github.com/zenparsing/es-observable) ponyfill\n\n\n## Install\n\n```\n$ npm install --save symbol-observable\n```\n\n\n## Usage\n\n```js\nconst symbolObservable = require('symbol-observable');\n\nconsole.log(symbolObservable);\n//=> Symbol(observable)\n```\n\n\n## Related\n\n- [is-observable](https://github.com/sindresorhus/is-observable) - Check if a value is an Observable\n- [observable-to-promise](https://github.com/sindresorhus/observable-to-promise) - Convert an Observable to a Promise\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\nCopyright (c) Ben Lesh <ben@benlesh.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-0.2.4.tgz#95a83db26186d6af7e7a18dbd9760a2f86d08f40",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-0.2.4.tgz",
+    "hash": "95a83db26186d6af7e7a18dbd9760a2f86d08f40",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "95a83db26186d6af7e7a18dbd9760a2f86d08f40"
+}

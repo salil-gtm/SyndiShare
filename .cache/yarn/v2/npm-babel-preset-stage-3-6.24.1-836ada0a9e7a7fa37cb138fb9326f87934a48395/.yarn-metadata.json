@@ -1,0 +1,39 @@
+{
+  "manifest": {
+    "name": "babel-preset-stage-3",
+    "version": "6.24.1",
+    "description": "Babel preset for stage 3 plugins",
+    "author": {
+      "name": "Sebastian McKenzie",
+      "email": "sebmck@gmail.com"
+    },
+    "homepage": "https://babeljs.io/",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-preset-stage-3"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+      "babel-plugin-transform-async-generator-functions": "^6.24.1",
+      "babel-plugin-transform-async-to-generator": "^6.24.1",
+      "babel-plugin-transform-exponentiation-operator": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.22.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-preset-stage-3-6.24.1-836ada0a9e7a7fa37cb138fb9326f87934a48395/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-preset-stage-3\n\n> Babel preset for stage 3 plugins.\n\nThe gist of Stage 3 is:\n\n> **Stage 3**: candidate\n>\n> **What is it?** The proposal is mostly finished and now needs feedback from implementations and users to progress further.\n\n> **What’s required?** The spec text must be complete. Designated reviewers (appointed by TC39, not by the champion) and the ECMAScript spec editor must sign off on the spec text. There must be at least two spec-compliant implementations (which don’t have to be enabled by default).\n>\n> **What’s next?** Henceforth, changes should only be made in response to critical issues raised by the implementations and their use.\n\n\n\n## Install\n\n```sh\nnpm install --save-dev babel-preset-stage-3\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"presets\": [\"stage-3\"]\n}\n```\n\n### Via CLI\n\n```sh\nbabel script.js --presets stage-3\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  presets: [\"stage-3\"]\n});\n```\n\n## References\n\n- Chapter \"[The TC39 process for ECMAScript features](http://exploringjs.com/es2016-es2017/ch_tc39-process.html)\" in \"Exploring ES2016 and ES2017\" by Axel Rauschmayer\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-preset-stage-3/-/babel-preset-stage-3-6.24.1.tgz#836ada0a9e7a7fa37cb138fb9326f87934a48395",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-preset-stage-3/-/babel-preset-stage-3-6.24.1.tgz",
+    "hash": "836ada0a9e7a7fa37cb138fb9326f87934a48395",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "836ada0a9e7a7fa37cb138fb9326f87934a48395"
+}

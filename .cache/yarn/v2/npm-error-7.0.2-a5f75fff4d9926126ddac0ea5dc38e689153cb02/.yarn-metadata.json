@@ -1,0 +1,82 @@
+{
+  "manifest": {
+    "name": "error",
+    "version": "7.0.2",
+    "description": "Custom errors",
+    "keywords": [],
+    "author": {
+      "name": "Raynos",
+      "email": "raynos2@gmail.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/Raynos/error.git"
+    },
+    "main": "index",
+    "homepage": "https://github.com/Raynos/error",
+    "contributors": [
+      {
+        "name": "Raynos"
+      }
+    ],
+    "bugs": {
+      "url": "https://github.com/Raynos/error/issues",
+      "email": "raynos2@gmail.com"
+    },
+    "dependencies": {
+      "string-template": "~0.2.1",
+      "xtend": "~4.0.0"
+    },
+    "devDependencies": {
+      "istanbul": "0.3.13",
+      "tape": "^3.5.0",
+      "uber-standard": "3.6.4"
+    },
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "http://github.com/Raynos/error/raw/master/LICENSE"
+      }
+    ],
+    "scripts": {
+      "lint": "standard -v .",
+      "test": "npm run lint && node test/index.js",
+      "travis-test": "istanbul cover ./test/index.js && ((cat coverage/lcov.info | coveralls) || exit 0)",
+      "cover": "istanbul cover --report none --print detail ./test/index.js",
+      "view-cover": "istanbul report html && google-chrome ./coverage/index.html",
+      "test-browser": "testem-browser ./test/browser/index.js",
+      "testem": "testem-both -b=./test/browser/index.js"
+    },
+    "testling": {
+      "files": "test/index.js",
+      "browsers": [
+        "ie/8..latest",
+        "firefox/16..latest",
+        "firefox/nightly",
+        "chrome/22..latest",
+        "chrome/canary",
+        "opera/12..latest",
+        "opera/next",
+        "safari/5.1..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest",
+        "android-browser/4.2..latest"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-error-7.0.2-a5f75fff4d9926126ddac0ea5dc38e689153cb02/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# error\n\n<!--\n    [![build status][1]][2]\n    [![NPM version][3]][4]\n    [![Coverage Status][5]][6]\n    [![gemnasium Dependency Status][7]][8]\n    [![Davis Dependency status][9]][10]\n-->\n\n<!-- [![browser support][11]][12] -->\n\nCustom errors\n\n## Typed Error\n\n```js\nvar TypedError = require(\"error/typed\")\n\nvar ServerError = TypedError({\n    type: 'server.5xx',\n    message: '{title} server error, status={statusCode}',\n    title: null,\n    statusCode: null\n});\nvar ClientError = TypedError({\n    type: 'client.4xx',\n    message: '{title} client error, status={statusCode}',\n    title: null,\n    statusCode: null\n});\n\nvar error = ServerError({\n    title:'some title',\n    statusCode: 500\n});\nvar error2 = ClientError({\n    title: 'some title',\n    statusCode: 404\n});\n```\n\n## Wrapped Errors\n\n```js\nvar net = require('net');\nvar WrappedError = require('error/wrapped');\n\nvar ServerListenError = WrappedError({\n    message: 'server: {origMessage}',\n    type: 'server.listen-failed',\n    requestedPort: null,\n    host: null\n});\n\nvar server = net.createServer();\n\nserver.on('error', function onError(err) {\n    if (err.code === 'EADDRINUSE') {\n        throw ServerListenError(err, {\n            requestedPort: 3000,\n            host: null\n        });\n    } else {\n        throw err;\n    }\n});\n\nserver.listen(3000);\n```\n\n## Installation\n\n`npm install error`\n\n## Contributors\n\n - Raynos\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/error.png\n  [2]: https://travis-ci.org/Raynos/error\n  [3]: https://badge.fury.io/js/error.png\n  [4]: https://badge.fury.io/js/error\n  [5]: https://coveralls.io/repos/Raynos/error/badge.png\n  [6]: https://coveralls.io/r/Raynos/error\n  [7]: https://gemnasium.com/Raynos/error.png\n  [8]: https://gemnasium.com/Raynos/error\n  [9]: https://david-dm.org/Raynos/error.png\n  [10]: https://david-dm.org/Raynos/error\n  [11]: https://ci.testling.com/Raynos/error.png\n  [12]: https://ci.testling.com/Raynos/error\n",
+    "license": "MIT"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/error/-/error-7.0.2.tgz#a5f75fff4d9926126ddac0ea5dc38e689153cb02",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/error/-/error-7.0.2.tgz",
+    "hash": "a5f75fff4d9926126ddac0ea5dc38e689153cb02",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a5f75fff4d9926126ddac0ea5dc38e689153cb02"
+}

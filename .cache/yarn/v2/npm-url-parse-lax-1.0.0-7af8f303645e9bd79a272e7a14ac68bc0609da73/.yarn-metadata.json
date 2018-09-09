@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "name": "url-parse-lax",
+    "version": "1.0.0",
+    "description": "url.parse() with support for protocol-less URLs & IPs",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/url-parse-lax.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "node test.js"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "url",
+      "uri",
+      "parse",
+      "parser",
+      "loose",
+      "lax",
+      "protocol",
+      "less",
+      "protocol-less",
+      "ip",
+      "ipv4",
+      "ipv6"
+    ],
+    "dependencies": {
+      "prepend-http": "^1.0.1"
+    },
+    "devDependencies": {
+      "ava": "0.0.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-url-parse-lax-1.0.0-7af8f303645e9bd79a272e7a14ac68bc0609da73/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# url-parse-lax [![Build Status](https://travis-ci.org/sindresorhus/url-parse-lax.svg?branch=master)](https://travis-ci.org/sindresorhus/url-parse-lax)\n\n> [`url.parse()`](https://nodejs.org/docs/latest/api/url.html#url_url_parse_urlstr_parsequerystring_slashesdenotehost) with support for protocol-less URLs & IPs\n\n\n## Install\n\n```\n$ npm install --save url-parse-lax\n```\n\n\n## Usage\n\n```js\nvar urlParseLax = require('url-parse-lax');\n\nurlParseLax('sindresorhus.com');\n/*\n{\n\tprotocol: null,\n\tslashes: true,\n\tauth: null,\n\thost: 'sindresorhus.com',\n\tport: null,\n\thostname: 'sindresorhus.com',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'http://sindresorhus.com/'\n}\n*/\n\nurlParseLax('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: true,\n\tauth: null,\n\thost: '[2001:db8::]:8000',\n\tport: '8000',\n\thostname: '2001:db8::',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'http://[2001:db8::]:8000/'\n}\n*/\n```\n\nAnd with the built-in `url.parse()`:\n\n```js\nvar url = require('url');\n\nurl.parse('sindresorhus.com');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: 'sindresorhus',\n\tpath: 'sindresorhus',\n\thref: 'sindresorhus'\n}\n*/\n\nurl.parse('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '[2001:db8::]:8000',\n\tpath: '[2001:db8::]:8000',\n\thref: '[2001:db8::]:8000'\n}\n*/\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-1.0.0.tgz",
+    "hash": "7af8f303645e9bd79a272e7a14ac68bc0609da73",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "7af8f303645e9bd79a272e7a14ac68bc0609da73"
+}

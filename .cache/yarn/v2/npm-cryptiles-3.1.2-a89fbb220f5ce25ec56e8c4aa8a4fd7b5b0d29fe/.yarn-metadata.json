@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "name": "cryptiles",
+    "description": "General purpose crypto utilities",
+    "version": "3.1.2",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/hapijs/cryptiles"
+    },
+    "main": "lib/index.js",
+    "keywords": [
+      "cryptography",
+      "security",
+      "utilites"
+    ],
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "dependencies": {
+      "boom": "5.x.x"
+    },
+    "devDependencies": {
+      "code": "4.x.x",
+      "lab": "13.x.x"
+    },
+    "scripts": {
+      "test": "lab -a code -t 100 -L",
+      "test-cov-html": "lab -a code -r html -o coverage.html"
+    },
+    "license": "BSD-3-Clause",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-cryptiles-3.1.2-a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe/package.json",
+    "readmeFilename": "README.md",
+    "readme": "cryptiles\n=========\n\nGeneral purpose crypto utilities\n\n[![Build Status](https://secure.travis-ci.org/hapijs/cryptiles.png)](http://travis-ci.org/hapijs/cryptiles)\n\nLead Maintainer - [C J Silverio](https://github.com/ceejbot)\n\n## Methods\n\n### `randomString(<Number> size)`\nReturns a cryptographically strong pseudo-random data string. Takes a size argument for the length of the string.\n\n### `randomDigits(<Number> size)`\nReturns a cryptographically strong pseudo-random data string consisting of only numerical digits (0-9). Takes a size argument for the length of the string.\n\n### `fixedTimeComparison(<String> a, <String> b)`\nCompare two strings using fixed time algorithm (to prevent time-based analysis of MAC digest match). Returns `true` if the strings match, `false` if they differ.\n",
+    "licenseText": "Copyright (c) 2014-2017, Eran Hammer and Project contributors\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * The names of any contributors may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n                                  *   *   *\n\nThe complete list of contributors can be found at: https://github.com/hueniverse/cryptiles/graphs/contributors\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cryptiles/-/cryptiles-3.1.2.tgz#a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cryptiles/-/cryptiles-3.1.2.tgz",
+    "hash": "a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe"
+}

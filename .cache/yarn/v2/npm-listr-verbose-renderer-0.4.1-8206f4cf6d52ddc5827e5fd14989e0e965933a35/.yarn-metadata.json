@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "listr-verbose-renderer",
+    "version": "0.4.1",
+    "description": "Listr verbose renderer",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SamVerschueren/listr-verbose-renderer.git"
+    },
+    "author": {
+      "name": "Sam Verschueren",
+      "email": "sam.verschueren@gmail.com",
+      "url": "github.com/SamVerschueren"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js",
+      "lib"
+    ],
+    "keywords": [
+      "listr",
+      "verbose",
+      "renderer",
+      "rendering",
+      "custom",
+      "format"
+    ],
+    "dependencies": {
+      "chalk": "^1.1.3",
+      "cli-cursor": "^1.0.2",
+      "date-fns": "^1.27.2",
+      "figures": "^1.7.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "hook-std": "^0.3.0",
+      "listr": "*",
+      "strip-ansi": "^3.0.1",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-listr-verbose-renderer-0.4.1-8206f4cf6d52ddc5827e5fd14989e0e965933a35/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# listr-verbose-renderer [![Build Status](https://travis-ci.org/SamVerschueren/listr-verbose-renderer.svg?branch=master)](https://travis-ci.org/SamVerschueren/listr-verbose-renderer)\n\n> [Listr](https://github.com/SamVerschueren/listr) verbose renderer\n\n<img src=\"screenshot.gif\" />\n\n\n## Install\n\n```\n$ npm install --save listr-verbose-renderer\n```\n\n\n## Usage\n\n```js\nconst VerboseRenderer = require('listr-verbose-renderer');\nconst Listr = require('listr');\n\nconst list = new Listr([\n\t{\n\t\ttitle: 'foo',\n\t\ttask: () => Promise.resolve('bar')\n\t}\n], {\n\trenderer: VerboseRenderer\n});\n\nlist.run();\n```\n\n> Note: This renderer supports non-TTY environments.\n\n\n## Options\n\nThese options should be provided in the [Listr](https://github.com/SamVerschueren/listr) options object.\n\n### dateFormat\n\nType: `string` `false`<br>\nDefault: `HH:mm:ss`\n\nFormat of the rendered timestamp. Use the [date-fns string format](https://date-fns.org/docs/format). If `false` is passed in, the timestamp will be hidden.\n\n\n## Related\n\n- [listr](https://github.com/SamVerschueren/listr) - Terminal task list\n- [listr-update-renderer](https://github.com/SamVerschueren/listr-update-renderer) - Listr update renderer\n- [listr-silent-renderer](https://github.com/SamVerschueren/listr-silent-renderer) - Suppress Listr rendering output\n\n\n## License\n\nMIT © [Sam Verschueren](https://github.com/SamVerschueren)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sam Verschueren <sam.verschueren@gmail.com> (github.com/SamVerschueren)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/listr-verbose-renderer/-/listr-verbose-renderer-0.4.1.tgz#8206f4cf6d52ddc5827e5fd14989e0e965933a35",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/listr-verbose-renderer/-/listr-verbose-renderer-0.4.1.tgz",
+    "hash": "8206f4cf6d52ddc5827e5fd14989e0e965933a35",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "8206f4cf6d52ddc5827e5fd14989e0e965933a35"
+}

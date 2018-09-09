@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-helper-bindify-decorators",
+    "version": "6.24.1",
+    "description": "Helper function to bindify decorators",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-bindify-decorators"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-traverse": "^6.24.1",
+      "babel-types": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-bindify-decorators-6.24.1-14c19e5f142d7b47f19a52431e52b1ccbc40a330/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-bindify-decorators\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-bindify-decorators/-/babel-helper-bindify-decorators-6.24.1.tgz#14c19e5f142d7b47f19a52431e52b1ccbc40a330",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-bindify-decorators/-/babel-helper-bindify-decorators-6.24.1.tgz",
+    "hash": "14c19e5f142d7b47f19a52431e52b1ccbc40a330",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "14c19e5f142d7b47f19a52431e52b1ccbc40a330"
+}

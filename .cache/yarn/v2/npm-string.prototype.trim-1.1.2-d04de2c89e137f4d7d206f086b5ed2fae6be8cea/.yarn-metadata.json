@@ -1,0 +1,98 @@
+{
+  "manifest": {
+    "name": "string.prototype.trim",
+    "version": "1.1.2",
+    "author": {
+      "name": "Jordan Harband",
+      "email": "ljharb@gmail.com",
+      "url": "http://ljharb.codes"
+    },
+    "contributors": [
+      {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com",
+        "url": "http://ljharb.codes"
+      }
+    ],
+    "description": "ES5 spec-compliant shim for String.prototype.trim",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+      "test": "npm run lint && es-shim-api --bound && npm run tests-only && npm run security",
+      "tests-only": "npm run test:shimmed && npm run test:module",
+      "test:shimmed": "node test/shimmed.js",
+      "test:module": "node test/index.js",
+      "coverage": "covert test/*.js",
+      "coverage-quiet": "covert test/*.js --quiet",
+      "lint": "npm run jscs && npm run eslint",
+      "eslint": "eslint test/*.js *.js",
+      "jscs": "jscs test/*.js *.js",
+      "security": "nsp check"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/es-shims/String.prototype.trim.git"
+    },
+    "keywords": [
+      "String.prototype.trim",
+      "string",
+      "ES5",
+      "shim",
+      "trim",
+      "polyfill",
+      "es-shim API"
+    ],
+    "dependencies": {
+      "define-properties": "^1.1.2",
+      "es-abstract": "^1.5.0",
+      "function-bind": "^1.0.2"
+    },
+    "devDependencies": {
+      "tape": "^4.4.0",
+      "covert": "^1.1.0",
+      "jscs": "^2.9.0",
+      "nsp": "^2.2.0",
+      "eslint": "^1.10.3",
+      "semver": "^5.1.0",
+      "replace": "^0.3.0",
+      "@ljharb/eslint-config": "^1.6.1",
+      "@es-shims/api": "^1.0.0"
+    },
+    "testling": {
+      "files": "test/index.js",
+      "browsers": [
+        "iexplore/9.0..latest",
+        "firefox/4.0..6.0",
+        "firefox/15.0..latest",
+        "firefox/nightly",
+        "chrome/4.0..10.0",
+        "chrome/20.0..latest",
+        "chrome/canary",
+        "opera/11.6..latest",
+        "opera/next",
+        "safari/5.0..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest",
+        "android-browser/4.2"
+      ]
+    },
+    "engines": {
+      "node": ">= 0.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-string.prototype.trim-1.1.2-d04de2c89e137f4d7d206f086b5ed2fae6be8cea/package.json",
+    "readmeFilename": "README.md",
+    "readme": "String.prototype.trim <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\n[![browser support][testling-svg]][testling-url]\n\nAn ES5 spec-compliant `String.prototype.trim` shim. Invoke its \"shim\" method to shim `String.prototype.trim` if it is unavailable.\n\nThis package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.20).\n\nMost common usage:\n\n```js\nvar assert = require('assert');\nvar trim = require('string.prototype.trim');\n\nassert(trim(' \\t\\na \\t\\n') === 'a');\n\ntrim.shim(); // will be a no-op if not needed\n\nassert(trim(' \\t\\na \\t\\n') === ' \\t\\na \\t\\n'.trim());\n```\n\n## Engine Bugs\nSome implementations of `String#trim` incorrectly trim zero-width spaces. This shim detects and corrects this behavior.\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[package-url]: https://npmjs.com/package/string.prototype.trim\n[npm-version-svg]: http://versionbadg.es/es-shims/String.prototype.trim.svg\n[travis-svg]: https://travis-ci.org/es-shims/String.prototype.trim.svg\n[travis-url]: https://travis-ci.org/es-shims/String.prototype.trim\n[deps-svg]: https://david-dm.org/es-shims/String.prototype.trim.svg\n[deps-url]: https://david-dm.org/es-shims/String.prototype.trim\n[dev-deps-svg]: https://david-dm.org/es-shims/String.prototype.trim/dev-status.svg\n[dev-deps-url]: https://david-dm.org/es-shims/String.prototype.trim#info=devDependencies\n[testling-svg]: https://ci.testling.com/es-shims/String.prototype.trim.png\n[testling-url]: https://ci.testling.com/es-shims/String.prototype.trim\n[npm-badge-png]: https://nodei.co/npm/string.prototype.trim.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/string.prototype.trim.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/string.prototype.trim.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=string.prototype.trim\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Jordan Harband\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.1.2.tgz#d04de2c89e137f4d7d206f086b5ed2fae6be8cea",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.1.2.tgz",
+    "hash": "d04de2c89e137f4d7d206f086b5ed2fae6be8cea",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d04de2c89e137f4d7d206f086b5ed2fae6be8cea"
+}

@@ -1,0 +1,36 @@
+{
+  "manifest": {
+    "name": "fake-merkle-patricia-tree",
+    "version": "1.0.1",
+    "description": "You want Ethereum's [merkle-patricia tree](https://github.com/wanderer/merkle-patricia-tree), but you don't care about the stateRoot. Fake it! And reap the optimization benefits.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+      "name": "kumavis"
+    },
+    "license": "ISC",
+    "dependencies": {
+      "checkpoint-store": "^1.1.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kumavis/fake-merkle-patricia-tree"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-fake-merkle-patricia-tree-1.0.1-4b8c3acfb520afadf9860b1f14cd8ce3402cddd3/package.json",
+    "readmeFilename": "README.md",
+    "readme": "### Fake Merkle-Patricia-Tree\n\nYou want Ethereum's [merkle-patricia tree](https://github.com/wanderer/merkle-patricia-tree), but you don't care about the stateRoot. Fake it! And reap the optimization benefits."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/fake-merkle-patricia-tree/-/fake-merkle-patricia-tree-1.0.1.tgz#4b8c3acfb520afadf9860b1f14cd8ce3402cddd3",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/fake-merkle-patricia-tree/-/fake-merkle-patricia-tree-1.0.1.tgz",
+    "hash": "4b8c3acfb520afadf9860b1f14cd8ce3402cddd3",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4b8c3acfb520afadf9860b1f14cd8ce3402cddd3"
+}

@@ -1,0 +1,85 @@
+{
+  "manifest": {
+    "name": "xtend",
+    "version": "2.1.2",
+    "description": "extend like a boss",
+    "keywords": [
+      "extend",
+      "merge",
+      "options",
+      "opts",
+      "object",
+      "array"
+    ],
+    "author": {
+      "name": "Raynos",
+      "email": "raynos2@gmail.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/Raynos/xtend.git"
+    },
+    "main": "index",
+    "scripts": {
+      "test": "node test"
+    },
+    "dependencies": {
+      "object-keys": "~0.4.0"
+    },
+    "devDependencies": {
+      "tape": "~1.1.0"
+    },
+    "homepage": "https://github.com/Raynos/xtend",
+    "contributors": [
+      {
+        "name": "Jake Verbaten"
+      },
+      {
+        "name": "Matt Esch"
+      }
+    ],
+    "bugs": {
+      "url": "https://github.com/Raynos/xtend/issues",
+      "email": "raynos2@gmail.com"
+    },
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "http://github.com/raynos/xtend/raw/master/LICENSE"
+      }
+    ],
+    "testling": {
+      "files": "test.js",
+      "browsers": [
+        "ie/7..latest",
+        "firefox/16..latest",
+        "firefox/nightly",
+        "chrome/22..latest",
+        "chrome/canary",
+        "opera/12..latest",
+        "opera/next",
+        "safari/5.1..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest"
+      ]
+    },
+    "engines": {
+      "node": ">=0.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-xtend-2.1.2-6efecc2a4dad8e6962c4901b337ce7ba87b5d28b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# xtend\n\n[![browser support][3]][4]\n\nExtend like a boss\n\nxtend is a basic utility library which allows you to extend an object by appending all of the properties from each object in a list. When there are identical properties, the right-most property takes presedence.\n\n## Examples\n\n```js\nvar extend = require(\"xtend\")\n\nvar combination = extend({\n    a: \"a\"\n}, {\n    b: \"b\"\n})\n// { a: \"a\", b: \"b\" }\n```\n\n\n## MIT Licenced\n\n\n  [3]: http://ci.testling.com/Raynos/xtend.png\n  [4]: http://ci.testling.com/Raynos/xtend\n",
+    "license": "MIT"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz",
+    "hash": "6efecc2a4dad8e6962c4901b337ce7ba87b5d28b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
+}

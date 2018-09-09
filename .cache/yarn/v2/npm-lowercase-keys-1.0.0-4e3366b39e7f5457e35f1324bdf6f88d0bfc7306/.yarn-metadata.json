@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "name": "lowercase-keys",
+    "version": "1.0.0",
+    "description": "Lowercase the keys of an object",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/lowercase-keys.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "node test.js"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "object",
+      "assign",
+      "extend",
+      "properties",
+      "lowercase",
+      "lower-case",
+      "case",
+      "keys",
+      "key"
+    ],
+    "devDependencies": {
+      "ava": "0.0.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-lowercase-keys-1.0.0-4e3366b39e7f5457e35f1324bdf6f88d0bfc7306/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# lowercase-keys [![Build Status](https://travis-ci.org/sindresorhus/lowercase-keys.svg?branch=master)](https://travis-ci.org/sindresorhus/lowercase-keys)\n\n> Lowercase the keys of an object\n\n\n## Install\n\n```\n$ npm install --save lowercase-keys\n```\n\n\n## Usage\n\n```js\nvar lowercaseKeys = require('lowercase-keys');\n\nlowercaseKeys({FOO: true, bAr: false});\n//=> {foo: true, bar: false}\n```\n\n\n## API\n\n### lowercaseKeys(object)\n\nLowercases the keys and returns a new object.\n\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.0.tgz",
+    "hash": "4e3366b39e7f5457e35f1324bdf6f88d0bfc7306",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
+}

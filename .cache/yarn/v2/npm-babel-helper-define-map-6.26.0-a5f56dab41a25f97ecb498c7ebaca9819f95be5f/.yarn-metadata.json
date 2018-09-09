@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "name": "babel-helper-define-map",
+    "version": "6.26.0",
+    "description": "Helper function to define a map",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-define-map"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-helper-function-name": "^6.24.1",
+      "babel-runtime": "^6.26.0",
+      "babel-types": "^6.26.0",
+      "lodash": "^4.17.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-define-map-6.26.0-a5f56dab41a25f97ecb498c7ebaca9819f95be5f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-define-map\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-define-map/-/babel-helper-define-map-6.26.0.tgz#a5f56dab41a25f97ecb498c7ebaca9819f95be5f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-define-map/-/babel-helper-define-map-6.26.0.tgz",
+    "hash": "a5f56dab41a25f97ecb498c7ebaca9819f95be5f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a5f56dab41a25f97ecb498c7ebaca9819f95be5f"
+}

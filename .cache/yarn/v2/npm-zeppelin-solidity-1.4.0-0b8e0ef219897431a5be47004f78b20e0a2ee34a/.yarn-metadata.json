@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "name": "zeppelin-solidity",
+    "version": "1.4.0",
+    "description": "Secure Smart Contract library for Solidity",
+    "scripts": {
+      "test": "scripts/test.sh",
+      "console": "truffle console",
+      "coverage": "scripts/coverage.sh"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/OpenZeppelin/zeppelin-solidity.git"
+    },
+    "keywords": [
+      "solidity",
+      "ethereum",
+      "smart",
+      "contracts",
+      "security",
+      "zeppelin"
+    ],
+    "author": {
+      "name": "Manuel Araoz",
+      "email": "manuelaraoz@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/OpenZeppelin/zeppelin-solidity/issues"
+    },
+    "homepage": "https://github.com/OpenZeppelin/zeppelin-solidity",
+    "devDependencies": {
+      "babel-polyfill": "^6.23.0",
+      "babel-preset-es2015": "^6.18.0",
+      "babel-preset-stage-2": "^6.18.0",
+      "babel-preset-stage-3": "^6.17.0",
+      "babel-register": "^6.23.0",
+      "chai": "^4.0.2",
+      "chai-as-promised": "^7.0.0",
+      "chai-bignumber": "^2.0.0",
+      "coveralls": "^2.13.1",
+      "ethereumjs-util": "^5.1.2",
+      "ethereumjs-testrpc": "^6.0.1",
+      "mocha-lcov-reporter": "^1.3.0",
+      "solidity-coverage": "^0.2.2",
+      "truffle": "^4.0.0",
+      "truffle-hdwallet-provider": "0.0.3"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-zeppelin-solidity-1.4.0-0b8e0ef219897431a5be47004f78b20e0a2ee34a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Zeppelin Solidity\n[![NPM Package](https://img.shields.io/npm/v/zeppelin-solidity.svg?style=flat-square)](https://www.npmjs.org/package/zeppelin-solidity)\n[![Build Status](https://img.shields.io/travis/OpenZeppelin/zeppelin-solidity.svg?branch=master&style=flat-square)](https://travis-ci.org/OpenZeppelin/zeppelin-solidity)\n[![Coverage Status](https://img.shields.io/coveralls/github/OpenZeppelin/zeppelin-solidity/master.svg?style=flat-square)](https://coveralls.io/github/OpenZeppelin/zeppelin-solidity?branch=master)\n\nOpenZeppelin is a library for writing secure [Smart Contracts](https://en.wikipedia.org/wiki/Smart_contract) on Ethereum.\n\nWith OpenZeppelin, you can build distributed applications, protocols and organizations:\n- using common contract security patterns (See [Onward with Ethereum Smart Contract Security](https://medium.com/bitcorps-blog/onward-with-ethereum-smart-contract-security-97a827e47702#.y3kvdetbz))\n- in the [Solidity language](http://solidity.readthedocs.io/en/develop/).\n\n> NOTE: New to smart contract development? Check our [introductory guide](https://medium.com/zeppelin-blog/the-hitchhikers-guide-to-smart-contracts-in-ethereum-848f08001f05#.cox40d2ut).\n\n## Getting Started\n\nOpenZeppelin integrates with [Truffle](https://github.com/ConsenSys/truffle), an Ethereum development environment. Please install Truffle and initialize your project with `truffle init`.\n\n```sh\nnpm install -g truffle\nmkdir myproject && cd myproject\ntruffle init\n```\n\nTo install the OpenZeppelin library, run:\n```sh\nnpm init\nnpm install zeppelin-solidity\n\n# If you are using yarn, add dependency like this -\nyarn add zeppelin-solidity\n```\n\nAfter that, you'll get all the library's contracts in the `node_modules/zeppelin-solidity/contracts` folder. You can use the contracts in the library like so:\n\n```js\nimport 'zeppelin-solidity/contracts/ownership/Ownable.sol';\n\ncontract MyContract is Ownable {\n  ...\n}\n```\n\n\n## Security\nOpenZeppelin is meant to provide secure, tested and community-audited code, but please use common sense when doing anything that deals with real money! We take no responsibility for your implementation decisions and any security problem you might experience.\n\nIf you find a security issue, please email [security@openzeppelin.org](mailto:security@openzeppelin.org).\n\n## Developer Resources\n\nBuilding a distributed application, protocol or organization with OpenZeppelin?\n\n- Read documentation: http://zeppelin-solidity.readthedocs.io/en/latest/\n\n- Ask for help and follow progress at: https://slack.openzeppelin.org/\n\nInterested in contributing to OpenZeppelin?\n\n- Framework proposal and roadmap: https://medium.com/zeppelin-blog/zeppelin-framework-proposal-and-development-roadmap-fdfa9a3a32ab#.iain47pak\n- Issue tracker: https://github.com/OpenZeppelin/zeppelin-solidity/issues\n- Contribution guidelines: https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md\n\n## Collaborating organizations and audits by OpenZeppelin\n- [Golem](https://golem.network/)\n- [Mediachain](http://www.mediachain.io/)\n- [Truffle](http://truffleframework.com/)\n- [Firstblood](http://firstblood.io/)\n- [Rootstock](http://www.rsk.co/)\n- [Consensys](https://consensys.net/)\n- [DigixGlobal](https://www.dgx.io/)\n- [Coinfund](https://coinfund.io/)\n- [DemocracyEarth](http://democracy.earth/)\n- [Signatura](https://signatura.co/)\n- [Ether.camp](http://www.ether.camp/)\n- [Aragon](https://aragon.one/)\n- [Wings](https://wings.ai/)\n\namong others...\n\n\n## License\nCode released under the [MIT License](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/LICENSE).\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2016 Smart Contract Solutions, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/zeppelin-solidity/-/zeppelin-solidity-1.4.0.tgz#0b8e0ef219897431a5be47004f78b20e0a2ee34a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/zeppelin-solidity/-/zeppelin-solidity-1.4.0.tgz",
+    "hash": "0b8e0ef219897431a5be47004f78b20e0a2ee34a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0b8e0ef219897431a5be47004f78b20e0a2ee34a"
+}

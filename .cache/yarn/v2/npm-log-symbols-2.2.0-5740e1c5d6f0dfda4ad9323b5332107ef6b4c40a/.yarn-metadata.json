@@ -1,0 +1,70 @@
+{
+  "manifest": {
+    "name": "log-symbols",
+    "version": "2.2.0",
+    "description": "Colored symbols for various log levels. Example: ✔︎ Success",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/log-symbols.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js",
+      "browser.js"
+    ],
+    "keywords": [
+      "unicode",
+      "cli",
+      "cmd",
+      "command-line",
+      "characters",
+      "char",
+      "symbol",
+      "symbols",
+      "figure",
+      "figures",
+      "fallback",
+      "win",
+      "windows",
+      "log",
+      "logging",
+      "terminal",
+      "stdout"
+    ],
+    "dependencies": {
+      "chalk": "^2.0.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "strip-ansi": "^4.0.0",
+      "xo": "*"
+    },
+    "browser": "browser.js",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-log-symbols-2.2.0-5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# log-symbols [![Build Status](https://travis-ci.org/sindresorhus/log-symbols.svg?branch=master)](https://travis-ci.org/sindresorhus/log-symbols)\n\n<img src=\"screenshot.png\" width=\"226\" align=\"right\">\n\n> Colored symbols for various log levels\n\nIncludes fallbacks for Windows CMD which only supports a [limited character set](https://en.wikipedia.org/wiki/Code_page_437).\n\n\n## Install\n\n```\n$ npm install log-symbols\n```\n\n\n## Usage\n\n```js\nconst logSymbols = require('log-symbols');\n\nconsole.log(logSymbols.success, 'Finished successfully!');\n// On good OSes:  ✔ Finished successfully!\n// On Windows:    √ Finished successfully!\n```\n\n## API\n\n### logSymbols\n\n#### info\n#### success\n#### warning\n#### error\n\n\n## Related\n\n- [figures](https://github.com/sindresorhus/figures) - Unicode symbols with Windows CMD fallbacks\n- [py-log-symbols](https://github.com/ManrajGrover/py-log-symbols) - Python port\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/log-symbols/-/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/log-symbols/-/log-symbols-2.2.0.tgz",
+    "hash": "5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
+}

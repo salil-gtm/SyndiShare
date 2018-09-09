@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "parse-json",
+    "version": "4.0.0",
+    "description": "Parse JSON with more helpful errors",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/parse-json.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && nyc ava"
+    },
+    "files": [
+      "index.js",
+      "vendor"
+    ],
+    "keywords": [
+      "parse",
+      "json",
+      "graceful",
+      "error",
+      "message",
+      "humanize",
+      "friendly",
+      "helpful",
+      "string",
+      "str"
+    ],
+    "dependencies": {
+      "error-ex": "^1.3.1",
+      "json-parse-better-errors": "^1.0.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "nyc": "^11.2.1",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-parse-json-4.0.0-be35f5425be1f7f6c747184f98a788cb99477ee0/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# parse-json [![Build Status](https://travis-ci.org/sindresorhus/parse-json.svg?branch=master)](https://travis-ci.org/sindresorhus/parse-json)\n\n> Parse JSON with more helpful errors\n\n\n## Install\n\n```\n$ npm install parse-json\n```\n\n\n## Usage\n\n```js\nconst parseJson = require('parse-json');\nconst json = '{\\n\\t\"foo\": true,\\n}';\n\n\nJSON.parse(json);\n/*\nundefined:3\n}\n^\nSyntaxError: Unexpected token }\n*/\n\n\nparseJson(json);\n/*\nJSONError: Trailing comma in object at 3:1\n}\n^\n*/\n\n\nparseJson(json, 'foo.json');\n/*\nJSONError: Trailing comma in object in foo.json:3:1\n}\n^\n*/\n\n\n// You can also add the filename at a later point\ntry {\n\tparseJson(json);\n} catch (err) {\n\terr.fileName = 'foo.json';\n\tthrow err;\n}\n/*\nJSONError: Trailing comma in object in foo.json:3:1\n}\n^\n*/\n```\n\n## API\n\n### parseJson(input, [reviver], [filename])\n\n#### input\n\nType: `string`\n\n#### reviver\n\nType: `Function`\n\nPrescribes how the value originally produced by parsing is transformed, before being returned. See [`JSON.parse` docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#Using_the_reviver_parameter\n) for more.\n\n#### filename\n\nType: `string`\n\nFilename displayed in the error message.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/parse-json/-/parse-json-4.0.0.tgz#be35f5425be1f7f6c747184f98a788cb99477ee0",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/parse-json/-/parse-json-4.0.0.tgz",
+    "hash": "be35f5425be1f7f6c747184f98a788cb99477ee0",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "be35f5425be1f7f6c747184f98a788cb99477ee0"
+}

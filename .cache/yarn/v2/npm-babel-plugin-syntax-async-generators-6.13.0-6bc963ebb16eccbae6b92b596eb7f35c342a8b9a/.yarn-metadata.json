@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-plugin-syntax-async-generators",
+    "version": "6.13.0",
+    "description": "Allow parsing of async generator functions",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-generators"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-syntax-async-generators-6.13.0-6bc963ebb16eccbae6b92b596eb7f35c342a8b9a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-syntax-async-generators\n\nAllow parsing of async generator functions.\n\n## Installation\n\n```sh\n$ npm install babel-plugin-syntax-async-generators\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"syntax-async-generators\"]\n}\n```\n\n### Via CLI\n\n```sh\n$ babel --plugins syntax-async-generators script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"syntax-async-generators\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-syntax-async-generators/-/babel-plugin-syntax-async-generators-6.13.0.tgz#6bc963ebb16eccbae6b92b596eb7f35c342a8b9a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-syntax-async-generators/-/babel-plugin-syntax-async-generators-6.13.0.tgz",
+    "hash": "6bc963ebb16eccbae6b92b596eb7f35c342a8b9a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6bc963ebb16eccbae6b92b596eb7f35c342a8b9a"
+}

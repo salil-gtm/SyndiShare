@@ -1,0 +1,43 @@
+{
+  "manifest": {
+    "name": "level-iterator-stream",
+    "version": "1.3.1",
+    "description": "Turn a leveldown iterator into a readable stream",
+    "scripts": {
+      "test": "make test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Level/iterator-stream.git"
+    },
+    "dependencies": {
+      "inherits": "^2.0.1",
+      "level-errors": "^1.0.3",
+      "readable-stream": "^1.0.33",
+      "xtend": "^4.0.0"
+    },
+    "devDependencies": {
+      "abstract-leveldown": "^2.1.0",
+      "level-codec": "^6.0.0",
+      "leveldown": "^0.10.4",
+      "tape": "^3.5.0",
+      "through2": "^0.6.3"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-level-iterator-stream-1.3.1-e43b78b1a8143e6fa97a4f485eb8ea530352f2ed/package.json",
+    "readmeFilename": "README.md",
+    "readme": "\n# level-iterator-stream\n\n<img alt=\"LevelDB Logo\" height=\"100\" src=\"http://leveldb.org/img/logo.svg\">\n\n**Turn a leveldown iterator into a readable stream**\n\n[![Build Status](https://travis-ci.org/Level/iterator-stream.png)](https://travis-ci.org/Level/iterator-stream)\n\n## Example\n\n```js\nvar iteratorStream = require('level-iterator-stream');\nvar leveldown = require('leveldown');\n\nvar db = leveldown(__dirname + '/db');\ndb.open(function(err){\n  if (err) throw err;\n\n  var stream = iteratorStream(db.iterator());\n  stream.on('data', function(kv){\n    console.log('%s -> %s', kv.key, kv.value);\n  });\n});\n```\n\n## Installation\n\n```bash\n$ npm install level-iterator-stream\n```\n\n## API\n\n### iteratorStream(iterator[, options])\n\n  Create a readable stream from `iterator`. `options` are passed down to the\n  `require('readable-stream').Readable` constructor, with `objectMode` forced\n  to `true`.\n\n  If `options.decoder` is passed, each key/value pair will be transformed by it.\n  Otherwise, an object with `{ key, value }` will be emitted.\n\n  When the stream ends, the `iterator` will be closed and afterwards a\n  `\"close\"` event emitted.\n\n  `.destroy()` will force close the underlying iterator.\n\n## Publishers\n\n* [@juliangruber](https://github.com/juliangruber)\n\n## License &amp; copyright\n\nCopyright (c) 2012-2015 LevelUP contributors.\n\nLevelUP is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.\n",
+    "licenseText": "The MIT License (MIT)\n=====================\n\nCopyright (c) 2012-2015 LevelUP contributors\n---------------------------------------\n\n*LevelUP contributors listed at <https://github.com/rvagg/node-levelup#contributors>*\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/level-iterator-stream/-/level-iterator-stream-1.3.1.tgz#e43b78b1a8143e6fa97a4f485eb8ea530352f2ed",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/level-iterator-stream/-/level-iterator-stream-1.3.1.tgz",
+    "hash": "e43b78b1a8143e6fa97a4f485eb8ea530352f2ed",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e43b78b1a8143e6fa97a4f485eb8ea530352f2ed"
+}

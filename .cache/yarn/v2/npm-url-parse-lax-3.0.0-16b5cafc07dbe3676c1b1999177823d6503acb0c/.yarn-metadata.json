@@ -1,0 +1,62 @@
+{
+  "manifest": {
+    "name": "url-parse-lax",
+    "version": "3.0.0",
+    "description": "Lax url.parse() with support for protocol-less URLs & IPs",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/url-parse-lax.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "url",
+      "uri",
+      "parse",
+      "parser",
+      "loose",
+      "lax",
+      "protocol",
+      "less",
+      "protocol-less",
+      "ip",
+      "ipv4",
+      "ipv6"
+    ],
+    "dependencies": {
+      "prepend-http": "^2.0.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-url-parse-lax-3.0.0-16b5cafc07dbe3676c1b1999177823d6503acb0c/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# url-parse-lax [![Build Status](https://travis-ci.org/sindresorhus/url-parse-lax.svg?branch=master)](https://travis-ci.org/sindresorhus/url-parse-lax)\n\n> Lax [`url.parse()`](https://nodejs.org/docs/latest/api/url.html#url_url_parse_urlstr_parsequerystring_slashesdenotehost) with support for protocol-less URLs & IPs\n\n\n## Install\n\n```\n$ npm install url-parse-lax\n```\n\n\n## Usage\n\n```js\nconst urlParseLax = require('url-parse-lax');\n\nurlParseLax('sindresorhus.com');\n/*\n{\n\tprotocol: 'https:',\n\tslashes: true,\n\tauth: null,\n\thost: 'sindresorhus.com',\n\tport: null,\n\thostname: 'sindresorhus.com',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'https://sindresorhus.com/'\n}\n*/\n\nurlParseLax('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: true,\n\tauth: null,\n\thost: '[2001:db8::]:8000',\n\tport: '8000',\n\thostname: '2001:db8::',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'http://[2001:db8::]:8000/'\n}\n*/\n```\n\nAnd with the built-in `url.parse()`:\n\n```js\nconst url = require('url');\n\nurl.parse('sindresorhus.com');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: 'sindresorhus',\n\tpath: 'sindresorhus',\n\thref: 'sindresorhus'\n}\n*/\n\nurl.parse('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '[2001:db8::]:8000',\n\tpath: '[2001:db8::]:8000',\n\thref: '[2001:db8::]:8000'\n}\n*/\n```\n\n\n## API\n\n### urlParseLax(url, [options])\n\n#### url\n\nType: `string`\n\nURL to parse.\n\n#### options\n\nType: `Object`\n\n##### https\n\nType: `boolean`<br>\nDefault: `true`\n\nPrepend `https://` instead of `http://` to protocol-less URLs.\n\n\n## Related\n\n- [url-format-lax](https://github.com/sindresorhus/url-format-lax) - Lax `url.format()` that formats a hostname and port into IPv6-compatible socket form of `hostname:port`\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-3.0.0.tgz#16b5cafc07dbe3676c1b1999177823d6503acb0c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-3.0.0.tgz",
+    "hash": "16b5cafc07dbe3676c1b1999177823d6503acb0c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "16b5cafc07dbe3676c1b1999177823d6503acb0c"
+}

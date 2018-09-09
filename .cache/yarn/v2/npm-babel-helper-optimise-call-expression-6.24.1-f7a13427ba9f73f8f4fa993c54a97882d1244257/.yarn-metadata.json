@@ -1,0 +1,31 @@
+{
+  "manifest": {
+    "name": "babel-helper-optimise-call-expression",
+    "version": "6.24.1",
+    "description": "Helper function to optimise call expression",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-optimise-call-expression"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-types": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-optimise-call-expression-6.24.1-f7a13427ba9f73f8f4fa993c54a97882d1244257/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-optimise-call-expression\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-optimise-call-expression/-/babel-helper-optimise-call-expression-6.24.1.tgz#f7a13427ba9f73f8f4fa993c54a97882d1244257",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-optimise-call-expression/-/babel-helper-optimise-call-expression-6.24.1.tgz",
+    "hash": "f7a13427ba9f73f8f4fa993c54a97882d1244257",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f7a13427ba9f73f8f4fa993c54a97882d1244257"
+}

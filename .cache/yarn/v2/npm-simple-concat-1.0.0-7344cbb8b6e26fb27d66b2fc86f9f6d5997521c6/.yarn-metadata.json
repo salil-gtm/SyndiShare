@@ -1,0 +1,50 @@
+{
+  "manifest": {
+    "name": "simple-concat",
+    "description": "Super-minimalist version of `concat-stream`. Less than 15 lines!",
+    "version": "1.0.0",
+    "author": {
+      "name": "Feross Aboukhadijeh",
+      "email": "feross@feross.org",
+      "url": "http://feross.org/"
+    },
+    "bugs": {
+      "url": "https://github.com/feross/simple-concat/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "standard": "^6.0.8",
+      "tape": "^4.0.0"
+    },
+    "homepage": "https://github.com/feross/simple-concat",
+    "keywords": [
+      "concat",
+      "concat-stream",
+      "concat stream"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/feross/simple-concat.git"
+    },
+    "scripts": {
+      "test": "standard && tape test/*.js"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-simple-concat-1.0.0-7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# simple-concat [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]\n\n[travis-image]: https://img.shields.io/travis/feross/simple-concat/master.svg\n[travis-url]: https://travis-ci.org/feross/simple-concat\n[npm-image]: https://img.shields.io/npm/v/simple-concat.svg\n[npm-url]: https://npmjs.org/package/simple-concat\n[downloads-image]: https://img.shields.io/npm/dm/simple-concat.svg\n[downloads-url]: https://npmjs.org/package/simple-concat\n\n### Super-minimalist version of `concat-stream`. Less than 15 lines!\n\n## install\n\n```\nnpm install simple-concat\n```\n\n## usage\n\nThis example is longer than the implementation.\n\n```js\nvar s = new stream.PassThrough()\nconcat(s, function (err, buf) {\n  if (err) throw err\n  console.error(buf)\n})\ns.write('abc')\nsetTimeout(function () {\n  s.write('123')\n}, 10)\nsetTimeout(function () {\n  s.write('456')\n}, 20)\nsetTimeout(function () {\n  s.end('789')\n}, 30)\n```\n\n## license\n\nMIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Feross Aboukhadijeh\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/simple-concat/-/simple-concat-1.0.0.tgz#7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/simple-concat/-/simple-concat-1.0.0.tgz",
+    "hash": "7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6"
+}

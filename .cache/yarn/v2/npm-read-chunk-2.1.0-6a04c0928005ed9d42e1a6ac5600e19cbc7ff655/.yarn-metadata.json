@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "read-chunk",
+    "version": "2.1.0",
+    "description": "Read a chunk from a file",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/read-chunk.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "read",
+      "file",
+      "readfile",
+      "fs",
+      "chunk",
+      "slice",
+      "part",
+      "head",
+      "tail",
+      "buffer",
+      "fd",
+      "open"
+    ],
+    "dependencies": {
+      "pify": "^3.0.0",
+      "safe-buffer": "^5.1.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-read-chunk-2.1.0-6a04c0928005ed9d42e1a6ac5600e19cbc7ff655/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# read-chunk [![Build Status](https://travis-ci.org/sindresorhus/read-chunk.svg?branch=master)](https://travis-ci.org/sindresorhus/read-chunk)\n\n> Read a chunk from a file\n\nBecause the built-in way requires way too much boilerplate.\n\n\n## Install\n\n```\n$ npm install read-chunk\n```\n\n\n## Usage\n\n```js\nconst readChunk = require('read-chunk');\n\n// foo.txt => hello\n\nreadChunk.sync('foo.txt', 1, 3);\n//=> 'ell'\n```\n\n\n## API\n\n### readChunk(filepath, position, length)\n\nReturns a `Promise<Buffer>`.\n\n### readChunk.sync(filepath, position, length)\n\nReturns a `Buffer`.\n\n#### filepath\n\nType: `string`\n\n#### position\n\nType: `number`\n\nPosition to start reading.\n\n#### length\n\nType: `number`\n\nNumber of bytes to read.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/read-chunk/-/read-chunk-2.1.0.tgz#6a04c0928005ed9d42e1a6ac5600e19cbc7ff655",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/read-chunk/-/read-chunk-2.1.0.tgz",
+    "hash": "6a04c0928005ed9d42e1a6ac5600e19cbc7ff655",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6a04c0928005ed9d42e1a6ac5600e19cbc7ff655"
+}

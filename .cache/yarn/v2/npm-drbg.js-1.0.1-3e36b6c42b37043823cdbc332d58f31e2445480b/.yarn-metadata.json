@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "name": "drbg.js",
+    "version": "1.0.1",
+    "description": "Deterministic Random Bit Generators",
+    "keywords": [
+      "drbg",
+      "nist sp 800-90a",
+      "ctrdrbg",
+      "hashdrbg",
+      "hmacdrbg"
+    ],
+    "bugs": {
+      "url": "https://github.com/cryptocoinjs/drbg.js/issues"
+    },
+    "license": "MIT",
+    "author": {
+      "name": "Kirill Fomichev",
+      "email": "fanatid@yandex.ru",
+      "url": "https://github.com/fanatid"
+    },
+    "files": [
+      "lib",
+      "hash.js",
+      "hmac.js",
+      "index.js"
+    ],
+    "main": "./index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/cryptocoinjs/drbg.js.git"
+    },
+    "scripts": {
+      "lint": "standard",
+      "test": "npm run lint && npm run unit",
+      "unit": "npm run unit:node && npm run unit:browser",
+      "unit:node": "tap --cov test/**/*.js",
+      "unit:browser": "karma start karma.conf.js"
+    },
+    "dependencies": {
+      "browserify-aes": "^1.0.6",
+      "create-hash": "^1.1.2",
+      "create-hmac": "^1.1.4"
+    },
+    "devDependencies": {
+      "browserify": "^12.0.0",
+      "karma": "^0.13.19",
+      "karma-browserify": "^5.0.1",
+      "karma-chrome-launcher": "^0.2.2",
+      "karma-detect-browsers": "^2.0.2",
+      "karma-firefox-launcher": "^0.1.7",
+      "karma-tap": "^1.0.3",
+      "tap": "^5.4.4",
+      "standard": "^6.0.4"
+    },
+    "engines": {
+      "node": ">=0.10"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-drbg.js-1.0.1-3e36b6c42b37043823cdbc332d58f31e2445480b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# drbg.js\n\n[![NPM Package](https://img.shields.io/npm/v/drbg.js.svg?style=flat-square)](https://www.npmjs.org/package/drbg.js)\n[![Build Status](https://img.shields.io/travis/cryptocoinjs/drbg.js.svg?branch=master&style=flat-square)](https://travis-ci.org/cryptocoinjs/drbg.js)\n[![Dependency status](https://img.shields.io/david/cryptocoinjs/drbg.js.svg?style=flat-square)](https://david-dm.org/cryptocoinjs/drbg.js#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nDeterministic Random Bits Generators\n\nBased on NIST Recommended DRBG from [NIST SP800-90A](https://en.wikipedia.org/wiki/NIST_SP_800-90A) with the following properties:\n  * <s>CTR DRBG with DF with AES-128, AES-192, AES-256 cores</s> see [issue #1](https://github.com/cryptocoinjs/drbg.js/issues/1)\n  * Hash DRBG with DF with SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 cores\n  * HMAC DRBG with SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 cores\n  * <s>with</s> and without prediction resistance\n\n## Installation\n\n```shell\nnpm install drbg.js\n```\n\n## Usage\n\n```javascript\nvar drbgs = require('drbg.js') // import HashDRBG and HmacDRBG\nvar HashDRBG = drbgs.HashDRBG // or require('drbg.js/hash')\nvar HmacDRBG = drbgs.HmacDRBG // or require('drbg.js/hmac')\n\nvar drbg2 = new HashDRBG('sha256', entropy, nonce, personalization_data)\ndrbg2.generate(5, additional_data) // <Buffer qq qq qq qq qq>\ndrbg2.reseed(entropy, personalization_data)\ndrbg2.generate(5, additional_data) // <Buffer ww ww ww ww ww>\n\nvar drbg3 = new HmacDRBG('sha256', entropy, nonce, personalization_data)\ndrbg3.generate(5, additional_data) // <Buffer ee ee ee ee ee>\ndrbg3.reseed(entropy, personalization_data)\ndrbg3.generate(5, additional_data) // <Buffer rr rr rr rr rr>\n```\n\n## LICENSE\n\nThis library is free and open-source software released under the MIT license.\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2016 Kirill Fomichev\n\nParts of this software are based on elliptic\nCopyright (c) 2014-2016 Fedor Indutny\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/drbg.js/-/drbg.js-1.0.1.tgz#3e36b6c42b37043823cdbc332d58f31e2445480b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/drbg.js/-/drbg.js-1.0.1.tgz",
+    "hash": "3e36b6c42b37043823cdbc332d58f31e2445480b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3e36b6c42b37043823cdbc332d58f31e2445480b"
+}

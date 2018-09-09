@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "name": "browser-stdout",
+    "version": "1.3.0",
+    "description": "`process.stdout` in your browser.",
+    "repository": {
+      "type": "git",
+      "url": "http://github.com/kumavis/browser-stdout.git"
+    },
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+      "name": "kumavis"
+    },
+    "license": "ISC",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-browser-stdout-1.3.0-f351d32969d32fa5d7a5567154263d928ae3bd1f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "### wat?\n\n`process.stdout` in your browser.\n\n### wai?\n\niono. cuz hakz.\n\n### hau?\n\n```js\nvar BrowserStdout = require('browser-stdout')\n\nmyStream.pipe(BrowserStdout())\n```\n\n### monkey\n\nYou can monkey-patch `process.stdout` for your dependency graph like this:\n\n```\nprocess.stdout = require('browser-stdout')()\nvar coolTool = require('module-that-uses-stdout-somewhere-in-its-depths')\n```\n\n### opts\n\nopts are passed directly to `stream.Writable`.\nadditionally, a label arg can be used to label console output.\n\n```js\nBrowserStdout({\n  objectMode: true,\n  label: 'dataz',\n})\n```\n\n### ur doin it rong\n\ni accept pr's."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.0.tgz#f351d32969d32fa5d7a5567154263d928ae3bd1f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.0.tgz",
+    "hash": "f351d32969d32fa5d7a5567154263d928ae3bd1f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f351d32969d32fa5d7a5567154263d928ae3bd1f"
+}

@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "sha3",
+    "version": "1.2.0",
+    "description": "A Node.js C++ extension for SHA-3 (Keccak)",
+    "keywords": [
+      "sha",
+      "sha3",
+      "sha-3",
+      "hash",
+      "hashing"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/phusion/node-sha3.git"
+    },
+    "main": "build/Release/sha3",
+    "scripts": {
+      "install": "node-gyp rebuild",
+      "test": "python test/generate_tests.py > test/test_vectors.js && node test/test_vectors.js && mocha test/unit_tests.js"
+    },
+    "gypfile": true,
+    "author": {
+      "name": "Hongli Lai",
+      "email": "hongli@phusion.nl",
+      "url": "Phusion"
+    },
+    "license": "MIT",
+    "engines": {
+      "node": ">= 0.10",
+      "iojs": ">= 1.0"
+    },
+    "dependencies": {
+      "nan": "^2.0.5"
+    },
+    "devDependencies": {
+      "mocha": "^2.1.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-sha3-1.2.0-6989f1b70a498705876a373e2c62ace96aa9399a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# A Node.js C++ extension for SHA-3 (Keccak)\n\nThis Node.js extension implements the SHA-3 ([Keccak](http://keccak.noekeon.org/)) cryptographic hashing algorithm. It is based on the reference C implementation, version 3.2. The exposed interface is almost identical to that of the `crypto` standard library.\n\n[![Build Status](https://travis-ci.org/phusion/node-sha3.svg?branch=master)](https://travis-ci.org/phusion/node-sha3)\n\n[<img src=\"http://www.phusion.nl/assets/logo.png\">](http://www.phusion.nl/)\n\n## Installation\n\n    npm install sha3\n\n## Usage\n\nKeccak supports 5 hash lengths: 224-bit, 256-bit, 384-bit, 512-bit and variable length. Variable length is not supported by this Node.js extension. Unless the user specifies otherwise, this Node.js extension assumes 512-bit.\n\n    var SHA3 = require('sha3');\n\n    // Generate 512-bit digest.\n    var d = new SHA3.SHA3Hash();\n    d.update('foo');\n    d.digest('hex');   // => \"1597842a...\"\n\n    // Generate 224-bit digest.\n    var d = new SHA3.SHA3Hash(224);\n    d.update('foo');\n    d.digest('hex');   // => \"daa94da7...\"\n\n### new SHA3Hash([hashlen])\n\nThis is the hash object. `hashlen` is 512 by default.\n\n### hash.update(data, [input_encoding])\n\nUpdates the hash content with the given data, the encoding of which is given in `input_encoding` and can be `'utf8'`, `'ascii'` or `'binary'`. Defaults to `'binary'`. This can be called many times with new data as it is streamed.\n\n### hash.digest([encoding])\n\nCalculates the digest of all of the passed data to be hashed. The encoding can be `'hex'` or `'binary'`. Defaults to `'binary'`.\n\nNote: unlike `crypto.Hash`, a `SHA3Hash` object _can_ still be used after the `digest()` method been called.\n\n## Running the test suite\n\nRun the test suite as follows:\n\n    npm test\n\nThe test suite is automatically generated from Keccak's reference test suite.\nIt requires that you have Python 2.7 installed and available via the\n`python` executable.\n\n## Warning\n\nDo not use SHA-3 for hashing passwords. Do not even use SHA-3 + salt for hashing passowords. Use a [slow hash](http://codahale.com/how-to-safely-store-a-password/) instead.\n\n## See also\n\n[Digest::SHA3 for Ruby](https://github.com/phusion/digest-sha3-ruby)\n",
+    "licenseText": "Copyright (c) 2012 Phusion\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nThis package contains code written by the Keccak authors, which is licensed http://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/sha3/-/sha3-1.2.0.tgz#6989f1b70a498705876a373e2c62ace96aa9399a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/sha3/-/sha3-1.2.0.tgz",
+    "hash": "6989f1b70a498705876a373e2c62ace96aa9399a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6989f1b70a498705876a373e2c62ace96aa9399a"
+}

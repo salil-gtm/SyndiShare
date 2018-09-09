@@ -1,0 +1,116 @@
+{
+  "manifest": {
+    "name": "level-errors",
+    "description": "Error types for LevelUP",
+    "version": "1.0.5",
+    "contributors": [
+      {
+        "name": "Rod Vagg",
+        "email": "r@va.gg",
+        "url": "https://github.com/rvagg"
+      },
+      {
+        "name": "John Chesley",
+        "email": "john@chesl.es",
+        "url": "https://github.com/chesles/"
+      },
+      {
+        "name": "Jake Verbaten",
+        "email": "raynos2@gmail.com",
+        "url": "https://github.com/raynos"
+      },
+      {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "https://github.com/dominictarr"
+      },
+      {
+        "name": "Max Ogden",
+        "email": "max@maxogden.com",
+        "url": "https://github.com/maxogden"
+      },
+      {
+        "name": "Lars-Magnus Skog",
+        "email": "ralphtheninja@riseup.net",
+        "url": "https://github.com/ralphtheninja"
+      },
+      {
+        "name": "David Björklund",
+        "email": "david.bjorklund@gmail.com",
+        "url": "https://github.com/kesla"
+      },
+      {
+        "name": "Julian Gruber",
+        "email": "julian@juliangruber.com",
+        "url": "https://github.com/juliangruber"
+      },
+      {
+        "name": "Paolo Fragomeni",
+        "email": "paolo@async.ly",
+        "url": "https://github.com/hij1nx"
+      },
+      {
+        "name": "Anton Whalley",
+        "email": "anton.whalley@nearform.com",
+        "url": "https://github.com/No9"
+      },
+      {
+        "name": "Matteo Collina",
+        "email": "matteo.collina@gmail.com",
+        "url": "https://github.com/mcollina"
+      },
+      {
+        "name": "Pedro Teixeira",
+        "email": "pedro.teixeira@gmail.com",
+        "url": "https://github.com/pgte"
+      },
+      {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "https://github.com/substack"
+      },
+      {
+        "name": "Jarrett Cruger",
+        "email": "jcrugzz@gmail.com",
+        "url": "https://github.com/jcrugzz"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/level/errors.git"
+    },
+    "scripts": {
+      "test": "tape test.js"
+    },
+    "homepage": "https://github.com/level/errors.git",
+    "keywords": [
+      "leveldb",
+      "levelup",
+      "leveldown",
+      "errors"
+    ],
+    "main": "errors.js",
+    "dependencies": {
+      "errno": "~0.1.1"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "tape": "^4.3.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-level-errors-1.0.5-83dbfb12f0b8a2516bdc9a31c4876038e227b859/package.json",
+    "readmeFilename": "README.md",
+    "readme": "\n# level-errors\n\n<img alt=\"LevelDB Logo\" height=\"100\" src=\"http://leveldb.org/img/logo.svg\">\n\n**Error module for [LevelUP](https://github.com/rvagg/node-levelup)**\n\n[![Build Status](https://travis-ci.org/Level/errors.png)](https://travis-ci.org/Level/errors) [![Greenkeeper badge](https://badges.greenkeeper.io/Level/errors.svg)](https://greenkeeper.io/)\n\n## Usage\n\n```js\nvar levelup = require('levelup')\nvar errors = levelup.errors\n\nlevelup('./db', { createIfMissing: false }, function (err, db) {\n  if (err instanceof errors.OpenError) {\n    console.log('open failed because expected db to exist')\n  }\n})\n```\n\n## API\n\n### .LevelUPError()\n\n  Generic error base class.\n\n### .InitializationError()\n\n  Error initializing the database, like when the database's location argument is missing.\n\n### .OpenError()\n\n  Error opening the database.\n\n### .ReadError()\n\n  Error reading from the database.\n\n### .WriteError()\n\n  Error writing to the database.\n\n### .NotFoundError()\n\n  Data not found error.\n\n  Has extra properties:\n\n  - `notFound`: `true`\n  - `status`: 404\n\n### .EncodingError()\n\n  Error encoding data.\n\n## Publishers\n\n* [@ralphtheninja](https://github.com/ralphtheninja)\n* [@juliangruber](https://github.com/juliangruber)\n\n## License &amp; copyright\n\nCopyright (c) 2012-2017 LevelUP contributors.\n\nLevelUP is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.\n",
+    "licenseText": "The MIT License (MIT)\n=====================\n\nCopyright (c) 2012-2017 LevelUP contributors\n---------------------------------------\n\n*LevelUP contributors listed at <https://github.com/rvagg/node-levelup#contributors>*\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/level-errors/-/level-errors-1.0.5.tgz#83dbfb12f0b8a2516bdc9a31c4876038e227b859",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/level-errors/-/level-errors-1.0.5.tgz",
+    "hash": "83dbfb12f0b8a2516bdc9a31c4876038e227b859",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "83dbfb12f0b8a2516bdc9a31c4876038e227b859"
+}

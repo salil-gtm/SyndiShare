@@ -1,0 +1,36 @@
+{
+  "manifest": {
+    "name": "randomhex",
+    "version": "0.1.5",
+    "description": "Will generate a random HEX string of a specifc byte size.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/frozeman/randomHex"
+    },
+    "license": "MIT",
+    "main": "src/index.js",
+    "browser": {
+      "crypto": "./src/browser.js"
+    },
+    "scripts": {
+      "test": "mocha test.js"
+    },
+    "devDependencies": {
+      "chai": "^3.0.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-randomhex-0.1.5-baceef982329091400f2a2912c6cd02f1094f585/package.json",
+    "readmeFilename": "README.md",
+    "readme": "randomHex\n===\n\nWill create a random bytes HEX string, in node.js and browsers with crypto.\n\nThis library uses the [crypto.randomBytes()](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) in node.js,\nand [crypto.getRandomValues()](https://developer.mozilla.org/en/docs/Web/API/RandomSource/getRandomValues) in the browser.\n\nBoth of those random generators should provide cryptographically strong pseudo-random data. \n\n```\n$ npm install randomhex\n```\n\n\n\n```js\nvar randomHex = require('randomhex');\n\nrandomHex(16); // get 16 random bytes as HEX string (0x + 32 chars)\n> \"0xd59e72dbf8612798aa1674834c80894e\"\n\nrandomHex(32, console.log); // get 32 random bytes as HEX string (0x + 64 chars)\n> null \"0x409de75fc727d81a7d9f59580130ce3e76124679eb5c4647eb18c40512450c29\"\n\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/randomhex/-/randomhex-0.1.5.tgz#baceef982329091400f2a2912c6cd02f1094f585",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/randomhex/-/randomhex-0.1.5.tgz",
+    "hash": "baceef982329091400f2a2912c6cd02f1094f585",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "baceef982329091400f2a2912c6cd02f1094f585"
+}

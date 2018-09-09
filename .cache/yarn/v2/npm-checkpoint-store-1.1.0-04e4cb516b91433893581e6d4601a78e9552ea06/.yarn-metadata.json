@@ -1,0 +1,36 @@
+{
+  "manifest": {
+    "name": "checkpoint-store",
+    "version": "1.1.0",
+    "description": "In-memory key-value store with history! Keys are strings, values are any type.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+      "name": "kumavis"
+    },
+    "license": "ISC",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kumavis/checkpoint-store"
+    },
+    "dependencies": {
+      "functional-red-black-tree": "^1.0.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-checkpoint-store-1.1.0-04e4cb516b91433893581e6d4601a78e9552ea06/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Checkpoint-Store\n\nIn-memory key-value store with history!\nKeys are strings, values are any type.\n\n```js\nvar store = new CheckpointStore()\nstore.put('xyz', 'hello world')\nstore.checkpoint()\nstore.put('xyz', 'haay wuurl')\n\nstore.get('xyz') //=> 'haay wuurl'\nstore.revert()\nstore.get('xyz') //=> 'hello world'\n```\n\nUses [functional-red-black-tree](https://github.com/mikolalysenko/functional-red-black-tree) under the hood.\n\n### api\n\n##### new CheckpointStore(initialState)\n\ncreates a new store. optionally pass in the intial state as a pojo.\n\n##### store.put(key, value)\n\nsets a value. key is a string. value is any type.\n\n##### store.get(key)\n\nreturns a value. key is a string. value is any type.\n\n##### store.del(key)\n\ndeletes a value. key is a string.\n\n##### store.checkpoint()\n\nadds a checkpoint. state of the store can be returned to this point.\n\n##### store.revert()\n\nreturns to the state of the previous checkpoint. throws an error if there are no checkpoints.\n\n##### store.commit()\n\nkeeps the state and removes the previous checkpoint. throws an error if there are no checkpoints.\n\n##### store.isCheckpointed()\n\nreturns true if the store has remaining checkpoints.\n\n##### store.copy()\n\nreturns a new CheckpointStore with matching state and checkpoints.\n\n##### store.toJSON()\n\nreturns an object (not a string!) of the current state."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/checkpoint-store/-/checkpoint-store-1.1.0.tgz#04e4cb516b91433893581e6d4601a78e9552ea06",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/checkpoint-store/-/checkpoint-store-1.1.0.tgz",
+    "hash": "04e4cb516b91433893581e6d4601a78e9552ea06",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "04e4cb516b91433893581e6d4601a78e9552ea06"
+}

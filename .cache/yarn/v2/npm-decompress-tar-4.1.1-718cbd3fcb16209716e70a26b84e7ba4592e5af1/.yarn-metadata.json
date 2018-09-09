@@ -1,0 +1,58 @@
+{
+  "manifest": {
+    "name": "decompress-tar",
+    "version": "4.1.1",
+    "description": "decompress tar plugin",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kevva/decompress-tar.git"
+    },
+    "author": {
+      "name": "Kevin Mårtensson",
+      "email": "kevinmartensson@gmail.com",
+      "url": "https://github.com/kevva"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "decompress",
+      "decompressplugin",
+      "extract",
+      "tar"
+    ],
+    "dependencies": {
+      "file-type": "^5.2.0",
+      "is-stream": "^1.1.0",
+      "tar-stream": "^1.5.2"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "is-jpg": "^1.0.0",
+      "pify": "^3.0.0",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-decompress-tar-4.1.1-718cbd3fcb16209716e70a26b84e7ba4592e5af1/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# decompress-tar [![Build Status](https://travis-ci.org/kevva/decompress-tar.svg?branch=master)](https://travis-ci.org/kevva/decompress-tar)\n\n> tar decompress plugin\n\n\n## Install\n\n```\n$ npm install decompress-tar\n```\n\n\n## Usage\n\n```js\nconst decompress = require('decompress');\nconst decompressTar = require('decompress-tar');\n\ndecompress('unicorn.tar', 'dist', {\n\tplugins: [\n\t\tdecompressTar()\n\t]\n}).then(() => {\n\tconsole.log('Files decompressed');\n});\n```\n\n\n## API\n\n### decompressTar()(input)\n\nReturns both a Promise for a Buffer and a [Duplex stream](https://nodejs.org/api/stream.html#stream_class_stream_duplex).\n\n#### input\n\nType: `Buffer` `Stream`\n\nBuffer or stream to decompress.\n\n\n## License\n\nMIT © [Kevin Mårtensson](https://github.com/kevva)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Kevin Mårtensson <kevinmartensson@gmail.com> (github.com/kevva)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/decompress-tar/-/decompress-tar-4.1.1.tgz#718cbd3fcb16209716e70a26b84e7ba4592e5af1",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/decompress-tar/-/decompress-tar-4.1.1.tgz",
+    "hash": "718cbd3fcb16209716e70a26b84e7ba4592e5af1",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "718cbd3fcb16209716e70a26b84e7ba4592e5af1"
+}

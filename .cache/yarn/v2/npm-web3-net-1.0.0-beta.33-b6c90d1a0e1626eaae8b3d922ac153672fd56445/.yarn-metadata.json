@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "name": "web3-net",
+    "namespace": "ethereum",
+    "version": "1.0.0-beta.33",
+    "description": "Web3 module to interact with the Ethereum nodes networking properties.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ethereum/web3.js/tree/master/packages/web3-net"
+    },
+    "license": "LGPL-3.0",
+    "main": "src/index.js",
+    "dependencies": {
+      "web3-core": "1.0.0-beta.33",
+      "web3-core-method": "1.0.0-beta.33",
+      "web3-utils": "1.0.0-beta.33"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-web3-net-1.0.0-beta.33-b6c90d1a0e1626eaae8b3d922ac153672fd56445/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# web3-net\n\nThis is a sub package of [web3.js][repo]\n\nThis is the net package to be used in other web3.js packages.\nPlease read the [documentation][docs] for more.\n\n## Installation\n\n### Node.js\n\n```bash\nnpm install web3-net\n```\n\n### In the Browser\n\nBuild running the following in the [web3.js][repo] repository:\n\n```bash\nnpm run-script build-all\n```\n\nThen include `dist/web3-net.js` in your html file.\nThis will expose the `Web3Net` object on the window object.\n\n\n## Usage\n\n```js\n// in node.js\nvar Web3Net = require('web3-net');\n\nvar net = new Web3Net('ws://localhost:8546');\n```\n\n\n[docs]: http://web3js.readthedocs.io/en/1.0/\n[repo]: https://github.com/ethereum/web3.js\n\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/web3-net/-/web3-net-1.0.0-beta.33.tgz#b6c90d1a0e1626eaae8b3d922ac153672fd56445",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/web3-net/-/web3-net-1.0.0-beta.33.tgz",
+    "hash": "b6c90d1a0e1626eaae8b3d922ac153672fd56445",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b6c90d1a0e1626eaae8b3d922ac153672fd56445"
+}

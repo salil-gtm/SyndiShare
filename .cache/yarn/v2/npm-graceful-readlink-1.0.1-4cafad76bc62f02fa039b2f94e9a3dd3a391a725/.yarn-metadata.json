@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "name": "graceful-readlink",
+    "version": "1.0.1",
+    "description": "graceful fs.readlink",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/zhiyelee/graceful-readlink.git"
+    },
+    "homepage": "https://github.com/zhiyelee/graceful-readlink",
+    "bugs": {
+      "url": "https://github.com/zhiyelee/graceful-readlink/issues"
+    },
+    "keywords": [
+      "fs.readlink",
+      "readlink"
+    ],
+    "author": {
+      "name": "zhiyelee"
+    },
+    "license": "MIT",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-graceful-readlink-1.0.1-4cafad76bc62f02fa039b2f94e9a3dd3a391a725/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# graceful-readlink\n[![NPM Version](http://img.shields.io/npm/v/graceful-readlink.svg?style=flat)](https://www.npmjs.org/package/graceful-readlink)\n[![NPM Downloads](https://img.shields.io/npm/dm/graceful-readlink.svg?style=flat)](https://www.npmjs.org/package/graceful-readlink)\n\n\n## Usage\n\n```js\nvar readlinkSync = require('graceful-readlink').readlinkSync;\nconsole.log(readlinkSync(f));\n// output\n//  the file pointed to when `f` is a symbolic link\n//  the `f` itself when `f` is not a symbolic link\n```\n## Licence\n\nMIT License\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Zhiye Li\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz",
+    "hash": "4cafad76bc62f02fa039b2f94e9a3dd3a391a725",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+}

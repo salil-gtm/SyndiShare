@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "name": "restore-cursor",
+    "version": "1.0.1",
+    "description": "Gracefully restore the CLI cursor on exit",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/restore-cursor.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "http://sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "exit",
+      "quit",
+      "process",
+      "graceful",
+      "shutdown",
+      "sigterm",
+      "sigint",
+      "terminate",
+      "kill",
+      "stop",
+      "cli",
+      "cursor",
+      "ansi",
+      "show",
+      "term",
+      "terminal",
+      "console",
+      "tty",
+      "shell",
+      "command-line"
+    ],
+    "dependencies": {
+      "exit-hook": "^1.0.0",
+      "onetime": "^1.0.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-restore-cursor-1.0.1-34661f46886327fed2991479152252df92daa541/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# restore-cursor\n\n> Gracefully restore the CLI cursor on exit\n\nPrevent the cursor you've hidden interactively to remain hidden if the process crashes.\n\n\n## Install\n\n```sh\n$ npm install --save restore-cursor\n```\n\n\n## Usage\n\n```js\nvar restoreCursor = require('restore-cursor');\nrestoreCursor();\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-1.0.1.tgz#34661f46886327fed2991479152252df92daa541",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-1.0.1.tgz",
+    "hash": "34661f46886327fed2991479152252df92daa541",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "34661f46886327fed2991479152252df92daa541"
+}

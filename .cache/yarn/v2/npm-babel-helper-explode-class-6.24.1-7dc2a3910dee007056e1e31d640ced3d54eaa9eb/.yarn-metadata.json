@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "name": "babel-helper-explode-class",
+    "version": "6.24.1",
+    "description": "Helper function to explode class",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-explode-class"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-traverse": "^6.24.1",
+      "babel-types": "^6.24.1",
+      "babel-helper-bindify-decorators": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-explode-class-6.24.1-7dc2a3910dee007056e1e31d640ced3d54eaa9eb/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-explode-class\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-explode-class/-/babel-helper-explode-class-6.24.1.tgz#7dc2a3910dee007056e1e31d640ced3d54eaa9eb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-explode-class/-/babel-helper-explode-class-6.24.1.tgz",
+    "hash": "7dc2a3910dee007056e1e31d640ced3d54eaa9eb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "7dc2a3910dee007056e1e31d640ced3d54eaa9eb"
+}

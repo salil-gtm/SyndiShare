@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "scryptsy",
+    "version": "1.2.1",
+    "description": "Pure JavaScript implementation of the scrypt key deriviation function that is fully compatible with Node.js and the browser.",
+    "main": "lib/scrypt.js",
+    "author": {},
+    "license": "MIT",
+    "devDependencies": {
+      "coveralls": "^2.10.0",
+      "istanbul": "^0.3.5",
+      "mocha": "^2.2.0",
+      "mochify": "^2.1.0",
+      "standard": "^3.2.0"
+    },
+    "dependencies": {
+      "pbkdf2": "^3.0.3"
+    },
+    "repository": {
+      "url": "git@github.com:cryptocoinjs/scryptsy.git",
+      "type": "git"
+    },
+    "keywords": [
+      "crytpo",
+      "cryptography",
+      "scrypt",
+      "kdf",
+      "litecoin",
+      "dogecoin",
+      "bitcoin",
+      "bip38"
+    ],
+    "scripts": {
+      "test": "mocha --ui bdd",
+      "unit": "./node_modules/.bin/mocha",
+      "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+      "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info",
+      "browser-test": "./node_modules/.bin/mochify --wd -R spec",
+      "standard": "standard"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-scryptsy-1.2.1-a3225fa4b2524f802700761e2855bdf3b2d92163/package.json",
+    "readmeFilename": "README.md",
+    "readme": "scryptsy\n========\n\n[![build status](https://secure.travis-ci.org/cryptocoinjs/scryptsy.png)](http://travis-ci.org/cryptocoinjs/scryptsy)\n[![Coverage Status](https://img.shields.io/coveralls/cryptocoinjs/scryptsy.svg)](https://coveralls.io/r/cryptocoinjs/scryptsy)\n[![Version](http://img.shields.io/npm/v/scryptsy.svg)](https://www.npmjs.org/package/scryptsy)\n\n`scryptsy` is a pure JavaScript implementation of the [scrypt][wiki] key deriviation function that is fully compatible with Node.js and the browser (via Browserify). \n\n### Official documentation:\n\nhttp://cryptocoinjs.com/modules/crypto/scryptsy/\n\n[wiki]: http://en.wikipedia.org/wiki/Scrypt\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/scryptsy/-/scryptsy-1.2.1.tgz#a3225fa4b2524f802700761e2855bdf3b2d92163",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/scryptsy/-/scryptsy-1.2.1.tgz",
+    "hash": "a3225fa4b2524f802700761e2855bdf3b2d92163",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a3225fa4b2524f802700761e2855bdf3b2d92163"
+}

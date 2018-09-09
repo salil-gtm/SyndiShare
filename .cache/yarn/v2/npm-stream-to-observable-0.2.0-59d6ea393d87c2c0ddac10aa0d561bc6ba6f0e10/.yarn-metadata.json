@@ -1,0 +1,73 @@
+{
+  "manifest": {
+    "name": "stream-to-observable",
+    "version": "0.2.0",
+    "description": "Convert Node Streams into ECMAScript-Observables",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jamestalmage/stream-to-observable.git"
+    },
+    "author": {
+      "name": "James Talmage",
+      "email": "james@talmage.io",
+      "url": "github.com/jamestalmage"
+    },
+    "engines": {
+      "node": ">=0.12.0"
+    },
+    "scripts": {
+      "test": "xo && nyc --reporter=lcov --reporter=text npm run test_both",
+      "test_both": "ava --require=any-observable/register/rxjs && ava --require=any-observable/register/zen"
+    },
+    "files": [
+      "index.js",
+      "zen.js",
+      "rxjs.js",
+      "rxjs-all.js"
+    ],
+    "keywords": [
+      "stream",
+      "observable",
+      "convert"
+    ],
+    "dependencies": {
+      "any-observable": "^0.2.0"
+    },
+    "devDependencies": {
+      "array-to-events": "^1.0.0",
+      "ava": "^0.15.2",
+      "coveralls": "^2.11.9",
+      "delay": "^1.3.1",
+      "nyc": "^6.4.0",
+      "rxjs": "^5.0.0-beta.6",
+      "xo": "^0.16.0",
+      "zen-observable": "^0.3.0"
+    },
+    "xo": {
+      "overrides": [
+        {
+          "files": [
+            "test.js"
+          ],
+          "esnext": true
+        }
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-stream-to-observable-0.2.0-59d6ea393d87c2c0ddac10aa0d561bc6ba6f0e10/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# stream-to-observable [![Build Status](https://travis-ci.org/jamestalmage/stream-to-observable.svg?branch=master)](https://travis-ci.org/jamestalmage/stream-to-observable) [![Coverage Status](https://coveralls.io/repos/github/jamestalmage/stream-to-observable/badge.svg?branch=master)](https://coveralls.io/github/jamestalmage/stream-to-observable?branch=master)\n\n> Convert Node Streams into ECMAScript-Observables\n\n[`Observables`](https://github.com/zenparsing/es-observable) are rapidly gaining popularity. They have much in common with Streams, in that they both represent data that arrives over time. Most Observable implementations provide expressive methods for filtering and mutating incoming data. Methods like `.map()`, `.filter()`, and `.forEach` behave very similarly to their Array counterparts, so using Observables can be very intuitive.\n\n[Learn more about Observables](#learn-about-observables)\n\n## Install\n\n```\n$ npm install --save stream-to-observable\n\n```\n\n`stream-to-observable` relies on [`any-observable`](https://github.com/sindresorhus/any-observable), which will search for an available Observable implementation. You need to install one yourself:\n\n  ```\n  $ npm install --save zen-observable\n  ```\n\n  or\n\n  ```\n  $ npm install --save rxjs\n  ```\n\nIf your code relies on a specific Observable implementation, you should likely specify one using `any-observable`s [registration shortcuts](https://github.com/sindresorhus/any-observable#registration-shortcuts).\n\n## Usage\n\n```js\nconst fs = require('fs');\nconst split = require('split');\n\nconst streamToObservable = require('stream-to-observable');\n\nconst readStream = fs\n  .createReadStream('./hello-world.txt', {encoding: 'utf8'})\n  .pipe(split());\n\nstreamToObservable(readStream)\n  .filter(chunk => /hello/i.test(chunk))\n  .map(chunk => chunk.toUpperCase())\n  .forEach(chunk => {\n    console.log(chunk); // only the lines containing \"hello\" - and they will be capitalized\n  });\n```\n\nThe [`split`](https://github.com/dominictarr/split) module above will chunk the stream into individual lines. This is often very handy for text streams, as each observable event is guaranteed to be a line.\n\n## API\n\n### streamToObservable(stream, [options])\n\n#### stream\n\nType: [`ReadableStream`](https://nodejs.org/api/stream.html#stream_class_stream_readable)\n\n*Note:*\n`stream` can technically be any [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) instance. By default, this module listens to the standard Stream events (`data`, `error`, and `end`), but those are configurable via the `options` parameter. If you are using this with a standard Stream, you likely won't need the `options` parameter.\n\n#### options\n\n##### await\n\nType: `Promise`\n\nIf provided, the Observable will not \"complete\" until `await` is resolved. If `await` is rejected, the Observable will immediately emit an `error` event and disconnect from the stream. This is mostly useful when attaching to the `stdin` or `stdout` streams of a  [`child_process`](https://nodejs.org/api/child_process.html#child_process_child_stdio). Those streams usually do not emit `error` events, even if the underlying process exits with an error. This provides a means to reject the Observable if the child process exits with an unexpected error code.\n\n##### endEvent\n\nType: `String` or `false` <br>\nDefault: `\"end\"`\n\nIf you are using an `EventEmitter` or non-standard Stream, you can change which event signals that the Observable should be completed.\n\nSetting this to `false` will avoid listening for any end events.\n\nSetting this to `false` and providing an `await` Promise will cause the Observable to resolve immediately with the `await` Promise (the Observable will remove all it's `data` event listeners from the stream once the Promise is resolved).\n\n##### errorEvent\n\nType: `String` or `false` <br>\nDefault: `\"error\"`\n\nIf you are using an `EventEmitter` or non-standard Stream, you can change which event signals that the Observable should be closed with an error.\n\nSetting this to `false` will avoid listening for any error events.\n\n##### dataEvent\n\nType: `String`<br>\nDefault: `\"data\"`\n\nIf you are using an `EventEmitter` or non-standard Stream, you can change which event causes data to be emitted to the Observable.\n\n## Learn about Observables\n\n - [Overview](https://github.com/zenparsing/es-observable)\n - [Formal Spec](https://zenparsing.github.io/es-observable/)\n - [egghead.io lesson](https://egghead.io/lessons/javascript-introducing-the-observable) - Video\n - [`rxjs` observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) - Observables implementation\n - [`zen-observables`](https://github.com/zenparsing/zen-observable) - Observables implementation\n\n## Transform Streams\n\n`data` events on the stream will be emitted as events in the Observable. Since most native streams emit `chunks` of binary data, you will likely want to use a `TransformStream` to convert those chunks of binary data into an object stream. [`split`](https://github.com/dominictarr/split) is just one popular TransformStream that splits streams into individual lines of text.\n\n## Caveats\n\nIt's important to note that using this module disables back-pressure controls on the stream. As such, it should not be used where back-pressure throttling is required (i.e. high volume web servers). It still has value for larger projects, as it can make unit testing streams much cleaner.\n\n## License\n\nMIT © [James Talmage](https://github.com/jamestalmage)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) James Talmage <james@talmage.io> (github.com/jamestalmage)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/stream-to-observable/-/stream-to-observable-0.2.0.tgz#59d6ea393d87c2c0ddac10aa0d561bc6ba6f0e10",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/stream-to-observable/-/stream-to-observable-0.2.0.tgz",
+    "hash": "59d6ea393d87c2c0ddac10aa0d561bc6ba6f0e10",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "59d6ea393d87c2c0ddac10aa0d561bc6ba6f0e10"
+}

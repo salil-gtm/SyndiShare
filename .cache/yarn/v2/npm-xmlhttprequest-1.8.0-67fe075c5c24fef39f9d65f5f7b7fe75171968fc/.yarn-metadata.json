@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "name": "xmlhttprequest",
+    "description": "XMLHttpRequest for Node",
+    "version": "1.8.0",
+    "author": {
+      "name": "Dan DeFelippi",
+      "url": "http://driverdan.com"
+    },
+    "keywords": [
+      "xhr",
+      "ajax"
+    ],
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/driverdan/node-XMLHttpRequest.git"
+    },
+    "bugs": {
+      "url": "http://github.com/driverdan/node-XMLHttpRequest/issues"
+    },
+    "engines": {
+      "node": ">=0.4.0"
+    },
+    "main": "./lib/XMLHttpRequest.js",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-xmlhttprequest-1.8.0-67fe075c5c24fef39f9d65f5f7b7fe75171968fc/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# node-XMLHttpRequest #\n\nnode-XMLHttpRequest is a wrapper for the built-in http client to emulate the\nbrowser XMLHttpRequest object.\n\nThis can be used with JS designed for browsers to improve reuse of code and\nallow the use of existing libraries.\n\nNote: This library currently conforms to [XMLHttpRequest 1](http://www.w3.org/TR/XMLHttpRequest/). Version 2.0 will target [XMLHttpRequest Level 2](http://www.w3.org/TR/XMLHttpRequest2/).\n\n## Usage ##\n\nHere's how to include the module in your project and use as the browser-based\nXHR object.\n\n\tvar XMLHttpRequest = require(\"xmlhttprequest\").XMLHttpRequest;\n\tvar xhr = new XMLHttpRequest();\n\nNote: use the lowercase string \"xmlhttprequest\" in your require(). On\ncase-sensitive systems (eg Linux) using uppercase letters won't work.\n\n## Versions ##\n\nPrior to 1.4.0 version numbers were arbitrary. From 1.4.0 on they conform to\nthe standard major.minor.bugfix. 1.x shouldn't necessarily be considered\nstable just because it's above 0.x.\n\nSince the XMLHttpRequest API is stable this library's API is stable as\nwell. Major version numbers indicate significant core code changes.\nMinor versions indicate minor core code changes or better conformity to\nthe W3C spec.\n\n## License ##\n\nMIT license. See LICENSE for full details.\n\n## Supports ##\n\n* Async and synchronous requests\n* GET, POST, PUT, and DELETE requests\n* All spec methods (open, send, abort, getRequestHeader,\n  getAllRequestHeaders, event methods)\n* Requests to all domains\n\n## Known Issues / Missing Features ##\n\nFor a list of open issues or to report your own visit the [github issues\npage](https://github.com/driverdan/node-XMLHttpRequest/issues).\n\n* Local file access may have unexpected results for non-UTF8 files\n* Synchronous requests don't set headers properly\n* Synchronous requests freeze node while waiting for response (But that's what you want, right? Stick with async!).\n* Some events are missing, such as abort\n* Cookies aren't persisted between requests\n* Missing XML support\n",
+    "licenseText": " Copyright (c) 2010 passive.ly LLC\n\n Permission is hereby granted, free of charge, to any person\n obtaining a copy of this software and associated documentation\n files (the \"Software\"), to deal in the Software without\n restriction, including without limitation the rights to use,\n copy, modify, merge, publish, distribute, sublicense, and/or sell\n copies of the Software, and to permit persons to whom the\n Software is furnished to do so, subject to the following\n conditions:\n\n The above copyright notice and this permission notice shall be\n included in all copies or substantial portions of the Software.\n\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\n OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\n WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\n OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz",
+    "hash": "67fe075c5c24fef39f9d65f5f7b7fe75171968fc",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
+}

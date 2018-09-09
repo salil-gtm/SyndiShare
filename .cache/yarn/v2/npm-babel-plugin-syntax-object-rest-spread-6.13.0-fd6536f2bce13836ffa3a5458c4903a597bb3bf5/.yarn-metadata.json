@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-plugin-syntax-object-rest-spread",
+    "version": "6.13.0",
+    "description": "Allow parsing of object rest/spread",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-syntax-object-rest-spread-6.13.0-fd6536f2bce13836ffa3a5458c4903a597bb3bf5/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-syntax-object-rest-spread\n\nAllow parsing of object rest/spread.\n\n## Installation\n\n```sh\n$ npm install babel-plugin-syntax-object-rest-spread\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"syntax-object-rest-spread\"]\n}\n```\n\n### Via CLI\n\n```sh\n$ babel --plugins syntax-object-rest-spread script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"syntax-object-rest-spread\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz",
+    "hash": "fd6536f2bce13836ffa3a5458c4903a597bb3bf5",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+}

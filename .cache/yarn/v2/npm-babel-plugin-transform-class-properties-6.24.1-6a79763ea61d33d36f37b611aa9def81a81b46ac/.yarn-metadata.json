@@ -1,0 +1,39 @@
+{
+  "manifest": {
+    "name": "babel-plugin-transform-class-properties",
+    "version": "6.24.1",
+    "description": "This plugin transforms static class properties as well as properties declared with the property initializer syntax",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-properties"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {
+      "babel-helper-function-name": "^6.24.1",
+      "babel-plugin-syntax-class-properties": "^6.8.0",
+      "babel-runtime": "^6.22.0",
+      "babel-template": "^6.24.1"
+    },
+    "devDependencies": {
+      "babel-helper-plugin-test-runner": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-transform-class-properties-6.24.1-6a79763ea61d33d36f37b611aa9def81a81b46ac/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-transform-class-properties\n\n> This plugin transforms es2015 static class properties as well as properties declared with the es2016 property initializer syntax.\n\n## Example\n\nBelow is a class with four class properties which will be transformed.\n\n```js\n  class Bork {\n    //Property initializer syntax\n    instanceProperty = \"bork\";\n    boundFunction = () => {\n      return this.instanceProperty;\n    }\n\n    //Static class properties\n    static staticProperty = \"babelIsCool\";\n    static staticFunction = function() {\n      return Bork.staticProperty;\n    }\n  }\n\n  let myBork = new Bork;\n\n  //Property initializers are not on the prototype.\n  console.log(myBork.prototype.boundFunction); // > undefined\n\n  //Bound functions are bound to the class instance.\n  console.log(myBork.boundFunction.call(undefined)); // > \"bork\"\n\n  //Static function exists on the class.\n  console.log(Bork.staticFunction()); // > \"babelIsCool\"\n```\n\n\n## Installation\n\n```sh\nnpm install --save-dev babel-plugin-transform-class-properties\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n// without options\n{\n  \"plugins\": [\"transform-class-properties\"]\n}\n\n// with options\n{\n  \"plugins\": [\n    [\"transform-class-properties\", { \"spec\": true }]\n  ]\n}\n```\n\n### Via CLI\n\n```sh\nbabel --plugins transform-class-properties script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"transform-class-properties\"]\n});\n```\n\n## Options\n\n### `spec`\n\n`boolean`, defaults to `false`.\n\nClass properties are compiled to use `Object.defineProperty`. Static fields are now defined even if they are not initialized.\n\n## References\n\n* [Proposal: ES Class Fields & Static Properties](https://github.com/jeffmo/es-class-static-properties-and-fields)\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz",
+    "hash": "6a79763ea61d33d36f37b611aa9def81a81b46ac",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6a79763ea61d33d36f37b611aa9def81a81b46ac"
+}

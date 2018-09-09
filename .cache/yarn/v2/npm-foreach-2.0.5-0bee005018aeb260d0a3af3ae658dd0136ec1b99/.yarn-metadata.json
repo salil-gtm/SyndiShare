@@ -1,0 +1,76 @@
+{
+  "manifest": {
+    "name": "foreach",
+    "description": "foreach component + npm package",
+    "version": "2.0.5",
+    "author": {
+      "name": "Manuel Stofer",
+      "email": "manuel@takimata.ch"
+    },
+    "contributors": [
+      {
+        "name": "Manuel Stofer"
+      },
+      {
+        "name": "Jordan Harband",
+        "url": "https://github.com/ljharb"
+      }
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+      "test": "node test.js",
+      "coverage": "covert test.js",
+      "coverage-quiet": "covert --quiet test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/manuelstofer/foreach"
+    },
+    "keywords": [
+      "shim",
+      "Array.prototype.forEach",
+      "forEach",
+      "Array#forEach",
+      "each"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "tape": "*",
+      "covert": "*"
+    },
+    "testling": {
+      "files": "test.js",
+      "browsers": [
+        "iexplore/6.0..latest",
+        "firefox/3.0",
+        "firefox/15.0..latest",
+        "firefox/nightly",
+        "chrome/4.0",
+        "chrome/22.0..latest",
+        "chrome/canary",
+        "opera/10.0..latest",
+        "opera/next",
+        "safari/5.0.5..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest",
+        "android-browser/4.2"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-foreach-2.0.5-0bee005018aeb260d0a3af3ae658dd0136ec1b99/package.json",
+    "readmeFilename": "Readme.md",
+    "readme": "\n# foreach\n\nIterate over the key value pairs of either an array-like object or a dictionary like object.\n\n[![browser support][1]][2]\n\n## API\n\n### foreach(object, function, [context])\n\n```js\nvar each = require('foreach');\n\neach([1,2,3], function (value, key, array) {\n    // value === 1, 2, 3\n    // key === 0, 1, 2\n    // array === [1, 2, 3]\n});\n\neach({0:1,1:2,2:3}, function (value, key, object) {\n    // value === 1, 2, 3\n    // key === 0, 1, 2\n    // object === {0:1,1:2,2:3}\n});\n```\n\n[1]: https://ci.testling.com/manuelstofer/foreach.png\n[2]: https://ci.testling.com/manuelstofer/foreach\n\n",
+    "licenseText": "The MIT License\n\nCopyright (c) 2013 Manuel Stofer\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz",
+    "hash": "0bee005018aeb260d0a3af3ae658dd0136ec1b99",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0bee005018aeb260d0a3af3ae658dd0136ec1b99"
+}

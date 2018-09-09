@@ -1,0 +1,38 @@
+{
+  "manifest": {
+    "name": "babel-plugin-transform-class-constructor-call",
+    "version": "6.24.1",
+    "description": "This plugin allows Babel to transform class constructors (deprecated)",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-constructor-call"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {
+      "babel-template": "^6.24.1",
+      "babel-plugin-syntax-class-constructor-call": "^6.18.0",
+      "babel-runtime": "^6.22.0"
+    },
+    "devDependencies": {
+      "babel-helper-plugin-test-runner": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-transform-class-constructor-call-6.24.1-80dc285505ac067dcb8d6c65e2f6f11ab7765ef9/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-transform-class-constructor-call (deprecated)\n\n> Proposal Withdrawn: can be solved with decorators.\n\nThis plugin allows Babel to transform class constructors.\n\nIt basically allows to use the [new.target](http://mdn.io/new.target) feature on ES2015 classes:\n\n```js\nclass Point {\n\n  constructor(x, y) {\n    this.x = x;\n    this.y = y;\n  }\n\n  call constructor(x, y) {\n    return new Point(x, y);\n  }\n\n}\n\nlet p1 = new Point(1, 2); // OK\nlet p2 = Point(3, 4); // OK\n```\n\n## Example\n\n### Date example\nThe javascript [Date](http://mdn.io/date) works this way:\n\n```js\n// You can get a Date instance using the new keyword\nlet now = new Date();\nconsole.log(now.getMonth()); // Prints '3'\nconsole.log(now.toString()); // Prints 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'\n\n// You can get a string of the current date using Date as a function:\nlet nowStr = Date();\nconsole.log(nowStr); // Prints 'Mon Apr 11 2016 13:26:07 GMT+0100 (BST)'\n```\n\nIt is currently possible to implement something like that using [new.target](http://mdn.io/new.target) (see [example in proposal](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md#motivating-example)) and this new feature makes it available for ES2015 classes.\n\nA date implementation could be:\n\n```js\nclass Date {\n  constructor() {\n    // ...\n  }\n\n  call constructor() {\n    let date = new Date();\n    return date.toString();\n  }\n}\n\nlet now = new Date(); // Get a Date instance\nlet nowStr = Date(); // Use the 'call constructor()' part to get a string value of the current date\n```\n\n## Installation\n\n```sh\nnpm install --save-dev babel-plugin-transform-class-constructor-call\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"transform-class-constructor-call\"]\n}\n```\n\n### Via CLI\n\n```sh\nbabel --plugins transform-class-constructor-call script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"transform-class-constructor-call\"]\n});\n```\n\n## References\n\n* [Inactive Proposals](https://github.com/tc39/proposals/blob/master/inactive-proposals.md)\n* [Proposal: Call Constructor](https://github.com/tc39/ecma262/blob/master/workingdocs/callconstructor.md)\n* [Blog post: ECMAScript proposal: function-callable classes](http://www.2ality.com/2015/10/call-constructor-esprop.html)\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-transform-class-constructor-call/-/babel-plugin-transform-class-constructor-call-6.24.1.tgz#80dc285505ac067dcb8d6c65e2f6f11ab7765ef9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-transform-class-constructor-call/-/babel-plugin-transform-class-constructor-call-6.24.1.tgz",
+    "hash": "80dc285505ac067dcb8d6c65e2f6f11ab7765ef9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "80dc285505ac067dcb8d6c65e2f6f11ab7765ef9"
+}

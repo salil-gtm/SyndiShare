@@ -1,0 +1,38 @@
+{
+  "manifest": {
+    "name": "pend",
+    "version": "1.2.0",
+    "description": "dead-simple optimistic async helper",
+    "main": "index.js",
+    "scripts": {
+      "test": "node test.js"
+    },
+    "author": {
+      "name": "Andrew Kelley",
+      "email": "superjoe30@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/andrewrk/node-pend.git"
+    },
+    "bugs": {
+      "url": "https://github.com/andrewrk/node-pend/issues"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-pend-1.2.0-7a57eb550a6783f9115331fcf4663d5c8e007a50/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Pend\n\nDead-simple optimistic async helper.\n\n## Usage\n\n```js\nvar Pend = require('pend');\nvar pend = new Pend();\npend.max = 10; // defaults to Infinity\nsetTimeout(pend.hold(), 1000); // pend.wait will have to wait for this hold to finish\npend.go(function(cb) {\n  console.log(\"this function is immediately executed\");\n  setTimeout(function() {\n    console.log(\"calling cb 1\");\n    cb();\n  }, 500);\n});\npend.go(function(cb) {\n  console.log(\"this function is also immediately executed\");\n  setTimeout(function() {\n    console.log(\"calling cb 2\");\n    cb();\n  }, 1000);\n});\npend.wait(function(err) {\n  console.log(\"this is excuted when the first 2 have returned.\");\n  console.log(\"err is a possible error in the standard callback style.\");\n});\n```\n\nOutput:\n\n```\nthis function is immediately executed\nthis function is also immediately executed\ncalling cb 1\ncalling cb 2\nthis is excuted when the first 2 have returned.\nerr is a possible error in the standard callback style.\n```\n",
+    "licenseText": "The MIT License (Expat)\n\nCopyright (c) 2014 Andrew Kelley\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation files\n(the \"Software\"), to deal in the Software without restriction,\nincluding without limitation the rights to use, copy, modify, merge,\npublish, distribute, sublicense, and/or sell copies of the Software,\nand to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\nBE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\nACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz",
+    "hash": "7a57eb550a6783f9115331fcf4663d5c8e007a50",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "7a57eb550a6783f9115331fcf4663d5c8e007a50"
+}

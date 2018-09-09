@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "name": "grouped-queue",
+    "version": "0.3.3",
+    "description": "In memory queue system prioritizing tasks",
+    "main": "lib/queue.js",
+    "scripts": {
+      "test": "mocha -R spec"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SBoudrias/grouped-queue.git"
+    },
+    "keywords": [
+      "queue",
+      "async",
+      "task",
+      "flow",
+      "control"
+    ],
+    "author": {
+      "name": "Simon Boudrias",
+      "email": "admin@simonboudrias.com"
+    },
+    "license": "MIT",
+    "files": [
+      "lib"
+    ],
+    "dependencies": {
+      "lodash": "^4.17.2"
+    },
+    "devDependencies": {
+      "mocha": "^3.1.2",
+      "sinon": "^1.12.2"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-grouped-queue-0.3.3-c167d2a5319c5a0e0964ef6a25b7c2df8996c85c/package.json",
+    "readmeFilename": "README.md",
+    "readme": "Grouped Queue [![Build Status](https://travis-ci.org/SBoudrias/grouped-queue.svg?branch=master)](https://travis-ci.org/SBoudrias/grouped-queue)\n==============\n\nIn memory queue system prioritizing tasks.\n\n\nDocumentation\n=============\n\nInstallation\n-------------\n\n``` bash\n$ npm install --save grouped-queue\n```\n\nMethods\n------------\n\n### Constructor\n\nThe constructor takes an optional array of task groups. The first `String` name will be the first queue to be emptied, the second string will be the second group emptied, etc.\n\nBy default, the constructor will always add a `default` queue in the last position. You can overwrite the position of the `default` group if you specify it explicitly.\n\n``` javascript\nvar Queue = require('grouped-queue');\n\nvar queue = new Queue([ 'first', 'second', 'third' ]);\n```\n\n### Queue#add `add( [group], task, [options] )`\n\nAdd a task into a group queue. If no group name is specified, `default` will be used.\n\nImplicitly, each time you add a task, the queue will start emptying (if not already running).\n\nEach task function is passed a callback function. This callback must be called when the task is complete.\n\n``` javascript\nqueue.add(function( cb ) {\n  DB.fetch().then( cb );\n});\n```\n\n#### Option: `once`\n\nYou can register tasks in queues that will be dropped if they're already planned. This is done with the `once` option. You pass a String (basically a name) to the `once` option.\n\n``` javascript\n// This one will eventually run\nqueue.add( method, { once: \"readDB\" });\n\n// This one will be dropped as `method` is currently in the queue\nqueue.add( method3, { once: \"readDB\" });\n```\n\n#### Option: `run`\n\nYou can register a task without launching the run loop by passing the argument `run: false`.\n\n```javascript\nqueue.add( method, { run: false });\n```\n\n### Pro tip\n\nBind your tasks with context and arguments!\n\n``` javascript\nvar task = function( models, cb ) {\n  /* you get `models` data here! */\n};\nqueue.add( task.bind(null, models) );\n```\n\n### That's all?\n\nYes!\n\nEvents\n-------------\n\n### `end`\n\nThis event is called **each time** the queue emptied itself.\n\n\nContributing\n=====================\n\n**Style Guide**: Please base yourself on [Idiomatic.js](https://github.com/rwldrn/idiomatic.js) style guide with two space indent  \n**Unit test**: Unit tests are written in Mocha. Please add a unit test for every new feature\nor bug fix. `npm test` to run the test suite.  \n**Documentation**: Add documentation for every API change. Feel free to send corrections\nor better docs!  \n**Pull Requests**: Send _fixes_ PR on the `master` branch.\n\n\nLicense\n=====================\n\nCopyright (c) 2013 Simon Boudrias (twitter: @vaxilart)  \nLicensed under the MIT license.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-0.3.3.tgz#c167d2a5319c5a0e0964ef6a25b7c2df8996c85c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-0.3.3.tgz",
+    "hash": "c167d2a5319c5a0e0964ef6a25b7c2df8996c85c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c167d2a5319c5a0e0964ef6a25b7c2df8996c85c"
+}

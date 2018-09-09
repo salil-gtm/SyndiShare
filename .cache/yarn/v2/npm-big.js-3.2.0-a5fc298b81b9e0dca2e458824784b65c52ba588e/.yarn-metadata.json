@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "name": "big.js",
+    "description": "A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic",
+    "version": "3.2.0",
+    "keywords": [
+      "arbitrary",
+      "precision",
+      "arithmetic",
+      "big",
+      "number",
+      "decimal",
+      "float",
+      "biginteger",
+      "bigdecimal",
+      "bignumber",
+      "bigint",
+      "bignum"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/MikeMcl/big.js.git"
+    },
+    "main": "big.js",
+    "author": {
+      "name": "Michael Mclaughlin",
+      "email": "M8ch88l@gmail.com"
+    },
+    "bugs": {
+      "url": "https://github.com/MikeMcl/big.js/issues"
+    },
+    "engines": {
+      "node": "*"
+    },
+    "license": "MIT",
+    "scripts": {
+      "test": "node ./test/every-test.js",
+      "build": "uglifyjs big.js --source-map doc/big.js.map -c -m -o big.min.js --preamble \"/* big.js v3.2.0 https://github.com/MikeMcl/big.js/LICENCE */\""
+    },
+    "files": [
+      "big.js",
+      "big.min.js"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-big.js-3.2.0-a5fc298b81b9e0dca2e458824784b65c52ba588e/package.json",
+    "readmeFilename": "README.md",
+    "readme": "\n# big.js #\n\nA small, fast JavaScript library for arbitrary-precision decimal arithmetic.\n\nThe little sister to [bignumber.js](https://github.com/MikeMcl/bignumber.js/).\nSee also [decimal.js](https://github.com/MikeMcl/decimal.js/), and [here](https://github.com/MikeMcl/big.js/wiki) for the difference between them.\n\n## Features\n\n  - Faster, smaller and easier-to-use than JavaScript versions of Java's BigDecimal\n  - Only 2.7 KB minified and gzipped\n  - Simple API\n  - Replicates the `toExponential`, `toFixed` and `toPrecision` methods of JavaScript's Number type\n  - Includes a `sqrt` method\n  - Stores values in an accessible decimal floating point format\n  - No dependencies\n  - Comprehensive [documentation](http://mikemcl.github.io/big.js/) and test set\n\n## Load\n\nThe library is the single JavaScript file *big.js* (or *big.min.js*, which is *big.js* minified).\n\nIt can be loaded via a script tag in an HTML document for the browser\n\n    <script src='./relative/path/to/big.js'></script>\n\nor as a CommonJS, [Node.js](http://nodejs.org) or AMD module using `require`.\n\n    var Big = require('big.js');\n\nFor Node.js, the library is available from the npm registry:\n\n    $ npm install big.js\n\n\n\n## Use\n\n*In all examples below, `var`, semicolons and `toString` calls are not shown.\nIf a commented-out value is in quotes it means `toString` has been called on the preceding expression.*\n\nThe library exports a single function: Big, the constructor of Big number instances.\nIt accepts a value of type Number, String or Big number Object.\n\n    x = new Big(123.4567)\n    y = Big('123456.7e-3')             // 'new' is optional\n    z = new Big(x)\n    x.eq(y) && x.eq(z) && y.eq(z)      // true\n\nA Big number is immutable in the sense that it is not changed by its methods.\n\n    0.3 - 0.1                          // 0.19999999999999998\n    x = new Big(0.3)\n    x.minus(0.1)                       // \"0.2\"\n    x                                  // \"0.3\"\n\nThe methods that return a Big number can be chained.\n\n    x.div(y).plus(z).times(9).minus('1.234567801234567e+8').plus(976.54321).div('2598.11772')\n    x.sqrt().div(y).pow(3).gt(y.mod(z))    // true\n\nLike JavaScript's Number type, there are `toExponential`, `toFixed` and `toPrecision` methods.\n\n    x = new Big(255.5)\n    x.toExponential(5)                 // \"2.55500e+2\"\n    x.toFixed(5)                       // \"255.50000\"\n    x.toPrecision(5)                   // \"255.50\"\n\nThe maximum number of decimal places and the rounding mode used to round the results of the `div`, `sqrt` and `pow`\n(with negative exponent) methods is determined by the value of the `DP` and `RM` properties of the `Big` number constructor.  \n\nThe other methods always give the exact result.  \n\n(From *v3.0.0*, multiple Big number constructors can be created, see Change Log below.)\n\n    Big.DP = 10\n    Big.RM = 1\n\n    x = new Big(2);\n    y = new Big(3);\n    z = x.div(y)                       // \"0.6666666667\"\n    z.sqrt()                           // \"0.8164965809\"\n    z.pow(-3)                          // \"3.3749999995\"\n    z.times(z)                         // \"0.44444444448888888889\"\n    z.times(z).round(10)               // \"0.4444444445\"\n\n\nThe value of a Big number is stored in a decimal floating point format in terms of a coefficient, exponent and sign.\n\n    x = new Big(-123.456);\n    x.c                                // [1,2,3,4,5,6]    coefficient (i.e. significand)\n    x.e                                // 2                exponent\n    x.s                                // -1               sign\n\nFor further information see the [API](http://mikemcl.github.io/big.js/) reference from the *doc* folder.\n\n## Test\n\nThe *test* directory contains the test scripts for each Big number method.\n\nThe tests can be run with Node or a browser.\n\nTo test a single method, from a command-line shell at the *test* directory, use e.g.\n\n    $ node toFixed\n\nTo test all the methods\n\n    $ node every-test\n\nFor the browser, see *single-test.html* and *every-test.html* in the *test/browser* directory.\n\n*big-vs-number.html* enables some of the methods of big.js to be compared with those of JavaScript's Number type.\n\n## Performance\n\nThe *perf* directory contains two applications and a *lib* directory containing the BigDecimal libraries used by both.\n\n*big-vs-bigdecimal.html* tests the performance of big.js against the JavaScript translations of two versions of BigDecimal, its use should be more or less self-explanatory.\n(The GWT version doesn't work in IE 6.)\n\n* GWT: java.math.BigDecimal\n<https://github.com/iriscouch/bigdecimal.js>\n* ICU4J: com.ibm.icu.math.BigDecimal\n<https://github.com/dtrebbien/BigDecimal.js>\n\nThe BigDecimal in Node's npm registry is the GWT version. Despite its seeming popularity I have found it to have some serious bugs, see the Node script *perf/lib/bigdecimal_GWT/bugs.js* for examples of flaws in its *remainder*, *divide* and *compareTo* methods.\n\n*bigtime.js* is a Node command-line application which tests the performance of big.js against the GWT version of\nBigDecimal from the npm registry.\n\nFor example, to compare the time taken by the big.js `plus` method and the BigDecimal `add` method:\n\n    $ node bigtime plus 10000 40\n\nThis will time 10000 calls to each, using operands of up to 40 random digits and will check that the results match.\n\nFor help:\n\n    $ node bigtime -h\n\n## Build\n\nI.e. minify.\n\nFor Node, if uglify-js is installed globally ( `npm install uglify-js -g` ) then\n\n    uglifyjs -o ./big.min.js ./big.js\n\nwill create *big.min.js*.\n\nThe *big.min.js* already present was created with *Microsoft Ajax Minifier 5.11*.\n\n## TypeScript\n\nThe [DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped) project has a TypeScript [definitions file](https://github.com/borisyankov/DefinitelyTyped/blob/master/big.js/big.js.d.ts) for big.js.\n\nThe definitions file can be added to your project via the [big.js.TypeScript.DefinitelyTyped](https://www.nuget.org/packages/big.js.TypeScript.DefinitelyTyped/0.0.1) NuGet package or via [tsd](http://definitelytyped.org/tsd/).\n\n    tsd query big.js --action install\n\nAny questions about the TypeScript definitions file should be addressed to the DefinitelyTyped project.\n\n## Feedback\n\nFeedback is welcome.\n\nBugs/comments/questions?\nOpen an issue, or email\n\nMichael\n<a href=\"mailto:M8ch88l@gmail.com\">M8ch88l@gmail.com</a>\n\nBitcoin donation to:\n**1DppGRQSjVSMgGxuygDEHQuWEdTiVEzJYG**\nThank you\n\n## Licence\n\nSee LICENCE.\n\n## Change Log\n\n####3.2.0\n\n* 14/09/17 Aid ES6 import.\n\n####3.1.3\n\n* Minor documentation updates.\n\n####3.1.2\n\n* README typo.\n\n####3.1.1\n\n* API documentation update, including FAQ additions.\n\n####3.1.0\n\n* Renamed and exposed `TO_EXP_NEG` and `TO_EXP_POS` as `Big.E_NEG` and\n `Big.E_POS`.\n\n####3.0.2\n\n* Remove *.npmignore*, use `files` field in *package.json* instead.\n\n####3.0.1\n\n* Added `sub`, `add` and `mul` aliases.\n* Clean-up after lint.\n\n####3.0.0\n\n* 10/12/14 Added [multiple constructor functionality](http://mikemcl.github.io/big.js/#faq).\n* No breaking changes or other additions, but a major code reorganisation,\n so *v3* seemed appropriate.\n\n####2.5.2\n\n* 1/11/14 Added bower.json.\n\n####2.5.1\n\n* 8/06/14 Amend README requires.\n\n####2.5.0\n\n* 26/01/14 Added `toJSON` method so serialization uses `toString`.\n\n####2.4.1\n\n* 17/10/13 Conform signed zero to IEEEE 754 (2008).\n\n####2.4.0\n\n* 19/09/13 Throw instances of `Error`.\n\n####2.3.0\n\n* 16/09/13 Added `cmp` method.\n\n####2.2.0\n\n* 11/07/13 Added 'round up' mode.\n\n####2.1.0\n\n* 26/06/13 Allow e.g. `.1` and `2.`.\n\n####2.0.0\n\n* 12/05/13 Added `abs` method and replaced `cmp` with `eq`, `gt`, `gte`, `lt`, and `lte` methods.\n\n####1.0.1\n\n* Changed default value of MAX_DP to 1E6\n\n####1.0.0\n\n* 7/11/2012 Initial release\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz",
+    "hash": "a5fc298b81b9e0dca2e458824784b65c52ba588e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a5fc298b81b9e0dca2e458824784b65c52ba588e"
+}

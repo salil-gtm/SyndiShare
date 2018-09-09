@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "elegant-spinner",
+    "version": "1.0.1",
+    "description": "Elegant spinner for interactive CLI apps",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/elegant-spinner.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && node test.js"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "ansi",
+      "terminal",
+      "console",
+      "cli",
+      "string",
+      "log",
+      "logging",
+      "spinner",
+      "busy",
+      "indicator",
+      "loading",
+      "loader",
+      "progress",
+      "elegant",
+      "loiter",
+      "interactive"
+    ],
+    "devDependencies": {
+      "ava": "0.0.4",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-elegant-spinner-1.0.1-db043521c95d7e303fd8f345bedc3349cfb0729e/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# elegant-spinner [![Build Status](https://travis-ci.org/sindresorhus/elegant-spinner.svg?branch=master)](https://travis-ci.org/sindresorhus/elegant-spinner)\n\n> Elegant spinner for interactive CLI apps\n\n<img width=\"173\" src=\"screenshot.gif\">\n\n\n## Install\n\n```\n$ npm install --save elegant-spinner\n```\n\n\n## Usage\n\n```js\nvar elegantSpinner = require('elegant-spinner');\nvar logUpdate = require('log-update');\nvar frame = elegantSpinner();\n\nsetInterval(function () {\n\tlogUpdate(frame());\n}, 50);\n```\n\n\n## Relevant\n\n- [log-update](https://github.com/sindresorhus/log-update) - Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz",
+    "hash": "db043521c95d7e303fd8f345bedc3349cfb0729e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "db043521c95d7e303fd8f345bedc3349cfb0729e"
+}

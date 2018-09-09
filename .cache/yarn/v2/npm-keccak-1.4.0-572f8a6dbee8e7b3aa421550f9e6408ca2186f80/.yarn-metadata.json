@@ -1,0 +1,82 @@
+{
+  "manifest": {
+    "name": "keccak",
+    "version": "1.4.0",
+    "description": "Keccak sponge function family",
+    "keywords": [
+      "sha3",
+      "sha-3",
+      "keccak",
+      "shake"
+    ],
+    "bugs": {
+      "url": "https://github.com/cryptocoinjs/keccak/issues"
+    },
+    "license": "MIT",
+    "contributors": [
+      {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      }
+    ],
+    "files": [
+      "lib",
+      "src",
+      "binding.gyp",
+      "bindings.js",
+      "index.js",
+      "js.js"
+    ],
+    "main": "./index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/cryptocoinjs/keccak.git"
+    },
+    "scripts": {
+      "coverage": "nyc tape test/index.js",
+      "coverage-lcov": "npm run coverage && nyc report -r lcov",
+      "install": "npm run rebuild || echo \"Keccak bindings compilation fail. Pure JS implementation will be used.\"",
+      "libkeccak": "./util/libkeccak.sh",
+      "lint": "standard",
+      "rebuild": "node-gyp rebuild",
+      "test": "npm run lint && npm run unit",
+      "unit": "tape test/index.js"
+    },
+    "dependencies": {
+      "bindings": "^1.2.1",
+      "inherits": "^2.0.3",
+      "nan": "^2.2.1",
+      "safe-buffer": "^5.1.0"
+    },
+    "devDependencies": {
+      "browserify": "^14.1.0",
+      "nyc": "^11.0.2",
+      "proxyquire": "^1.7.10",
+      "standard": "^10.0.2",
+      "tape": "^4.5.1"
+    },
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "gypfile": true,
+    "browser": {
+      "./index.js": "./js.js"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-keccak-1.4.0-572f8a6dbee8e7b3aa421550f9e6408ca2186f80/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# keccak\n\nVersion | Mac/Linux | Windows\n------- | --------- | -------\n[![NPM Package](https://img.shields.io/npm/v/keccak.svg?style=flat-square)](https://www.npmjs.org/package/keccak) | [![Build Status](https://img.shields.io/travis/cryptocoinjs/keccak.svg?branch=master&style=flat-square)](https://travis-ci.org/cryptocoinjs/keccak) | [![AppVeyor](https://img.shields.io/appveyor/ci/fanatid/keccak.svg?branch=master&style=flat-square)](https://ci.appveyor.com/project/fanatid/keccak)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nThis module provides native bindings to [Keccak sponge function family][1] from [Keccak Code Package][2]. In browser pure JavaScript implementation will be used.\n\n## Usage\n\nYou can use this package as [node Hash][3].\n\n```js\nconst createKeccakHash = require('keccak')\n\nconsole.log(createKeccakHash('keccak256').digest().toString('hex'))\n// => c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470\n\nconsole.log(createKeccakHash('keccak256').update('Hello world!').digest('hex'))\n// => ecd0e108a98e192af1d2c25055f4e3bed784b5c877204e73219a5203251feaab\n```\n\nAlso object has two useful methods: `_resetState` and `_clone`\n\n```js\nconst createKeccakHash = require('keccak')\n\nconsole.log(createKeccakHash('keccak256').update('Hello World!')._resetState().digest('hex'))\n// => c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470\n\nconst hash1 = createKeccakHash('keccak256').update('Hello')\nconst hash2 = hash1._clone()\nconsole.log(hash1.digest('hex'))\n// => 06b3dfaec148fb1bb2b066f10ec285e7c9bf402ab32aa78a5d38e34566810cd2\nconsole.log(hash1.update(' world!').digest('hex'))\n// => throw Error: Digest already called\nconsole.log(hash2.update(' world!').digest('hex'))\n// => ecd0e108a98e192af1d2c25055f4e3bed784b5c877204e73219a5203251feaab\n```\n\n### Why I should use this package?\n\nI thought it will be popular question, so I decide write explanation in readme.\n\nI know a few popular packages on [npm][4] related with [Keccak][1]:\n\n  - [sha3][5] ([phusion/node-sha3][6] on github) — not actual because support _only keccak_.\n  - [js-sha3][7] ([emn178/js-sha3][8] on github) — brilliant package which support keccak, sha3, shake. But not implement [node Hash][3] interface unfortunately!\n  - [browserify-sha3][9] ([wanderer/browserify-sha3][10] on github) — based on [js-sha3][7] (but not support shake!). Support [node Hash][3] interface, but without [streams][11].\n  - [keccakjs][12] ([axic/keccakjs][13] on github) — uses [sha3][5] and [browserify-sha3][9] as fallback. As result _keccak only_ with [node Hash][3] interface without [streams][11].\n\n## LICENSE\n\nThis library is free and open-source software released under the MIT license.\n\n[1]: http://keccak.noekeon.org/\n[2]: https://github.com/gvanas/KeccakCodePackage\n[3]: https://nodejs.org/api/crypto.html#crypto_class_hash\n[4]: http://npmjs.com/\n[5]: https://www.npmjs.com/package/sha3\n[6]: https://github.com/phusion/node-sha3\n[7]: https://www.npmjs.com/package/js-sha3\n[8]: https://github.com/emn178/js-sha3\n[9]: https://www.npmjs.com/package/browserify-sha3\n[10]: https://github.com/wanderer/browserify-sha3\n[11]: http://nodejs.org/api/stream.html\n[12]: https://www.npmjs.com/package/keccakjs\n[13]: https://github.com/axic/keccakjs\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2016 https://github.com/cryptocoinjs/keccak contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/keccak/-/keccak-1.4.0.tgz#572f8a6dbee8e7b3aa421550f9e6408ca2186f80",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/keccak/-/keccak-1.4.0.tgz",
+    "hash": "572f8a6dbee8e7b3aa421550f9e6408ca2186f80",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "572f8a6dbee8e7b3aa421550f9e6408ca2186f80"
+}

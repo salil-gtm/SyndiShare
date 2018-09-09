@@ -1,0 +1,69 @@
+{
+  "manifest": {
+    "name": "ethereumjs-wallet",
+    "version": "0.6.0",
+    "description": "Utilities for handling Ethereum keys",
+    "main": "index.js",
+    "scripts": {
+      "coverage": "istanbul cover _mocha",
+      "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
+      "lint": "standard",
+      "prepublish": "npm run lint && npm run test",
+      "test": "mocha ./test/**/*.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ethereumjs/ethereumjs-wallet.git"
+    },
+    "keywords": [
+      "ethereum",
+      "wallets",
+      "keys"
+    ],
+    "author": {
+      "name": "Alex Beregszaszi",
+      "email": "alex@rtfs.hu"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/ethereumjs/ethereumjs-wallet/issues"
+    },
+    "homepage": "https://github.com/ethereumjs/ethereumjs-wallet",
+    "dependencies": {
+      "aes-js": "^0.2.3",
+      "bs58check": "^1.0.8",
+      "ethereumjs-util": "^4.4.0",
+      "hdkey": "^0.7.0",
+      "scrypt.js": "^0.2.0",
+      "uuid": "^2.0.1",
+      "utf8": "^2.1.1"
+    },
+    "devDependencies": {
+      "coveralls": "^2.11.4",
+      "istanbul": "^0.4.1",
+      "mocha": "^2.3.4",
+      "standard": "^5.4.1"
+    },
+    "standard": {
+      "globals": [
+        "describe",
+        "it"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-ethereumjs-wallet-0.6.0-82763b1697ee7a796be7155da9dfb49b2f98cfdb/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# ethereumjs-wallet\n\n[![NPM Package](https://img.shields.io/npm/v/ethereumjs-wallet.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-wallet)\n[![Build Status](https://img.shields.io/travis/ethereumjs/ethereumjs-wallet.svg?branch=master&style=flat-square)](https://travis-ci.org/ethereumjs/ethereumjs-wallet)\n[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-wallet.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-wallet)\n[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode\n\nA lightweight wallet implementation. At the moment it supports key creation and conversion between various formats.\n\nIt is complemented by the following packages:\n- [ethereumjs-tx](https://github.com/ethereumjs/ethereumjs-tx) to sign transactions\n- [ethereumjs-icap](https://github.com/ethereumjs/ethereumjs-icap) to manipulate ICAP addresses\n- [store.js](https://github.com/marcuswestin/store.js) to use browser storage\n\nMotivations are:\n- be lightweight\n- work in a browser\n- use a single, maintained version of crypto library (and that should be in line with `ethereumjs-util` and `ethereumjs-tx`)\n- support import/export between various wallet formats\n- support BIP32 HD keys\n\nFeatures not supported:\n- signing transactions\n- managing storage (neither in node.js or the browser)\n\n## Wallet API\n\nConstructors:\n\n* `generate([icap])` - create an instance based on a new random key (setting `icap` to true will generate an address suitable for the `ICAP Direct mode`)\n* `fromPrivateKey(input)` - create an instance based on a raw private key\n* `fromExtendedPrivateKey(input)` - create an instance based on a BIP32 extended private key (xprv)\n* `fromPublicKey(input, [nonStrict])` - create an instance based on a public key (certain methods will not be available)\n* `fromExtendedPublicKey(input)` - create an instance based on a BIP32 extended public key (xpub)\n* `fromV1(input, password)` - import a wallet (Version 1 of the Ethereum wallet format)\n* `fromV3(input, password, [nonStrict])` - import a wallet (Version 3 of the Ethereum wallet format). Set `nonStrict` true to accept files with mixed-caps.\n* `fromEthSale(input, password)` - import an Ethereum Pre Sale wallet\n\nFor the V1, V3 and EthSale formats the input is a JSON serialized string. All these formats require a password.\n\nNote: `fromPublicKey()` only accepts uncompressed Ethereum-style public keys, unless the `nonStrict` flag is set to true.\n\nInstance methods:\n\n* `getPrivateKey()` - return the private key\n* `getPublicKey()` - return the public key\n* `getAddress()` - return the address\n* `getChecksumAddressString()` - return the [address with checksum](https://github.com/ethereum/EIPs/issues/55)\n* `getV3Filename([timestamp])` - return the suggested filename for V3 keystores\n* `toV3(password, [options])` - return the wallet as a JSON string (Version 3 of the Ethereum wallet format)\n\nAll of the above instance methods return a Buffer or JSON. Use the `String` suffixed versions for a string output, such as `getPrivateKeyString()`.\n\nNote: `getPublicKey()` only returns uncompressed Ethereum-style public keys.\n\n## Thirdparty API\n\nImporting various third party wallets is possible through the `thirdparty` submodule:\n\n`var thirdparty = require('ethereumjs-wallet/thirdparty')`\n\nConstructors:\n\n* `fromEtherCamp(passphrase)` - import a brain wallet used by Ether.Camp\n* `fromEtherWallet(input, password)` - import a wallet generated by EtherWallet\n* `fromKryptoKit(seed)` - import a wallet from a KryptoKit seed\n* `fromQuorumWallet(passphrase, userid)` - import a brain wallet used by Quorum Wallet\n\n## HD Wallet API\n\nTo use BIP32 HD wallets, first include the `hdkey` submodule:\n\n`var hdkey = require('ethereumjs-wallet/hdkey')`\n\nConstructors:\n\n* `fromMasterSeed(seed)` - create an instance based on a seed\n* `fromExtendedKey(key)` - create an instance based on a BIP32 extended private or public key\n\nFor the seed  we suggest to use [bip39](https://npmjs.org/packages/bip39) to create one from a BIP39 mnemonic.\n\nInstance methods:\n\n* `privateExtendedKey()` - return a BIP32 extended private key (xprv)\n* `publicExtendedKey()` - return a BIP32 extended public key (xpub)\n* `derivePath(path)` - derive a node based on a path (e.g.  m/44'/0'/0/1)\n* `deriveChild(index)` - derive a node based on a child index\n* `getWallet()` - return a `Wallet` instance as seen above\n\n## Provider Engine\n\nThe Wallet can be easily plugged into [provider-engine](https://github.com/metamask/provider-engine) to provide signing:\n\n```js\nconst WalletSubprovider = require('ethereumjs-wallet/provider-engine')\n\n<engine>.addProvider(new WalletSubprovider(<wallet instance>))\n```\n\nNote it only supports the basic wallet. With a HD Wallet, call `getWallet()` first.\n\n### Remarks about `toV3`\n\nThe `options` is an optional object hash, where all the serialization parameters can be fine tuned:\n- uuid - UUID. One is randomly generated.\n- salt - Random salt for the `kdf`. Size must match the requirements of the KDF (key derivation function). Random number generated via `crypto.getRandomBytes` if nothing is supplied.\n- iv - Initialization vector for the `cipher`. Size must match the requirements of the cipher. Random number generated via `crypto.getRandomBytes` if nothing is supplied.\n- kdf - The key derivation function, see below.\n- dklen - Derived key length. For certain `cipher` settings, this must match the block sizes of those.\n- cipher - The cipher to use. Names must match those of supported by `OpenSSL`, e.g. `aes-128-ctr` or `aes-128-cbc`.\n\nDepending on the `kdf` selected, the following options are available too.\n\nFor `pbkdf2`:\n- `c` - Number of iterations. Defaults to 262144.\n- `prf` - The only supported (and default) value is `hmac-sha256`. So no point changing it.\n\nFor `scrypt`:\n- `n` - Iteration count. Defaults to 262144.\n- `r` - Block size for the underlying hash. Defaults to 8.\n- `p` - Parallelization factor. Defaults to 1.\n\nThe following settings are favoured by the Go Ethereum implementation and we default to the same:\n- `kdf`: `scrypt`\n- `dklen`: `32`\n- `n`: `262144`\n- `r`: `8`\n- `p`: `1`\n- `cipher`: `aes-128-ctr`\n\n## License\n\nMIT License\n\nCopyright (C) 2016 Alex Beregszaszi\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Alex Beregszaszi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ethereumjs-wallet/-/ethereumjs-wallet-0.6.0.tgz#82763b1697ee7a796be7155da9dfb49b2f98cfdb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ethereumjs-wallet/-/ethereumjs-wallet-0.6.0.tgz",
+    "hash": "82763b1697ee7a796be7155da9dfb49b2f98cfdb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "82763b1697ee7a796be7155da9dfb49b2f98cfdb"
+}

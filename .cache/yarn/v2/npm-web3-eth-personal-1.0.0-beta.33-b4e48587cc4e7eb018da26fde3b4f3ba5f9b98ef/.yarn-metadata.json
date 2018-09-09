@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "name": "web3-eth-personal",
+    "namespace": "ethereum",
+    "version": "1.0.0-beta.33",
+    "description": "Web3 module to interact with the Ethereum blockchain accounts stored in the node.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ethereum/web3.js/tree/master/packages/web3-eth-personal"
+    },
+    "license": "LGPL-3.0",
+    "main": "src/index.js",
+    "dependencies": {
+      "web3-core": "1.0.0-beta.33",
+      "web3-core-helpers": "1.0.0-beta.33",
+      "web3-core-method": "1.0.0-beta.33",
+      "web3-net": "1.0.0-beta.33",
+      "web3-utils": "1.0.0-beta.33"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-web3-eth-personal-1.0.0-beta.33-b4e48587cc4e7eb018da26fde3b4f3ba5f9b98ef/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# web3-eth-personal\n\nThis is a sub package of [web3.js][repo]\n\nThis is the personal package to be used in the `web3-eth` package.\nPlease read the [documentation][docs] for more.\n\n## Installation\n\n### Node.js\n\n```bash\nnpm install web3-eth-personal\n```\n\n### In the Browser\n\nBuild running the following in the [web3.js][repo] repository:\n\n```bash\nnpm run-script build-all\n```\n\nThen include `dist/web3-eth-personal.js` in your html file.\nThis will expose the `Web3EthPersonal` object on the window object.\n\n\n## Usage\n\n```js\n// in node.js\nvar Web3EthPersonal = require('web3-eth-personal');\n\nvar personal = new Web3EthPersonal('ws://localhost:8546');\n```\n\n\n[docs]: http://web3js.readthedocs.io/en/1.0/\n[repo]: https://github.com/ethereum/web3.js\n\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/web3-eth-personal/-/web3-eth-personal-1.0.0-beta.33.tgz#b4e48587cc4e7eb018da26fde3b4f3ba5f9b98ef",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/web3-eth-personal/-/web3-eth-personal-1.0.0-beta.33.tgz",
+    "hash": "b4e48587cc4e7eb018da26fde3b4f3ba5f9b98ef",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b4e48587cc4e7eb018da26fde3b4f3ba5f9b98ef"
+}

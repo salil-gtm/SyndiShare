@@ -1,0 +1,48 @@
+{
+  "manifest": {
+    "name": "browserify-des",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "standard && node test.js | tspec"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/crypto-browserify/browserify-des.git"
+    },
+    "author": {
+      "name": "Calvin Metcalf",
+      "email": "calvin.metcalf@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/crypto-browserify/browserify-des/issues"
+    },
+    "homepage": "https://github.com/crypto-browserify/browserify-des#readme",
+    "dependencies": {
+      "cipher-base": "^1.0.1",
+      "des.js": "^1.0.0",
+      "inherits": "^2.0.1"
+    },
+    "devDependencies": {
+      "standard": "^5.3.1",
+      "tap-spec": "^4.1.0",
+      "tape": "^4.2.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-browserify-des-1.0.0-daa277717470922ed2fe18594118a175439721dd/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "browserify-des\n===\n\nDES for browserify\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/browserify-des/-/browserify-des-1.0.0.tgz#daa277717470922ed2fe18594118a175439721dd",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/browserify-des/-/browserify-des-1.0.0.tgz",
+    "hash": "daa277717470922ed2fe18594118a175439721dd",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "daa277717470922ed2fe18594118a175439721dd"
+}

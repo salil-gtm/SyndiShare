@@ -1,0 +1,60 @@
+{
+  "manifest": {
+    "name": "github-username",
+    "version": "4.1.0",
+    "description": "Get a GitHub username from an email address",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/github-username.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "github",
+      "user",
+      "username",
+      "email",
+      "address",
+      "gh",
+      "git"
+    ],
+    "dependencies": {
+      "gh-got": "^6.0.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-github-username-4.1.0-cbe280041883206da4212ae9e4b5f169c30bf417/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# github-username [![Build Status](https://travis-ci.org/sindresorhus/github-username.svg?branch=master)](https://travis-ci.org/sindresorhus/github-username)\n\n> Get a GitHub username from an email address\n\n\n## Install\n\n```\n$ npm install github-username\n```\n\n\n## Usage\n\n```js\nconst githubUsername = require('github-username');\n\ngithubUsername('sindresorhus@gmail.com').then(username => {\n\tconsole.log(username);\n\t//=> 'sindresorhus'\n});\n```\n\n\n## API\n\n### githubUsername(email, [token])\n\nReturns a `Promise` for the username.\n\n#### email\n\nType: `string`\n\nEmail address for the user of whom you want the username.\n\n#### token\n\nType: `string`\n\nGitHub [personal access token](https://github.com/settings/tokens/new).\n\n\n## Related\n\n- [github-username-cli](https://github.com/sindresorhus/github-username-cli) - CLI for this module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/github-username/-/github-username-4.1.0.tgz#cbe280041883206da4212ae9e4b5f169c30bf417",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/github-username/-/github-username-4.1.0.tgz",
+    "hash": "cbe280041883206da4212ae9e4b5f169c30bf417",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "cbe280041883206da4212ae9e4b5f169c30bf417"
+}

@@ -1,0 +1,62 @@
+{
+  "manifest": {
+    "name": "cli-truncate",
+    "version": "0.2.1",
+    "description": "Truncate a string to a specific width in the terminal",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/cli-truncate.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "truncate",
+      "ellipsis",
+      "text",
+      "limit",
+      "slice",
+      "cli",
+      "terminal",
+      "term",
+      "shell",
+      "width",
+      "ansi"
+    ],
+    "dependencies": {
+      "slice-ansi": "0.0.4",
+      "string-width": "^1.0.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-cli-truncate-0.2.1-9f15cfbb0705005369216c626ac7d05ab90dd574/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# cli-truncate [![Build Status](https://travis-ci.org/sindresorhus/cli-truncate.svg?branch=master)](https://travis-ci.org/sindresorhus/cli-truncate)\n\n> Truncate a string to a specific width in the terminal\n\nGracefully handles [ANSI escapes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles). Like a string styled with [`chalk`](https://github.com/chalk/chalk).\n\n\n## Install\n\n```\n$ npm install --save cli-truncate\n```\n\n\n## Usage\n\n```js\nconst cliTruncate = require('cli-truncate');\n\ncliTruncate('unicorn', 4);\n//=> 'uni…'\n\n// truncate at different positions\ncliTruncate('unicorn', 4, {position: 'start'});\n//=> '…orn'\n\ncliTruncate('unicorn', 4, {position: 'middle'});\n//=> 'un…n'\n\ncliTruncate('\\u001b[31municorn\\u001b[39m', 4);\n//=> '\\u001b[31muni\\u001b[39m…'\n\n// truncate the paragraph to the terminal width\nconst paragraph = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.';\ncliTruncate(paragraph, process.stdout.columns));\n//=> 'Lorem ipsum dolor sit amet, consectetuer adipiscing…'\n```\n\n\n## API\n\n### cliTruncate(input, columns, [options])\n\n#### input\n\nType: `string`\n\nText to truncate.\n\n#### columns\n\nType: `number`\n\nColumns to occupy in the terminal.\n\n#### options\n\n##### position\n\nType: `string`<br>\nDefault: `'end'`<br>\nValues: `'start'`, `'middle'`, `'end'`\n\nPosition to truncate the string.\n\n\n## Related\n\n- [wrap-ansi](https://github.com/chalk/wrap-ansi) - Wordwrap a string with ANSI escape codes\n- [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cli-truncate/-/cli-truncate-0.2.1.tgz#9f15cfbb0705005369216c626ac7d05ab90dd574",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cli-truncate/-/cli-truncate-0.2.1.tgz",
+    "hash": "9f15cfbb0705005369216c626ac7d05ab90dd574",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9f15cfbb0705005369216c626ac7d05ab90dd574"
+}

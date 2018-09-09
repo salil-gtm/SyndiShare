@@ -1,0 +1,71 @@
+{
+  "manifest": {
+    "name": "prettier",
+    "version": "1.11.1",
+    "description": "Prettier is an opinionated code formatter",
+    "bin": {
+      "prettier": "./bin-prettier.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/prettier/prettier.git"
+    },
+    "homepage": "https://prettier.io/",
+    "author": {
+      "name": "James Long"
+    },
+    "license": "MIT",
+    "main": "./index.js",
+    "engines": {
+      "node": ">=4"
+    },
+    "devDependencies": {
+      "babel-cli": "6.24.1",
+      "babel-preset-es2015": "6.24.1",
+      "codecov": "2.2.0",
+      "cross-env": "5.0.5",
+      "eslint": "4.1.1",
+      "eslint-config-prettier": "2.9.0",
+      "eslint-friendly-formatter": "3.0.0",
+      "eslint-plugin-import": "2.6.1",
+      "eslint-plugin-prettier": "2.4.0",
+      "eslint-plugin-react": "7.1.0",
+      "jest": "21.1.0",
+      "mkdirp": "0.5.1",
+      "prettier": "1.11.0",
+      "prettylint": "1.0.0",
+      "rimraf": "2.6.2",
+      "rollup": "0.47.6",
+      "rollup-plugin-commonjs": "8.2.6",
+      "rollup-plugin-json": "2.1.1",
+      "rollup-plugin-node-builtins": "2.0.0",
+      "rollup-plugin-node-globals": "1.1.0",
+      "rollup-plugin-node-resolve": "2.0.0",
+      "rollup-plugin-replace": "1.2.1",
+      "shelljs": "0.8.1",
+      "snapshot-diff": "0.2.2",
+      "strip-ansi": "4.0.0",
+      "sw-toolbox": "3.6.0",
+      "tempy": "0.2.1",
+      "uglify-es": "3.0.28",
+      "webpack": "2.6.1"
+    },
+    "scripts": {
+      "prepublishOnly": "node -e \"assert.equal(require('.').version, require('..').version)\""
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-prettier-1.11.1-61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75/package.json",
+    "readmeFilename": "README.md",
+    "readme": "![Prettier Banner](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)\n\n<h2 align=\"center\">Opinionated Code Formatter</h2>\n\n<p align=\"center\">\n  <em>\n  JavaScript\n  · Flow\n  · TypeScript\n  · CSS\n  · SCSS\n  · Less\n  · JSX\n  · Vue\n  · GraphQL\n  · JSON\n  · Markdown\n  · <a href=\"https://prettier.io/docs/en/plugins.html\">\n      Your favorite language?\n    </a>\n  </em>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://gitter.im/jlongster/prettier\">\n    <img alt=\"Gitter\" src=\"https://img.shields.io/gitter/room/jlongster/prettier.svg?style=flat-square\">\n  </a>\n  <a href=\"https://travis-ci.org/prettier/prettier\">\n    <img alt=\"Travis\" src=\"https://img.shields.io/travis/prettier/prettier/master.svg?style=flat-square\">\n  </a>\n  <a href=\"https://codecov.io/gh/prettier/prettier\">\n    <img alt=\"Codecov\" src=\"https://img.shields.io/codecov/c/github/prettier/prettier.svg?style=flat-square\">\n  </a>\n  <a href=\"https://www.npmjs.com/package/prettier\">\n    <img alt=\"npm version\" src=\"https://img.shields.io/npm/v/prettier.svg?style=flat-square\">\n  </a>\n  <a href=\"https://www.npmjs.com/package/prettier\">\n    <img alt=\"monthly downloads\" src=\"https://img.shields.io/npm/dm/prettier.svg?style=flat-square\">\n  </a>\n  <a href=\"#badge\">\n    <img alt=\"code style: prettier\" src=\"https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square\">\n  </a>\n  <a href=\"https://twitter.com/PrettierCode\">\n    <img alt=\"Follow+Prettier+on+Twitter\" src=\"https://img.shields.io/twitter/follow/prettiercode.svg?label=follow+prettier&style=flat-square\">\n  </a>\n</p>\n\n## Intro\n\nPrettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.\n\n### Input\n\n<!-- prettier-ignore -->\n```js\nfoo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());\n```\n\n### Output\n\n```js\nfoo(\n  reallyLongArg(),\n  omgSoManyParameters(),\n  IShouldRefactorThis(),\n  isThereSeriouslyAnotherOne()\n);\n```\n\nPrettier can be run [in your editor](http://prettier.io/docs/en/editors.html) on-save, in a [pre-commit hook](https://prettier.io/docs/en/precommit.html), or in [CI environments](https://prettier.io/docs/en/cli.html#list-different) to ensure your codebase has a consistent style without devs ever having to post a nit-picky comment on a code review ever again!\n\n---\n\n**[Documentation](https://prettier.io/docs/en/)**\n\n<!-- prettier-ignore -->\n[Install](https://prettier.io/docs/en/install.html) ·\n[Options](https://prettier.io/docs/en/options.html) ·\n[CLI](https://prettier.io/docs/en/cli.html) ·\n[API](https://prettier.io/docs/en/api.html)\n\n**[Playground](https://prettier.io/playground/)**\n\n---\n\n## Badge\n\nShow the world you're using _Prettier_ → [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)\n\n```md\n[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)\n```\n\n## Contributing\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md).\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/prettier/-/prettier-1.11.1.tgz#61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/prettier/-/prettier-1.11.1.tgz",
+    "hash": "61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75"
+}

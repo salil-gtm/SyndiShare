@@ -1,0 +1,62 @@
+{
+  "manifest": {
+    "name": "read-pkg",
+    "version": "3.0.0",
+    "description": "Read a package.json file",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/read-pkg.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "json",
+      "read",
+      "parse",
+      "file",
+      "fs",
+      "graceful",
+      "load",
+      "pkg",
+      "package",
+      "normalize"
+    ],
+    "dependencies": {
+      "load-json-file": "^4.0.0",
+      "normalize-package-data": "^2.3.2",
+      "path-type": "^3.0.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-read-pkg-3.0.0-9cbc686978fee65d16c00e2b19c237fcf6e38389/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# read-pkg [![Build Status](https://travis-ci.org/sindresorhus/read-pkg.svg?branch=master)](https://travis-ci.org/sindresorhus/read-pkg)\n\n> Read a package.json file\n\n\n## Why\n\n- [Gracefully handles filesystem issues](https://github.com/isaacs/node-graceful-fs)\n- [Strips UTF-8 BOM](https://github.com/sindresorhus/strip-bom)\n- [Throws more helpful JSON errors](https://github.com/sindresorhus/parse-json)\n- [Normalizes the data](https://github.com/npm/normalize-package-data#what-normalization-currently-entails)\n\n\n## Install\n\n```\n$ npm install read-pkg\n```\n\n\n## Usage\n\n```js\nconst readPkg = require('read-pkg');\n\nreadPkg().then(pkg => {\n\tconsole.log(pkg);\n\t//=> {name: 'read-pkg', ...}\n});\n\nreadPkg(__dirname).then(pkg => {\n\tconsole.log(pkg);\n\t//=> {name: 'read-pkg', ...}\n});\n\nreadPkg(path.join('unicorn', 'package.json')).then(pkg => {\n\tconsole.log(pkg);\n\t//=> {name: 'read-pkg', ...}\n});\n```\n\n\n## API\n\n### readPkg([path], [options])\n\nReturns a `Promise` for the parsed JSON.\n\n### readPkg.sync([path], [options])\n\nReturns the parsed JSON.\n\n#### path\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nPath to a `package.json` file or its directory.\n\n#### options\n\n##### normalize\n\nType: `boolean`<br>\nDefault: `true`\n\n[Normalize](https://github.com/npm/normalize-package-data#what-normalization-currently-entails) the package data.\n\n\n## Related\n\n- [read-pkg-up](https://github.com/sindresorhus/read-pkg-up) - Read the closest package.json file\n- [write-pkg](https://github.com/sindresorhus/write-pkg) - Write a `package.json` file\n- [load-json-file](https://github.com/sindresorhus/load-json-file) - Read and parse a JSON file\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/read-pkg/-/read-pkg-3.0.0.tgz#9cbc686978fee65d16c00e2b19c237fcf6e38389",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/read-pkg/-/read-pkg-3.0.0.tgz",
+    "hash": "9cbc686978fee65d16c00e2b19c237fcf6e38389",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9cbc686978fee65d16c00e2b19c237fcf6e38389"
+}

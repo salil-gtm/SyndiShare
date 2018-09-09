@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "name": "original-require",
+    "version": "1.0.1",
+    "description": "The require statement. Useful for bundling with Webpack in rare cases.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/tcoulter/original-require.git"
+    },
+    "homepage": "https://github.com/tcoulter/original-require",
+    "author": {
+      "name": "Tim Coulter",
+      "email": "tim@timothyjcoulter.com"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-original-require-1.0.1-0f130471584cd33511c5ec38c8d59213f9ac5e20/package.json"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/original-require/-/original-require-1.0.1.tgz#0f130471584cd33511c5ec38c8d59213f9ac5e20",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/original-require/-/original-require-1.0.1.tgz",
+    "hash": "0f130471584cd33511c5ec38c8d59213f9ac5e20",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0f130471584cd33511c5ec38c8d59213f9ac5e20"
+}

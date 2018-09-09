@@ -1,0 +1,149 @@
+{
+  "manifest": {
+    "name": "clone",
+    "description": "deep cloning of objects and arrays",
+    "tags": [
+      "clone",
+      "object",
+      "array",
+      "function",
+      "date"
+    ],
+    "version": "2.1.2",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/pvorb/node-clone.git"
+    },
+    "bugs": {
+      "url": "https://github.com/pvorb/node-clone/issues"
+    },
+    "main": "clone.js",
+    "author": {
+      "name": "Paul Vorbach",
+      "email": "paul@vorba.ch",
+      "url": "http://paul.vorba.ch/"
+    },
+    "contributors": [
+      {
+        "name": "Blake Miner",
+        "email": "miner.blake@gmail.com",
+        "url": "http://www.blakeminer.com/"
+      },
+      {
+        "name": "Tian You",
+        "email": "axqd001@gmail.com",
+        "url": "http://blog.axqd.net/"
+      },
+      {
+        "name": "George Stagas",
+        "email": "gstagas@gmail.com",
+        "url": "http://stagas.com/"
+      },
+      {
+        "name": "Tobiasz Cudnik",
+        "email": "tobiasz.cudnik@gmail.com",
+        "url": "https://github.com/TobiaszCudnik"
+      },
+      {
+        "name": "Pavel Lang",
+        "email": "langpavel@phpskelet.org",
+        "url": "https://github.com/langpavel"
+      },
+      {
+        "name": "Dan MacTough",
+        "url": "http://yabfog.com/"
+      },
+      {
+        "name": "w1nk",
+        "url": "https://github.com/w1nk"
+      },
+      {
+        "name": "Hugh Kennedy",
+        "url": "http://twitter.com/hughskennedy"
+      },
+      {
+        "name": "Dustin Diaz",
+        "url": "http://dustindiaz.com"
+      },
+      {
+        "name": "Ilya Shaisultanov",
+        "url": "https://github.com/diversario"
+      },
+      {
+        "name": "Nathan MacInnes",
+        "email": "nathan@macinn.es",
+        "url": "http://macinn.es/"
+      },
+      {
+        "name": "Benjamin E. Coe",
+        "email": "ben@npmjs.com",
+        "url": "https://twitter.com/benjamincoe"
+      },
+      {
+        "name": "Nathan Zadoks",
+        "url": "https://github.com/nathan7"
+      },
+      {
+        "name": "Róbert Oroszi",
+        "email": "robert+gh@oroszi.net",
+        "url": "https://github.com/oroce"
+      },
+      {
+        "name": "Aurélio A. Heckert",
+        "url": "http://softwarelivre.org/aurium"
+      },
+      {
+        "name": "Guy Ellis",
+        "url": "http://www.guyellisrocks.com/"
+      },
+      {
+        "name": "fscherwi",
+        "url": "https://fscherwi.github.io"
+      },
+      {
+        "name": "rictic",
+        "url": "https://github.com/rictic"
+      },
+      {
+        "name": "Martin Jurča",
+        "url": "https://github.com/jurca"
+      },
+      {
+        "name": "Misery Lee",
+        "email": "miserylee@foxmail.com",
+        "url": "https://github.com/miserylee"
+      },
+      {
+        "name": "Clemens Wolff",
+        "url": "https://github.com/c-w"
+      }
+    ],
+    "license": "MIT",
+    "engines": {
+      "node": ">=0.8"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "nodeunit": "~0.9.0"
+    },
+    "optionalDependencies": {},
+    "scripts": {
+      "test": "nodeunit test.js"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-clone-2.1.2-1b7f4b9f591f1e8f83670401600345a02887435f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# clone\n\n[![build status](https://secure.travis-ci.org/pvorb/clone.svg)](http://travis-ci.org/pvorb/clone) [![downloads](https://img.shields.io/npm/dt/clone.svg)](http://npm-stat.com/charts.html?package=clone)\n\noffers foolproof _deep cloning_ of objects, arrays, numbers, strings, maps,\nsets, promises, etc. in JavaScript.\n\n**XSS vulnerability detected**\n\n\n## Installation\n\n    npm install clone\n\n(It also works with browserify, ender or standalone. You may want to use the\noption `noParse` in browserify to reduce the resulting file size, since usually\n`Buffer`s are not needed in browsers.)\n\n\n## Example\n\n~~~ javascript\nvar clone = require('clone');\n\nvar a, b;\n\na = { foo: { bar: 'baz' } };  // initial value of a\n\nb = clone(a);                 // clone a -> b\na.foo.bar = 'foo';            // change a\n\nconsole.log(a);               // show a\nconsole.log(b);               // show b\n~~~\n\nThis will print:\n\n~~~ javascript\n{ foo: { bar: 'foo' } }\n{ foo: { bar: 'baz' } }\n~~~\n\n**clone** masters cloning simple objects (even with custom prototype), arrays,\nDate objects, and RegExp objects. Everything is cloned recursively, so that you\ncan clone dates in arrays in objects, for example.\n\n\n## API\n\n`clone(val, circular, depth)`\n\n  * `val` -- the value that you want to clone, any type allowed\n  * `circular` -- boolean\n\n    Call `clone` with `circular` set to `false` if you are certain that `obj`\n    contains no circular references. This will give better performance if\n    needed. There is no error if `undefined` or `null` is passed as `obj`.\n  * `depth` -- depth to which the object is to be cloned (optional,\n    defaults to infinity)\n  * `prototype` -- sets the prototype to be used when cloning an object.\n    (optional, defaults to parent prototype).\n  * `includeNonEnumerable` -- set to `true` if the non-enumerable properties\n    should be cloned as well. Non-enumerable properties on the prototype chain\n    will be ignored. (optional, defaults to `false`)\n\n`clone.clonePrototype(obj)`\n\n  * `obj` -- the object that you want to clone\n\nDoes a prototype clone as\n[described by Oran Looney](http://oranlooney.com/functional-javascript/).\n\n\n## Circular References\n\n~~~ javascript\nvar a, b;\n\na = { hello: 'world' };\n\na.myself = a;\nb = clone(a);\n\nconsole.log(b);\n~~~\n\nThis will print:\n\n~~~ javascript\n{ hello: \"world\", myself: [Circular] }\n~~~\n\nSo, `b.myself` points to `b`, not `a`. Neat!\n\n\n## Test\n\n    npm test\n\n\n## Changelog\n\n### v2.1.2\n\n#### 2018-03-21\n\n  - Use `Buffer.allocUnsafe()` on Node >= 4.5.0 (contributed by @ChALkeR)\n\n### v2.1.1\n\n#### 2017-03-09\n\n  - Fix build badge in README\n  - Add support for cloning Maps and Sets on Internet Explorer\n\n### v2.1.0\n\n#### 2016-11-22\n\n  - Add support for cloning Errors\n  - Exclude non-enumerable symbol-named object properties from cloning\n  - Add option to include non-enumerable own properties of objects\n\n### v2.0.0\n\n#### 2016-09-28\n\n  - Add support for cloning ES6 Maps, Sets, Promises, and Symbols\n\n### v1.0.3\n\n#### 2017-11-08\n\n  - Close XSS vulnerability in the NPM package, which included the file\n    `test-apart-ctx.html`. This vulnerability was disclosed by Juho Nurminen of\n    2NS - Second Nature Security.\n\n### v1.0.2 (deprecated)\n\n#### 2015-03-25\n\n  - Fix call on getRegExpFlags\n  - Refactor utilities\n  - Refactor test suite\n\n### v1.0.1 (deprecated)\n\n#### 2015-03-04\n\n  - Fix nodeunit version\n  - Directly call getRegExpFlags\n\n### v1.0.0 (deprecated)\n\n#### 2015-02-10\n\n  - Improve browser support\n  - Improve browser testability\n  - Move helper methods to private namespace\n\n## Caveat\n\nSome special objects like a socket or `process.stdout`/`stderr` are known to not\nbe cloneable. If you find other objects that cannot be cloned, please [open an\nissue](https://github.com/pvorb/clone/issues/new).\n\n\n## Bugs and Issues\n\nIf you encounter any bugs or issues, feel free to [open an issue at\ngithub](https://github.com/pvorb/clone/issues) or send me an email to\n<paul@vorba.ch>. I also always like to hear from you, if you’re using my code.\n\n## License\n\nCopyright © 2011-2016 [Paul Vorbach](https://paul.vorba.ch/) and\n[contributors](https://github.com/pvorb/clone/graphs/contributors).\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the “Software”), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+    "licenseText": "Copyright © 2011-2015 Paul Vorbach <paul@vorba.ch>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the “Software”), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz",
+    "hash": "1b7f4b9f591f1e8f83670401600345a02887435f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1b7f4b9f591f1e8f83670401600345a02887435f"
+}

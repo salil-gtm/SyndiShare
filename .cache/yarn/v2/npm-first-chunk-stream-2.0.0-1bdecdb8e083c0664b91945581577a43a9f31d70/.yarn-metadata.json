@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "first-chunk-stream",
+    "version": "2.0.0",
+    "description": "Transform the first chunk in a stream",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/first-chunk-stream.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && mocha",
+      "cover": "istanbul cover --report html _mocha -- test.js -R spec -t 5000"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "buffer",
+      "stream",
+      "streams",
+      "transform",
+      "first",
+      "chunk",
+      "size",
+      "min",
+      "minimum"
+    ],
+    "dependencies": {
+      "readable-stream": "^2.0.2"
+    },
+    "devDependencies": {
+      "istanbul": "^0.3.19",
+      "mocha": "*",
+      "mocha-lcov-reporter": "0.0.2",
+      "streamtest": "^1.2.1",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-first-chunk-stream-2.0.0-1bdecdb8e083c0664b91945581577a43a9f31d70/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# first-chunk-stream [![Build Status](https://travis-ci.org/sindresorhus/first-chunk-stream.svg?branch=master)](https://travis-ci.org/sindresorhus/first-chunk-stream)\n\n> Buffer and transform the n first bytes of a stream\n\n\n## Install\n\n```\n$ npm install --save first-chunk-stream\n```\n\n\n## Usage\n\n```js\nconst fs = require('fs');\nconst concatStream = require('concat-stream');\nconst firstChunkStream = require('first-chunk-stream');\n\n// unicorn.txt => unicorn rainbow\nfs.createReadStream('unicorn.txt')\n\t.pipe(firstChunkStream({chunkLength: 7}, function (chunk, enc, cb) {\n\t\tthis.push(chunk.toUpperCase());\n\t\tcb();\n\t}))\n\t.pipe(concatStream(function (data) {\n\t\tif (data.length < 7) {\n\t\t\tthrow new Error('Couldn\\'t get the minimum required first chunk length');\n\t\t}\n\n\t\tconsole.log(data);\n\t\t//=> 'UNICORN rainbow'\n\t}));\n```\n\n\n## API\n\n### firstChunkStream([options], transform)\n\nReturns a `FirstChunkStream` instance.\n\n#### options\n\nThe options object is passed to the [`Duplex` stream](https://nodejs.org/api/stream.html#stream_class_stream_duplex) constructor allowing you to customize your stream behavior. In addition you can specify the following option:\n\n##### chunkLength\n\nType: `number`\n\nHow many bytes you want to buffer.\n\n#### transform(chunk, encoding, callback)\n\nType: `function`\n\nThe function that gets the required `options.chunkLength` bytes.\n\nNote that the buffer can have a smaller length than the required one. In that case, it will be due to the fact that the complete stream contents has a length less than the `òptions.chunkLength` value. You should check for this yourself if you strictly depend on the length.\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-2.0.0.tgz#1bdecdb8e083c0664b91945581577a43a9f31d70",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-2.0.0.tgz",
+    "hash": "1bdecdb8e083c0664b91945581577a43a9f31d70",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1bdecdb8e083c0664b91945581577a43a9f31d70"
+}

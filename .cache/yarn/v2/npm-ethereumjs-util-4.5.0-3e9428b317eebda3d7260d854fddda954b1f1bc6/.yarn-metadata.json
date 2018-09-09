@@ -1,0 +1,83 @@
+{
+  "manifest": {
+    "name": "ethereumjs-util",
+    "version": "4.5.0",
+    "description": "a collection of utility functions for Ethereum",
+    "main": "index.js",
+    "scripts": {
+      "coverage": "istanbul cover _mocha",
+      "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
+      "lint": "standard",
+      "prepublish": "npm run lint && npm run test",
+      "test": "npm run test:node && npm run test:browser",
+      "test:browser": "karma start karma.conf.js",
+      "test:node": "istanbul test mocha -- --reporter spec",
+      "build:docs": "documentation --github  -f md ./index.js > ./docs/index.md"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ethereumjs/ethereumjs-util.git"
+    },
+    "keywords": [
+      "ethereum",
+      "utilties"
+    ],
+    "author": {
+      "name": "mjbecze",
+      "email": "mjbecze@gmail.com"
+    },
+    "contributors": [
+      {
+        "name": "Alex Beregszaszi",
+        "email": "alex@rtfs.hu"
+      }
+    ],
+    "license": "MPL-2.0",
+    "bugs": {
+      "url": "https://github.com/ethereumjs/ethereumjs-util/issues"
+    },
+    "homepage": "https://github.com/ethereumjs/ethereumjs-util",
+    "dependencies": {
+      "bn.js": "^4.8.0",
+      "create-hash": "^1.1.2",
+      "keccakjs": "^0.2.0",
+      "rlp": "^2.0.0",
+      "secp256k1": "^3.0.1"
+    },
+    "devDependencies": {
+      "browserify": "^13.0.0",
+      "coveralls": "^2.11.4",
+      "documentation": "^3.0.4",
+      "istanbul": "^0.4.1",
+      "karma": "^0.13.15",
+      "karma-browserify": "^5.0.0",
+      "karma-chrome-launcher": "^0.2.2",
+      "karma-detect-browsers": "^2.0.2",
+      "karma-env-preprocessor": "^0.1.1",
+      "karma-firefox-launcher": "^0.1.7",
+      "karma-mocha": "^0.2.1",
+      "mocha": "^2.3.4",
+      "standard": "^5.4.1"
+    },
+    "standard": {
+      "globals": [
+        "describe",
+        "it"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-ethereumjs-util-4.5.0-3e9428b317eebda3d7260d854fddda954b1f1bc6/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# SYNOPSIS\n[![NPM Package](https://img.shields.io/npm/v/ethereumjs-util.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-util)\n[![Build Status](https://img.shields.io/travis/ethereumjs/ethereumjs-util.svg?branch=master&style=flat-square)](https://travis-ci.org/ethereumjs/ethereumjs-util)\n[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-util.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-util)\n[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode  \n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)  \n\n\n\nA collection of utility functions for ethereum. It can be used in node.js or can be in the browser with browserify.\n\n# API\n[./docs/](./docs/index.md)\n\n# LICENSE\nMPL-2.0\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-4.5.0.tgz#3e9428b317eebda3d7260d854fddda954b1f1bc6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-4.5.0.tgz",
+    "hash": "3e9428b317eebda3d7260d854fddda954b1f1bc6",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3e9428b317eebda3d7260d854fddda954b1f1bc6"
+}

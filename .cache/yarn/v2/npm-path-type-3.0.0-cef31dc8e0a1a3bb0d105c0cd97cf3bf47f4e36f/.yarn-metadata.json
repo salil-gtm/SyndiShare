@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "name": "path-type",
+    "version": "3.0.0",
+    "description": "Check if a path is a file, directory, or symlink",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/path-type.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "path",
+      "fs",
+      "type",
+      "is",
+      "check",
+      "directory",
+      "dir",
+      "file",
+      "filepath",
+      "symlink",
+      "symbolic",
+      "link",
+      "stat",
+      "stats",
+      "filesystem"
+    ],
+    "dependencies": {
+      "pify": "^3.0.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-path-type-3.0.0-cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# path-type [![Build Status](https://travis-ci.org/sindresorhus/path-type.svg?branch=master)](https://travis-ci.org/sindresorhus/path-type)\n\n> Check if a path is a file, directory, or symlink\n\n\n## Install\n\n```\n$ npm install path-type\n```\n\n\n## Usage\n\n```js\nconst pathType = require('path-type');\n\npathType.file('package.json').then(isFile => {\n\tconsole.log(isFile);\n\t//=> true\n})\n```\n\n\n## API\n\n### .file(path)\n### .dir(path)\n### .symlink(path)\n\nReturns a `Promise` for a `boolean` of whether the path is the checked type.\n\n### .fileSync(path)\n### .dirSync(path)\n### .symlinkSync(path)\n\nReturns a `boolean` of whether the path is the checked type.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/path-type/-/path-type-3.0.0.tgz",
+    "hash": "cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
+}

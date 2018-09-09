@@ -1,0 +1,50 @@
+{
+  "manifest": {
+    "name": "unpipe",
+    "description": "Unpipe a stream from all destinations",
+    "version": "1.0.0",
+    "author": {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/stream-utils/unpipe.git"
+    },
+    "devDependencies": {
+      "istanbul": "0.3.15",
+      "mocha": "2.2.5",
+      "readable-stream": "1.1.13"
+    },
+    "files": [
+      "HISTORY.md",
+      "LICENSE",
+      "README.md",
+      "index.js"
+    ],
+    "engines": {
+      "node": ">= 0.8"
+    },
+    "scripts": {
+      "test": "mocha --reporter spec --bail --check-leaks test/",
+      "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+      "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-unpipe-1.0.0-b2bf4ee8514aae6165b4817829d21b2ef49904ec/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# unpipe\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nUnpipe a stream from all destinations.\n\n## Installation\n\n```sh\n$ npm install unpipe\n```\n\n## API\n\n```js\nvar unpipe = require('unpipe')\n```\n\n### unpipe(stream)\n\nUnpipes all destinations from a given stream. With stream 2+, this is\nequivalent to `stream.unpipe()`. When used with streams 1 style streams\n(typically Node.js 0.8 and below), this module attempts to undo the\nactions done in `stream.pipe(dest)`.\n\n## License\n\n[MIT](LICENSE)\n\n[npm-image]: https://img.shields.io/npm/v/unpipe.svg\n[npm-url]: https://npmjs.org/package/unpipe\n[node-image]: https://img.shields.io/node/v/unpipe.svg\n[node-url]: http://nodejs.org/download/\n[travis-image]: https://img.shields.io/travis/stream-utils/unpipe.svg\n[travis-url]: https://travis-ci.org/stream-utils/unpipe\n[coveralls-image]: https://img.shields.io/coveralls/stream-utils/unpipe.svg\n[coveralls-url]: https://coveralls.io/r/stream-utils/unpipe?branch=master\n[downloads-image]: https://img.shields.io/npm/dm/unpipe.svg\n[downloads-url]: https://npmjs.org/package/unpipe\n",
+    "licenseText": "(The MIT License)\n\nCopyright (c) 2015 Douglas Christopher Wilson <doug@somethingdoug.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz",
+    "hash": "b2bf4ee8514aae6165b4817829d21b2ef49904ec",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b2bf4ee8514aae6165b4817829d21b2ef49904ec"
+}

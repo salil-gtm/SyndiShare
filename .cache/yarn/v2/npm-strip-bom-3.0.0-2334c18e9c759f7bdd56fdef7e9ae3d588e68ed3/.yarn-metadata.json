@@ -1,0 +1,60 @@
+{
+  "manifest": {
+    "name": "strip-bom",
+    "version": "3.0.0",
+    "description": "Strip UTF-8 byte order mark (BOM) from a string",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/strip-bom.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "strip",
+      "bom",
+      "byte",
+      "order",
+      "mark",
+      "unicode",
+      "utf8",
+      "utf-8",
+      "remove",
+      "delete",
+      "trim",
+      "text",
+      "string"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-strip-bom-3.0.0-2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# strip-bom [![Build Status](https://travis-ci.org/sindresorhus/strip-bom.svg?branch=master)](https://travis-ci.org/sindresorhus/strip-bom)\n\n> Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a string\n\nFrom Wikipedia:\n\n> The Unicode Standard permits the BOM in UTF-8, but does not require nor recommend its use. Byte order has no meaning in UTF-8.\n\n\n## Install\n\n```\n$ npm install --save strip-bom\n```\n\n\n## Usage\n\n```js\nconst stripBom = require('strip-bom');\n\nstripBom('\\uFEFFunicorn');\n//=> 'unicorn'\n```\n\n\n## Related\n\n- [strip-bom-cli](https://github.com/sindresorhus/strip-bom-cli) - CLI for this module\n- [strip-bom-buf](https://github.com/sindresorhus/strip-bom-buf) - Buffer version of this module\n- [strip-bom-stream](https://github.com/sindresorhus/strip-bom-stream) - Stream version of this module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz",
+    "hash": "2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
+}

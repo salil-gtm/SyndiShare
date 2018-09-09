@@ -1,0 +1,84 @@
+{
+  "manifest": {
+    "name": "any-observable",
+    "version": "0.2.0",
+    "description": "Support any Observable library and polyfill",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/any-observable.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js",
+      "implementation.js",
+      "loader.js",
+      "register.js",
+      "register-shim.js",
+      "register"
+    ],
+    "keywords": [
+      "observable",
+      "observables",
+      "support",
+      "polyfill",
+      "any",
+      "rxjs"
+    ],
+    "devDependencies": {
+      "arrify": "^1.0.1",
+      "ava": "*",
+      "browserify": "^13.0.0",
+      "execa": "^0.4.0",
+      "karma": "^1.1.0",
+      "karma-browserify": "^5.0.4",
+      "karma-chrome-launcher": "^1.0.1",
+      "karma-mocha": "^1.0.1",
+      "karma-phantomjs-launcher": "^1.0.0",
+      "mocha": "^2.4.5",
+      "phantomjs-prebuilt": "^2.1.7",
+      "rxjs": "^5.0.0-beta.9",
+      "watchify": "^3.7.0",
+      "xo": "*",
+      "zen-observable": "^0.3.0"
+    },
+    "browser": {
+      "./register.js": "./register-shim.js"
+    },
+    "xo": {
+      "overrides": [
+        {
+          "files": "browser/tests/**",
+          "envs": [
+            "mocha"
+          ]
+        }
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-any-observable-0.2.0-c67870058003579009083f54ac0abafb5c33d242/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# any-observable [![Build Status](https://travis-ci.org/sindresorhus/any-observable.svg?branch=master)](https://travis-ci.org/sindresorhus/any-observable)\n\n> Support any [Observable](https://github.com/zenparsing/es-observable) library and polyfill\n\nLike [`any-promise`](https://github.com/kevinbeaty/any-promise). *(Docs are lacking here, so refer to those docs for now)*\n\n\n## Install\n\n```\n$ npm install --save any-observable\n```\n\nYou must also install the Observable library you want:\n\n```\n$ npm install --save zen-observable\n```\n\n\n## Usage\n\n```js\nconst Observable = require('any-observable'); // using `zen-observable` since it's installed\n\nObservable.of(1, 2).forEach(x => console.log(x));\n//=> 1\n//=> 2\n```\n\n## Registration Shortcuts\n\nThis adds the following shortcut registrations:\n\n- `rxjs-min`: Bare bones [RxJs](https://github.com/ReactiveX/rxjs) Observable implementation. See the [RxJs Installation Instructions](http://reactivex.io/rxjs/manual/installation.html) for details on patching additional methods into that implementation.\n- `rxjs`: Same as `rxjs-min`, but adds the somewhat standard `Observable.of` and `Observable.from`.\n- `rxjs-all`: The kitchen sink approach to Observables.\n- `zen`: The [`zen-observable`](https://github.com/zenparsing/zen-observable) implementation.\n\nShortcut registration can be done as follows:\n\n```js\nimport 'any-observable/register/zen';\n```\n\nIt's especially handy for more recent versions of Node.js (and many test runners), that offer a `--require` flag:\n\n```\n$ ava --require=any-observable/register/zen test.js\n```\n\n\n## Related\n\n- [is-observable](https://github.com/sindresorhus/is-observable) - Check if a value is an Observable\n- [observable-to-promise](https://github.com/sindresorhus/observable-to-promise) - Convert an Observable to a Promise\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nany-promise Copyright (C) 2014-2016 Kevin Beaty\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/any-observable/-/any-observable-0.2.0.tgz#c67870058003579009083f54ac0abafb5c33d242",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/any-observable/-/any-observable-0.2.0.tgz",
+    "hash": "c67870058003579009083f54ac0abafb5c33d242",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c67870058003579009083f54ac0abafb5c33d242"
+}

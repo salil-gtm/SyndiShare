@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "name": "cli-spinners",
+    "version": "0.1.2",
+    "description": "Spinners for use in the terminal",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/cli-spinners.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js",
+      "spinners.json"
+    ],
+    "keywords": [
+      "cli",
+      "spinner",
+      "spinners",
+      "terminal",
+      "term",
+      "console",
+      "ascii",
+      "unicode",
+      "loading",
+      "indicator",
+      "progress",
+      "busy",
+      "wait",
+      "idle",
+      "json"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "log-update": "^1.0.2",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-cli-spinners-0.1.2-bb764d88e185fb9e1e6a2a1f19772318f605e31c/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# cli-spinners [![Build Status](https://travis-ci.org/sindresorhus/cli-spinners.svg?branch=master)](https://travis-ci.org/sindresorhus/cli-spinners)\n\n> 50+ spinners for use in the terminal\n\n![](screenshot.gif)\n\nThe list of spinners is just a [JSON file](spinners.json) and can be used wherever.\n\nYou probably want to use one of these spinners through the [`ora`](https://github.com/sindresorhus/ora) module.\n\n\n## Install\n\n```\n$ npm install --save cli-spinners\n```\n\n\n## Usage\n\n```js\nconst cliSpinners = require('cli-spinners');\n\nconsole.log(cliSpinners.dots);\n/*\n{\n\tinterval: 80,\n\tframes: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']\n}\n*/\n```\n\n\n## API\n\nEach spinner comes with a recommended `interval` and an array of `frames`.\n\n[See the spinners.](spinners.json)\n\n\n## Related\n\n- [ora](https://github.com/sindresorhus/ora) - Elegant terminal spinner\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-0.1.2.tgz#bb764d88e185fb9e1e6a2a1f19772318f605e31c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-0.1.2.tgz",
+    "hash": "bb764d88e185fb9e1e6a2a1f19772318f605e31c",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "bb764d88e185fb9e1e6a2a1f19772318f605e31c"
+}

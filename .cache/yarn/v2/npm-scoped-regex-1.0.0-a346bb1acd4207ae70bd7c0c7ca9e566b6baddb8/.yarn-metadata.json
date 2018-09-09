@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "scoped-regex",
+    "version": "1.0.0",
+    "description": "Regular expression for matching scoped npm package names",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/scoped-regex.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "scoped",
+      "npm",
+      "package",
+      "name",
+      "regex",
+      "regexp",
+      "regular",
+      "expression"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-scoped-regex-1.0.0-a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# scoped-regex [![Build Status](https://travis-ci.org/sindresorhus/scoped-regex.svg?branch=master)](https://travis-ci.org/sindresorhus/scoped-regex)\n\n> Regular expression for matching [scoped npm package names](https://docs.npmjs.com/misc/scope)\n\n\n## Install\n\n```\n$ npm install --save scoped-regex\n```\n\n\n## Usage\n\n```js\nconst scopedRegex = require('scoped-regex');\n\nscopedRegex({exact: true}).test('@sindresorhus/df');\n//=> true\n\n'foo @sindresorhus/df bar'.match(scopedRegex());\n//=> ['@sindresorhus/df']\n```\n\n\n## API\n\n### scopedRegex([options])\n\nReturns a `RegExp` for matching scoped package names.\n\n#### options.exact\n\nType: `boolean`<br>\nDefault: `false` *(Matches any scoped package names in a string)*\n\nOnly match an exact string. Useful with `RegExp#test()` to check if a string is a scoped package name.\n\n\n## Related\n\n- [is-scoped](https://github.com/sindresorhus/is-scoped) - Check if a string is a scoped npm package name\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/scoped-regex/-/scoped-regex-1.0.0.tgz#a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/scoped-regex/-/scoped-regex-1.0.0.tgz",
+    "hash": "a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8"
+}

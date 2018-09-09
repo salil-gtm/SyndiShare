@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "name": "node-dir",
+    "version": "0.1.8",
+    "description": "asynchronous file and directory operations for Node.js",
+    "main": "index",
+    "homepage": "https://github.com/fshost",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/fshost/node-dir"
+    },
+    "author": {
+      "name": "Nathan Cartwright",
+      "email": "fshost@yahoo.com",
+      "url": "https://github.com/fshost"
+    },
+    "scripts": {
+      "test": "./node_modules/.bin/mocha --reporter spec"
+    },
+    "engines": {
+      "node": ">= 0.10.5"
+    },
+    "licenses": [
+      "MIT"
+    ],
+    "keywords": [
+      "node-dir",
+      "directory",
+      "dir",
+      "subdir",
+      "file",
+      "asynchronous",
+      "Node.js",
+      "fs"
+    ],
+    "devDependencies": {
+      "mocha": "~1.13.0",
+      "should": "~2.0.2"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-node-dir-0.1.8-55fb8deb699070707fb67f91a460f0448294c77d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "[![Build Status](https://secure.travis-ci.org/fshost/node-dir.png)](http://travis-ci.org/fshost/node-dir)\n\n# node-dir\nA lightweight Node.js module with methods for some common directory and file operations, including asynchronous, non-blocking methods for recursively getting an array of files, subdirectories, or both, and methods for recursively, sequentially reading and processing the contents of files in a directory and its subdirectories, with several options available for added flexibility if needed.\n\n#### installation\n\n    npm install node-dir\n\n#### methods\nFor the sake of brevity, assume that the following line of code precedes all of the examples.\n\n```javascript\nvar dir = require('node-dir');\n```\n\n#### readFiles( dir, [options], fileCallback, [finishedCallback] )\nSequentially read the content of each file in a directory, passing the contents to a callback, optionally calling a finished callback when complete.  The options and finishedCallback arguments are not required.\n\nValid options are:\n- encoding: file encoding (defaults to 'utf8')\n- exclude: a regex pattern or array to specify filenames to ignore\n- excludeDir: a regex pattern or array to specify directories to ignore\n- match: a regex pattern or array to specify filenames to operate on\n- matchDir: a regex pattern or array to specify directories to recurse \n- recursive: whether to recurse subdirectories when reading files (defaults to true)\n- reverse: sort files in each directory in descending order\n- shortName: whether to aggregate only the base filename rather than the full filepath\n- sort: sort files in each directory in ascending order (defaults to true)\n\nA reverse sort can also be achieved by setting the sort option to 'reverse', 'desc', or 'descending' string value.\n\nexamples\n\n```javascript\n// display contents of files in this script's directory\ndir.readFiles(__dirname,\n    function(err, content, next) {\n        if (err) throw err;\n        console.log('content:', content);\n        next();\n    },\n    function(err, files){\n        if (err) throw err;\n        console.log('finished reading files:', files);\n    });\n\n// match only filenames with a .txt extension and that don't start with a `.´\ndir.readFiles(__dirname, {\n    match: /.txt$/,\n    exclude: /^\\./\n    }, function(err, content, next) {\n        if (err) throw err;\n        console.log('content:', content);\n        next();\n    },\n    function(err, files){\n        if (err) throw err;\n        console.log('finished reading files:',files);\n    });\n\n// exclude an array of subdirectory names\ndir.readFiles(__dirname, {\n    exclude: ['node_modules', 'test']\n    }, function(err, content, next) {\n        if (err) throw err;\n        console.log('content:', content);\n        next();\n    },\n    function(err, files){\n        if (err) throw err;\n        console.log('finished reading files:',files);\n    });\n\n\n// the callback for each file can optionally have a filename argument as its 3rd parameter\n// and the finishedCallback argument is optional, e.g.\ndir.readFiles(__dirname, function(err, content, filename, next) {\n        console.log('processing content of file', filename);\n        next();\n    });\n```\n\n        \n#### files( dir, callback )\nAsynchronously iterate the files of a directory and its subdirectories and pass an array of file paths to a callback.\n    \n```javascript\ndir.files(__dirname, function(err, files) {\n    if (err) throw err;\n    console.log(files);\n});\n```\n\nNote that for the files and subdirs the object returned is an array, and thus all of the standard array methods are available for use in your callback for operations like filters or sorting. Some quick examples:\n\n```javascript\ndir.files(__dirname, function(err, files) {\n    if (err) throw err;\n    // sort ascending\n    files.sort();\n    // sort descending\n    files.reverse();\n    // include only certain filenames\n    files = files.filter(function (file) {\n       return ['allowed', 'file', 'names'].indexOf(file) > -1;\n    });\n    // exclude some filenames\n    files = files.filter(function (file) {\n        return ['exclude', 'these', 'files'].indexOf(file) === -1;\n    });\n});\n```\n\nAlso note that if you need to work with the contents of the files asynchronously, please use the readFiles method.  The files and subdirs methods are for getting a list of the files or subdirs in a directory as an array.\n        \n#### subdirs( dir, callback )\nAsynchronously iterate the subdirectories of a directory and its subdirectories and pass an array of directory paths to a callback.\n\n```javascript\ndir.subdirs(__dirname, function(err, subdirs) {\n    if (err) throw err;\n    console.log(subdirs);\n});\n```\n\n#### paths(dir, [combine], callback )\nAsynchronously iterate the subdirectories of a directory and its subdirectories and pass an array of both file and directory paths to a callback.\n\nSeparated into two distinct arrays (paths.files and paths.dirs)\n\n```javascript\ndir.paths(__dirname, function(err, paths) {\n    if (err) throw err;\n    console.log('files:\\n',paths.files);\n    console.log('subdirs:\\n', paths.dirs);\n});\n```\n\n\nCombined in a single array (convenience method for concatenation of the above)\n\n```javascript\ndir.paths(__dirname, true, function(err, paths) {\n    if (err) throw err;\n    console.log('paths:\\n',paths);\n});\n```\n\n\n## License\nMIT licensed (See LICENSE.txt)\n",
+    "license": "MIT",
+    "licenseText": "(The MIT License)\n\nCopyright (c) 2012 Nathan Cartwright <fshost@yahoo.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.8.tgz#55fb8deb699070707fb67f91a460f0448294c77d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.8.tgz",
+    "hash": "55fb8deb699070707fb67f91a460f0448294c77d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "55fb8deb699070707fb67f91a460f0448294c77d"
+}

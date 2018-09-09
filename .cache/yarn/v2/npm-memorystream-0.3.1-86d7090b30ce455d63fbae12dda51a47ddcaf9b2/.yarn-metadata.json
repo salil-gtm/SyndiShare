@@ -1,0 +1,67 @@
+{
+  "manifest": {
+    "name": "memorystream",
+    "description": "This is lightweight memory stream module for node.js.",
+    "version": "0.3.1",
+    "keywords": [
+      "memory",
+      "test",
+      "stream",
+      "tools",
+      "streams",
+      "buffer"
+    ],
+    "scripts": {
+      "test": "grunt"
+    },
+    "devDependencies": {
+      "expect.js": "~0.2.0",
+      "mocha": "~1.20.0",
+      "grunt": "~0.4",
+      "grunt-cli": "~0.1.13",
+      "grunt-mocha-test": "~0.12.2",
+      "grunt-contrib-jshint": "~0.10.0",
+      "q": "~1.0.1"
+    },
+    "author": {
+      "name": "Dmitry Nizovtsev",
+      "url": "https://github.com/JSBizon"
+    },
+    "contributors": [
+      {
+        "name": "Dmitry Nizovtsev",
+        "email": "dmitryp3@gmail.com"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/JSBizon/node-memorystream.git"
+    },
+    "homepage": "https://github.com/JSBizon/node-memorystream",
+    "engines": {
+      "node": ">= 0.10.0"
+    },
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "http://github.com/JSBizon/node-memorystream/raw/master/LICENSE"
+      }
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-memorystream-0.3.1-86d7090b30ce455d63fbae12dda51a47ddcaf9b2/package.json",
+    "readmeFilename": "README.md",
+    "readme": "[![Build Status](https://travis-ci.org/JSBizon/node-memorystream.svg?branch=master)](https://travis-ci.org/JSBizon/node-memorystream)\n\n# Introduction\nnode-memorystream - this module allow create streams in memory. It can be used for emulating file streams, filtering/mutating data between one stream and another, buffering incoming data, being the gap between two data/network streams of variable rates, etc. MemoryStream support read/write states or only read state or only write state. The API is meant to follow node's Stream implementation.\nModule supports streams for node > 0.10 now.\n\n\nOriginal module is here git://github.com/ollym/memstream.git was remade and improved. \n\n## Installation\nIf you have npm installed, you can simply type:\n\n\tnpm install memorystream\n\t\nOr you can clone this repository using the git command:\n\n\tgit clone git://github.com/JSBizon/node-memorystream.git\n\t\n## Usage\nSome examples how to use memorystream module.\n\n#### Basic I/O Operation\nIn this example I illustrate the basic I/O operations of the memory stream.\n\n\tvar MemoryStream = require('memorystream');\n\tvar memStream = new MemoryStream(['Hello',' ']);\n\t\n\tvar data = '';\n\tmemStream.on('data', function(chunk) {\n\t\tdata += chunk.toString();\n\t});\n\t\n\tmemStream.write('World');\n\t\n\tmemStream.on('end', function() {\n\t\t// outputs 'Hello World!'\n\t\tconsole.log(data);\n\t});\n\tmemStream.end('!');\n\t\n#### Piping\nIn this example I'm piping all data from the memory stream to the process's stdout stream.\n\n\tvar MemoryStream = require('memorystream');\n\tvar memStream = new MemoryStream();\n\tmemStream.pipe(process.stdout, { end: false });\n\t\n\tmemStream.write('Hello World!');\n\t\nIn this example I'm piping all data from the response stream to the memory stream.\n\n\tvar http = require('http'),\n\t\tMemoryStream = require('memorystream');\n\n\tvar options = {\n\t\thost: 'google.com'\n\t};\n\tvar memStream = new MemoryStream(null, {\n\t\treadable : false\n\t});\n\n\tvar req = http.get(options, function(res) {\n\t\tres.pipe(memStream);\n\t\tres.on('end', function() {\n\t\t\tconsole.log(memStream.toString());\n\t\t});\n\t});\n\n#### Delayed Response\nIn the example below, we first pause the stream before writing the data to it. The stream is then resumed after 1 second, and the data is written to the console.\n\n\tvar MemoryStream = require('memorystream');\n\n\tvar memStream = new MemoryStream('Hello');\n\tvar data = '';\n\tmemStream.on('data', function(chunk) {\n\t\tdata += chunk;\n\t});\n\t\n\tmemStream.pause();\n\tmemStream.write('World!');\n\t\n\tsetTimeout(function() {\n\t\tmemStream.resume();\n\t}, 1000);\n\n## Documentation\nThe memory stream adopts all the same methods and events as node's Stream implementation.\nDocumentation is [available here](http://github.com/JSBizon/node-memorystream/wiki/API/ \"Documentation\").\n\n\n\n\t",
+    "license": "MIT",
+    "licenseText": "Copyright (C) 2011 Dmitry Nizovtsev\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/memorystream/-/memorystream-0.3.1.tgz#86d7090b30ce455d63fbae12dda51a47ddcaf9b2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/memorystream/-/memorystream-0.3.1.tgz",
+    "hash": "86d7090b30ce455d63fbae12dda51a47ddcaf9b2",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "86d7090b30ce455d63fbae12dda51a47ddcaf9b2"
+}

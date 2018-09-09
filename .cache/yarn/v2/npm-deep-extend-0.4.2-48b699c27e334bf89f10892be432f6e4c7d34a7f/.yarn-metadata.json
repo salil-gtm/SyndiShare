@@ -1,0 +1,81 @@
+{
+  "manifest": {
+    "name": "deep-extend",
+    "description": "Recursive object extending",
+    "license": "MIT",
+    "version": "0.4.2",
+    "homepage": "https://github.com/unclechu/node-deep-extend",
+    "keywords": [
+      "deep-extend",
+      "extend",
+      "deep",
+      "recursive",
+      "xtend",
+      "clone",
+      "merge",
+      "json"
+    ],
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "https://raw.githubusercontent.com/unclechu/node-deep-extend/master/LICENSE"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/unclechu/node-deep-extend.git"
+    },
+    "author": {
+      "name": "Viacheslav Lotsmanov",
+      "email": "lotsmanov89@gmail.com"
+    },
+    "bugs": {
+      "url": "https://github.com/unclechu/node-deep-extend/issues"
+    },
+    "contributors": [
+      {
+        "name": "Romain Prieto",
+        "url": "https://github.com/rprieto"
+      },
+      {
+        "name": "Max Maximov",
+        "url": "https://github.com/maxmaximov"
+      },
+      {
+        "name": "Marshall Bowers",
+        "url": "https://github.com/maxdeviant"
+      }
+    ],
+    "main": "lib/deep-extend.js",
+    "engines": {
+      "node": ">=0.12.0",
+      "iojs": ">=1.0.0"
+    },
+    "scripts": {
+      "test": "./node_modules/.bin/mocha"
+    },
+    "devDependencies": {
+      "mocha": "^2.2.1",
+      "should": "^5.2.0"
+    },
+    "files": [
+      "lib/deep-extend.js",
+      "index.js"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-deep-extend-0.4.2-48b699c27e334bf89f10892be432f6e4c7d34a7f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "Deep Extend\n===========\n\nRecursive object extending.\n\n[![NPM](https://nodei.co/npm/deep-extend.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/deep-extend/)\n[![NPM](https://nodei.co/npm-dl/deep-extend.png?height=3)](https://nodei.co/npm/deep-extend/)\n\nInstall\n-------\n\n```bash\n$ npm install deep-extend\n```\n\nUsage\n-----\n\n```javascript\nvar deepExtend = require('deep-extend');\nvar obj1 = {\n  a: 1,\n  b: 2,\n  d: {\n    a: 1,\n    b: [],\n    c: { test1: 123, test2: 321 }\n  },\n  f: 5,\n  g: 123,\n  i: 321,\n  j: [1, 2]\n};\nvar obj2 = {\n  b: 3,\n  c: 5,\n  d: {\n    b: { first: 'one', second: 'two' },\n    c: { test2: 222 }\n  },\n  e: { one: 1, two: 2 },\n  f: [],\n  g: (void 0),\n  h: /abc/g,\n  i: null,\n  j: [3, 4]\n};\n\ndeepExtend(obj1, obj2);\n\nconsole.log(obj1);\n/*\n{ a: 1,\n  b: 3,\n  d:\n   { a: 1,\n     b: { first: 'one', second: 'two' },\n     c: { test1: 123, test2: 222 } },\n  f: [],\n  g: undefined,\n  c: 5,\n  e: { one: 1, two: 2 },\n  h: /abc/g,\n  i: null,\n  j: [3, 4] }\n*/\n```\n\nUnit testing\n------------\n\n```bash\n$ npm test\n```\n\nChangelog\n---------\n\n[CHANGELOG.md](./CHANGELOG.md)\n\nAny issues?\n-----------\n\nPlease, report about issues\n[here](https://github.com/unclechu/node-deep-extend/issues).\n\nLicense\n-------\n\n[MIT](./LICENSE)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2013-2015, Viacheslav Lotsmanov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz",
+    "hash": "48b699c27e334bf89f10892be432f6e4c7d34a7f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "48b699c27e334bf89f10892be432f6e4c7d34a7f"
+}

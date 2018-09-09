@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "ethereumjs-account",
+    "version": "2.0.4",
+    "description": "Encoding, decoding and validation of Ethereum's Account schema",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ethereumjs/ethereumjs-account.git"
+    },
+    "scripts": {
+      "coverage": "istanbul cover ./test/index.js",
+      "coveralls": "npm run coverage && coveralls <coverage/lcov.info",
+      "lint": "standard",
+      "test": "tape ./test/index.js"
+    },
+    "keywords": [
+      "ethereum",
+      "account"
+    ],
+    "author": {
+      "name": "mjbecze",
+      "url": "mjbecze@gmail.com"
+    },
+    "license": "MPL-2.0",
+    "bugs": {
+      "url": "https://github.com/ethereumjs/ethereumjs-account/issues"
+    },
+    "homepage": "https://github.com/ethereumjs/ethereumjs-account#readme",
+    "dependencies": {
+      "ethereumjs-util": "^4.0.1",
+      "rlp": "^2.0.0"
+    },
+    "devDependencies": {
+      "coveralls": "^2.11.4",
+      "istanbul": "^0.4.1",
+      "standard": "^5.4.1",
+      "tape": "^4.0.3"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-ethereumjs-account-2.0.4-f8c30231bcb707f4514d8a052c1f9da103624d47/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# SYNOPSIS\n\n[![NPM Package](https://img.shields.io/npm/v/ethereumjs-account.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-account)\n[![Build Status](https://img.shields.io/travis/ethereumjs/ethereumjs-account.svg?branch=master&style=flat-square)](https://travis-ci.org/ethereumjs/ethereumjs-account)\n[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-account.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-account)\n[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode\n\n [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/ethereumjs-lib?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or #ethereumjs on freenode\n\nImplements schema and functions relating to accounts stored ethereum's state Trie   \nNOTE: this is different from [ethereumjs-accounts](https://github.com/SilentCicero/ethereumjs-accounts) which should be used if you want to key management and web3 sugar.\n\n# INSTALL\n`npm install ethereumjs-account`\n\n# BROWSER\nThis module work with `browserify`\n\n# API\n - [`new Account([data])`](#new-accountdata)\n  - [`Account` Properties](#account-properties)\n  - [`Account` Methods](#account-methods)\n    - [`account.isEmpty()`](#accountisempty)\n    - [`account.isContract()`](#accountiscontract)\n    - [`account.serialize()`](#accountserialize)\n    - [`account.toJSON()`](#accounttojson)\n    - [`account.getCode(trie, cb)`](#accountgetcodetrie-cb)\n    - [`account.setCode(trie, code, cb)`](#accountsetcodetrie-code-cb)\n    - [`account.getStorage(trie, key, cb)`](#accountgetstoragetrie-key-cb)\n    - [`account.setStorage(trie, key, val, cb)`](#accountsetstoragetrie-key-val-cb)\n\n### `new Account([data])`\nCreates a new account object\n- `data` - an account can be initialized with either a `buffer` containing the RLP serialized account.\n Or an `Array` of buffers relating to each of the account Properties, listed in order below.  For example:\n```javascript\nvar raw = [ \n  '0x02', //nonce\n  '0x0384', //balance\n  '0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421', //stateRoot\n  '0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470'  //codeHash\n  ];\n\nvar account = new Account(raw);\n```\n\nOr lastly an `Object` containing the Properties of the account:\n\n```javascript\nvar raw = {\n  nonce: '',\n  balance: '0x03e7',\n  stateRoot: '0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421',\n  codeHash: '0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470'\n};\n\nvar account = new Account(raw);\n```\nFor `Object` and `Array` each of the elements can either be a `Buffer`, hex `String`, `Number`, or an object with a `toBuffer` method such as `Bignum`.\n\n### `Account` Properties\n- `nonce` - The account's nonce.\n- `balance`  - The account's balance in wei.\n- `stateRoot` - The stateRoot for the storage of the contract.\n- `codeHash` - The hash of the code of the contract.\n\n### `Account` Methods\n\n#### `account.isEmpty()`\nReturns a `Boolean` determining if the account is empty.\n\n#### `account.isContract()`\nReturns a `Boolean` deteremining if the account is a contract.\n\n#### `account.serialize()`\nReturns the RLP serialization of the account as a `Buffer`.\n\n#### `account.toJSON([object])`\nReturns the account as JSON.\n- `object` - A `Boolean` that defaults to false. If `object` is true then this will return an `Object`, else it will return an `Array`.\n\n#### `account.getCode(trie, cb)`\nFetches the code from the trie.\n- `trie` - The [trie](https://github.com/ethereumjs/merkle-patricia-tree) storing the accounts.\n- `cb` - The callback.\n\n#### `account.setCode(trie, code, cb)`\nStores the code in the trie.\n- `trie` - The [trie](https://github.com/ethereumjs/merkle-patricia-tree) storing the accounts.\n- `code` - A `Buffer`.\n- `cb` - The callback.\n\n#### `account.getStorage(trie, key, cb)`\nFetches `key` from the account's storage.\n\n#### `account.setStorage(trie, key, val, cb)`\nStores a `val` at the `key` in the contract's storage.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ethereumjs-account/-/ethereumjs-account-2.0.4.tgz#f8c30231bcb707f4514d8a052c1f9da103624d47",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ethereumjs-account/-/ethereumjs-account-2.0.4.tgz",
+    "hash": "f8c30231bcb707f4514d8a052c1f9da103624d47",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f8c30231bcb707f4514d8a052c1f9da103624d47"
+}

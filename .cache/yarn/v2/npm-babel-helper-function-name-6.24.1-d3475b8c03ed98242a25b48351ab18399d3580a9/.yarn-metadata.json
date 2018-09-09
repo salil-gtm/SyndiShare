@@ -1,0 +1,34 @@
+{
+  "manifest": {
+    "name": "babel-helper-function-name",
+    "version": "6.24.1",
+    "description": "Helper function to change the property 'name' of every function",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-function-name"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-types": "^6.24.1",
+      "babel-traverse": "^6.24.1",
+      "babel-helper-get-function-arity": "^6.24.1",
+      "babel-template": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-function-name-6.24.1-d3475b8c03ed98242a25b48351ab18399d3580a9/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-function-name\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-function-name/-/babel-helper-function-name-6.24.1.tgz#d3475b8c03ed98242a25b48351ab18399d3580a9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-function-name/-/babel-helper-function-name-6.24.1.tgz",
+    "hash": "d3475b8c03ed98242a25b48351ab18399d3580a9",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d3475b8c03ed98242a25b48351ab18399d3580a9"
+}

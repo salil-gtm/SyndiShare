@@ -1,0 +1,81 @@
+{
+  "manifest": {
+    "name": "is-date-object",
+    "version": "1.0.1",
+    "author": {
+      "name": "Jordan Harband"
+    },
+    "description": "Is this value a JS Date object? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+      "test": "npm run lint && node --harmony --es-staging test.js && npm run security",
+      "coverage": "covert test.js",
+      "coverage-quiet": "covert test.js --quiet",
+      "lint": "npm run jscs && npm run eslint",
+      "jscs": "jscs test.js *.js",
+      "eslint": "eslint test.js *.js",
+      "security": "nsp package"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/ljharb/is-date-object.git"
+    },
+    "keywords": [
+      "Date",
+      "ES6",
+      "toStringTag",
+      "@@toStringTag",
+      "Date object"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "foreach": "^2.0.5",
+      "is": "^3.1.0",
+      "tape": "^4.2.0",
+      "indexof": "^0.0.1",
+      "covert": "^1.1.0",
+      "jscs": "^2.1.1",
+      "nsp": "^1.1.0",
+      "eslint": "^1.5.1",
+      "@ljharb/eslint-config": "^1.2.0",
+      "semver": "^5.0.3"
+    },
+    "testling": {
+      "files": "test.js",
+      "browsers": [
+        "iexplore/6.0..latest",
+        "firefox/3.0..6.0",
+        "firefox/15.0..latest",
+        "firefox/nightly",
+        "chrome/4.0..10.0",
+        "chrome/20.0..latest",
+        "chrome/canary",
+        "opera/10.0..latest",
+        "opera/next",
+        "safari/4.0..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest",
+        "android-browser/4.2"
+      ]
+    },
+    "engines": {
+      "node": ">= 0.4"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-is-date-object-1.0.1-9aa20eb6aeebbff77fbd33e74ca01b33581d3a16/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# is-date-object <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nIs this value a JS Date object? This module works cross-realm/iframe, and despite ES6 @@toStringTag.\n\n## Example\n\n```js\nvar isDate = require('is-date-object');\nvar assert = require('assert');\n\nassert.notOk(isDate(undefined));\nassert.notOk(isDate(null));\nassert.notOk(isDate(false));\nassert.notOk(isDate(true));\nassert.notOk(isDate(42));\nassert.notOk(isDate('foo'));\nassert.notOk(isDate(function () {}));\nassert.notOk(isDate([]));\nassert.notOk(isDate({}));\nassert.notOk(isDate(/a/g));\nassert.notOk(isDate(new RegExp('a', 'g')));\n\nassert.ok(isDate(new Date()));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-date-object\n[2]: http://versionbadg.es/ljharb/is-date-object.svg\n[3]: https://travis-ci.org/ljharb/is-date-object.svg\n[4]: https://travis-ci.org/ljharb/is-date-object\n[5]: https://david-dm.org/ljharb/is-date-object.svg\n[6]: https://david-dm.org/ljharb/is-date-object\n[7]: https://david-dm.org/ljharb/is-date-object/dev-status.svg\n[8]: https://david-dm.org/ljharb/is-date-object#info=devDependencies\n[9]: https://ci.testling.com/ljharb/is-date-object.png\n[10]: https://ci.testling.com/ljharb/is-date-object\n[11]: https://nodei.co/npm/is-date-object.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-date-object.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-date-object.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-date-object\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Jordan Harband\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-date-object/-/is-date-object-1.0.1.tgz#9aa20eb6aeebbff77fbd33e74ca01b33581d3a16",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-date-object/-/is-date-object-1.0.1.tgz",
+    "hash": "9aa20eb6aeebbff77fbd33e74ca01b33581d3a16",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9aa20eb6aeebbff77fbd33e74ca01b33581d3a16"
+}

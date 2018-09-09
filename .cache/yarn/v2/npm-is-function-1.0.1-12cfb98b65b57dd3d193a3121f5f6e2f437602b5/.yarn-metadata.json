@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "is-function",
+    "version": "1.0.1",
+    "description": "is that thing a function? Use this module to find out",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+      "tape": "~2.3.2"
+    },
+    "scripts": {
+      "test": "tape test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/grncdr/js-is-function.git"
+    },
+    "homepage": "https://github.com/grncdr/js-is-function",
+    "keywords": [
+      "polyfill",
+      "is-function",
+      "ie6"
+    ],
+    "author": {
+      "name": "Stephen Sugden",
+      "email": "me@stephensugden.com"
+    },
+    "license": "MIT",
+    "testling": {
+      "files": "test.js",
+      "browsers": [
+        "iexplore/6.0..latest",
+        "firefox/3.0..6.0",
+        "firefox/15.0..latest",
+        "firefox/nightly",
+        "chrome/4.0..10.0",
+        "chrome/20.0..latest",
+        "chrome/canary",
+        "opera/10.0..latest",
+        "opera/next",
+        "safari/4.0..latest",
+        "ipad/6.0..latest",
+        "iphone/6.0..latest",
+        "android-browser/4.2"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-is-function-1.0.1-12cfb98b65b57dd3d193a3121f5f6e2f437602b5/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# is-function\n\n[![browser support](https://ci.testling.com/grncdr/js-is-function.png)](https://ci.testling.com/grncdr/js-is-function)\n\nIs that thing a function? Use this module to find out.\n\n## API\n\n### module.exports = function isFunction(fn) -> Boolean\n\nReturn `true` if `fn` is a function, otherwise `false`.\n\n## Why not typeof fn === 'function'\n\nBecause certain old browsers misreport the type of `RegExp` objects as functions.\n\n## Acknowledgements\n\nI stole this from https://github.com/ljharb/object-keys\n\n## License\n\nMIT\n",
+    "licenseText": "Copyright (c) 2013 Stephen Sugden\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-function/-/is-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-function/-/is-function-1.0.1.tgz",
+    "hash": "12cfb98b65b57dd3d193a3121f5f6e2f437602b5",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
+}

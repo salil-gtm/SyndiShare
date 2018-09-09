@@ -1,0 +1,70 @@
+{
+  "manifest": {
+    "name": "into-stream",
+    "version": "3.1.0",
+    "description": "Convert a buffer/string/array/object/iterable/promise into a stream",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/into-stream.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "stream",
+      "buffer",
+      "string",
+      "object",
+      "array",
+      "iterable",
+      "promise",
+      "promises",
+      "from",
+      "into",
+      "to",
+      "transform",
+      "convert",
+      "readable",
+      "pull",
+      "gulpfriendly",
+      "value",
+      "str"
+    ],
+    "dependencies": {
+      "from2": "^2.1.1",
+      "p-is-promise": "^1.1.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "get-stream": "^3.0.0",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-into-stream-3.1.0-96fb0a936c12babd6ff1752a17d05616abd094c6/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# into-stream [![Build Status](https://travis-ci.org/sindresorhus/into-stream.svg?branch=master)](https://travis-ci.org/sindresorhus/into-stream)\n\n> Convert a buffer/string/array/object/iterable/promise into a stream\n\nCorrectly chunks up the input and handles backpressure.\n\n\n## Install\n\n```\n$ npm install --save into-stream\n```\n\n\n## Usage\n\n```js\nconst intoStream = require('into-stream');\n\nintoStream('unicorn').pipe(process.stdout);\n//=> 'unicorn'\n```\n\n\n## API\n\n### intoStream(input)\n\nType: `Buffer` `string` `Iterable<Buffer|string>` `Promise`<br>\nReturns: [Readable stream](https://nodejs.org/api/stream.html#stream_class_stream_readable)\n\nAdheres to the requested chunk size, except for `array` where each element will be a chunk.\n\n### intoStream.obj(input)\n\nType: `Object`, `Iterable<Object>` `Promise`<br>\nReturns: [Readable object stream](https://nodejs.org/api/stream.html#stream_object_mode)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz",
+    "hash": "96fb0a936c12babd6ff1752a17d05616abd094c6",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "96fb0a936c12babd6ff1752a17d05616abd094c6"
+}

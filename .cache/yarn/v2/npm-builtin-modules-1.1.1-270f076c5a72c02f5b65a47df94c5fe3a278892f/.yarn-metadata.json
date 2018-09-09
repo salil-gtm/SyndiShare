@@ -1,0 +1,60 @@
+{
+  "manifest": {
+    "name": "builtin-modules",
+    "version": "1.1.1",
+    "description": "List of the Node.js builtin modules",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/builtin-modules.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava",
+      "make": "node make.js"
+    },
+    "files": [
+      "index.js",
+      "static.js",
+      "builtin-modules.json"
+    ],
+    "keywords": [
+      "builtin",
+      "built-in",
+      "builtins",
+      "node",
+      "modules",
+      "core",
+      "bundled",
+      "list",
+      "array",
+      "names"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-builtin-modules-1.1.1-270f076c5a72c02f5b65a47df94c5fe3a278892f/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# builtin-modules [![Build Status](https://travis-ci.org/sindresorhus/builtin-modules.svg?branch=master)](https://travis-ci.org/sindresorhus/builtin-modules)\n\n> List of the Node.js builtin modules\n\nThe list is just a [JSON file](builtin-modules.json) and can be used wherever.\n\n\n## Install\n\n```\n$ npm install --save builtin-modules\n```\n\n\n## Usage\n\n```js\nvar builtinModules = require('builtin-modules');\n\nconsole.log(builinModules);\n//=> ['assert', 'buffer', ...]\n```\n\n\n## API\n\nReturns an array of builtin modules fetched from the running Node.js version.\n\n### Static list\n\nThis module also comes bundled with a static array of builtin modules generated from the latest Node.js version. You can get it with `require('builtin-modules/static');`\n\n\n## Related\n\n- [is-builtin-module](https://github.com/sindresorhus/is-builtin-module) - Check if a string matches the name of a Node.js builtin module\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz",
+    "hash": "270f076c5a72c02f5b65a47df94c5fe3a278892f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "270f076c5a72c02f5b65a47df94c5fe3a278892f"
+}

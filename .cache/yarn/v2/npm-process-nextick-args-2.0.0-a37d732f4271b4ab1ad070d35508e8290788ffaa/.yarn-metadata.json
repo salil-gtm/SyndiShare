@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "name": "process-nextick-args",
+    "version": "2.0.0",
+    "description": "process.nextTick but always with args",
+    "main": "index.js",
+    "files": [
+      "index.js"
+    ],
+    "scripts": {
+      "test": "node test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/calvinmetcalf/process-nextick-args.git"
+    },
+    "author": {},
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/calvinmetcalf/process-nextick-args/issues"
+    },
+    "homepage": "https://github.com/calvinmetcalf/process-nextick-args",
+    "devDependencies": {
+      "tap": "~0.2.6"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-process-nextick-args-2.0.0-a37d732f4271b4ab1ad070d35508e8290788ffaa/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "process-nextick-args\n=====\n\n[![Build Status](https://travis-ci.org/calvinmetcalf/process-nextick-args.svg?branch=master)](https://travis-ci.org/calvinmetcalf/process-nextick-args)\n\n```bash\nnpm install --save process-nextick-args\n```\n\nAlways be able to pass arguments to process.nextTick, no matter the platform\n\n```js\nvar pna = require('process-nextick-args');\n\npna.nextTick(function (a, b, c) {\n  console.log(a, b, c);\n}, 'step', 3,  'profit');\n```\n",
+    "licenseText": "# Copyright (c) 2015 Calvin Metcalf\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\n**THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.**\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz",
+    "hash": "a37d732f4271b4ab1ad070d35508e8290788ffaa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a37d732f4271b4ab1ad070d35508e8290788ffaa"
+}

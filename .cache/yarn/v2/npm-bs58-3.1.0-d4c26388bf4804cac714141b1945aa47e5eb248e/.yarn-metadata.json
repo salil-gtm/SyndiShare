@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "name": "bs58",
+    "version": "3.1.0",
+    "description": "Base 58 encoding / decoding",
+    "keywords": [
+      "base58",
+      "bitcoin",
+      "crypto",
+      "crytography",
+      "decode",
+      "decoding",
+      "encode",
+      "encoding",
+      "litecoin"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+      "mocha": "^2.0.0",
+      "mochify": "^2.1.0",
+      "standard": "^5.1.0"
+    },
+    "repository": {
+      "url": "http://github.com/cryptocoinjs/bs58",
+      "type": "git"
+    },
+    "main": "index.js",
+    "scripts": {
+      "browser-test": "mochify --wd -R spec",
+      "standard": "standard",
+      "test": "npm run standard && npm run unit",
+      "unit": "mocha"
+    },
+    "dependencies": {
+      "base-x": "^1.1.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-bs58-3.1.0-d4c26388bf4804cac714141b1945aa47e5eb248e/package.json",
+    "readmeFilename": "README.md",
+    "readme": "bs58\n====\n\n[![build status](https://secure.travis-ci.org/cryptocoinjs/bs58.png)](http://travis-ci.org/cryptocoinjs/bs58)\n\nJavaScript component to compute base 58 encoding. This encoding is typically used for crypto currencies such as Bitcoin.\n\n**Note:** If you're looking for **base 58 check** encoding, see: [https://github.com/bitcoinjs/bs58check](https://github.com/bitcoinjs/bs58check), which depends upon this library.\n\n\nInstall\n-------\n\n    npm i --save bs58\n\n\nAPI\n---\n\n### encode(input)\n\n`input` must be a [Buffer](http://nodejs.org/api/buffer.html) or an `Array`. It returns a `string`.\n\n**example**:\n\n```js\nvar bs58 = require('bs58')\n\nvar unencodedData = \"003c176e659bea0f29a3e9bf7880c112b1b31b4dc826268187\"\nvar out = bs58.encode(new Buffer(unencodedData, 'hex'))\nconsole.log(out) // => 16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS\n```\n\n\n### decode(input)\n\n`input` must be a base 58 encoded string. Returns an `Array`.\n\n**example**:\n\n```js\nvar bs58 = require('bs58')\n\nvar address = \"16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS\"\nvar out = bs58.decode(address)\nconsole.log(out.toString())\n// => 0,60,23,110,101,155,234,15,41,163,233,191,120,128,193,18,177,179,27,77,200,38,38,129,135\n\n// if using Node.js or browserify\nconsole.log(new Buffer(out).toString('hex'))\n// => 003c176e659bea0f29a3e9bf7880c112b1b31b4dc826268187\n```\n\nHack / Test\n-----------\n\nUses JavaScript standard style. Read more:\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\n\nCredits\n-------\n- [Mike Hearn](https://github.com/mikehearn) for original Java implementation\n- [Stefan Thomas](https://github.com/justmoon) for porting to JavaScript\n- [Stephan Pair](https://github.com/gasteve) for buffer improvements\n- [Daniel Cousens](https://github.com/dcousens) for cleanup and merging improvements from bitcoinjs-lib\n- [Jared Deckard](https://github.com/deckar01) for killing `bigi` as a dependency\n\n\nLicense\n-------\n\nMIT\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/bs58/-/bs58-3.1.0.tgz#d4c26388bf4804cac714141b1945aa47e5eb248e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/bs58/-/bs58-3.1.0.tgz",
+    "hash": "d4c26388bf4804cac714141b1945aa47e5eb248e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d4c26388bf4804cac714141b1945aa47e5eb248e"
+}

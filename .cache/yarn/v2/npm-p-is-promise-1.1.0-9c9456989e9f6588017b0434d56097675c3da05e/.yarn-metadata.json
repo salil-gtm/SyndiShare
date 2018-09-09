@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "p-is-promise",
+    "version": "1.1.0",
+    "description": "Check if something is a promise",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/p-is-promise.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "promise",
+      "is",
+      "detect",
+      "check",
+      "kind",
+      "type",
+      "thenable",
+      "es2015",
+      "async",
+      "await",
+      "promises",
+      "bluebird"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "bluebird": "^3.4.6",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-p-is-promise-1.1.0-9c9456989e9f6588017b0434d56097675c3da05e/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# p-is-promise [![Build Status](https://travis-ci.org/sindresorhus/p-is-promise.svg?branch=master)](https://travis-ci.org/sindresorhus/p-is-promise)\n\n> Check if something is a promise\n\nWhy not [`is-promise`](https://github.com/then/is-promise)? That module [checks for a thenable](https://github.com/then/is-promise/issues/6), not an ES2015 promise. This one is stricter.\n\nYou most likely don't need this. Just pass your value to `Promise.resolve()` and let it handle it.\n\nCan be useful if you need to create a fast path for a synchronous operation.\n\n\n## Install\n\n```\n$ npm install --save p-is-promise\n```\n\n\n## Usage\n\n```js\nconst pIsPromise = require('p-is-promise');\nconst Bluebird = require('bluebird');\n\npIsPromise(Promise.resolve('🦄'));\n//=> true\n\npIsPromise(Bluebird.resolve('🦄'));\n//=> true\n\npIsPromise('🦄');\n//=> false\n```\n\n\n## Related\n\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz",
+    "hash": "9c9456989e9f6588017b0434d56097675c3da05e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9c9456989e9f6588017b0434d56097675c3da05e"
+}

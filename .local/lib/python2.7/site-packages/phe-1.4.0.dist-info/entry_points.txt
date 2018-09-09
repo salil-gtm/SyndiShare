@@ -1,0 +1,3 @@
+[console_scripts]
+pheutil = phe.command_line:cli [cli]
+

@@ -1,0 +1,67 @@
+{
+  "manifest": {
+    "name": "log-update",
+    "version": "1.0.2",
+    "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/log-update.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "log",
+      "logger",
+      "logging",
+      "cli",
+      "terminal",
+      "term",
+      "console",
+      "shell",
+      "update",
+      "refresh",
+      "overwrite",
+      "output",
+      "stdout",
+      "progress",
+      "bar",
+      "animation"
+    ],
+    "dependencies": {
+      "ansi-escapes": "^1.0.0",
+      "cli-cursor": "^1.0.2"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-log-update-1.0.2-19929f64c4093d2d2e7075a1dad8af59c296b8d1/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# log-update [![Build Status](https://travis-ci.org/sindresorhus/log-update.svg?branch=master)](https://travis-ci.org/sindresorhus/log-update)\n\n> Log by overwriting the previous output in the terminal.  \n> Useful for rendering progress bars, animations, etc.\n\n![](screenshot.gif)\n\n\n## Install\n\n```\n$ npm install --save log-update\n```\n\n\n## Usage\n\n```js\nvar logUpdate = require('log-update');\n\nvar i = 0;\nvar frames = ['-', '\\\\', '|', '/'];\n\nsetInterval(function () {\n\tvar frame = frames[i++ % frames.length];\n\tlogUpdate('\\n' + '        ♥♥\\n   ' + frame + ' unicorns ' + frame + '\\n        ♥♥');\n}, 100);\n```\n\n\n## API\n\n### logUpdate(text, ...)\n\nLog to stdout.\n\n### logUpdate.clear()\n\nClear the logged output.\n\n### logUpdate.done()\n\nPersist the logged output.  \nUseful if you want to start a new log session below the current one.\n\n### logUpdate.stderr(text, ...)\n\nLog to stderr.\n\n### logUpdate.stderr.clear()\n### logUpdate.stderr.done()\n\n### logUpdate.create(stream)\n\nGet a `logUpdate` method that logs to the specified stream.\n\n\n## Examples\n\n- [speed-test](https://github.com/sindresorhus/speed-test) - Uses this module to render a spinner\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/log-update/-/log-update-1.0.2.tgz#19929f64c4093d2d2e7075a1dad8af59c296b8d1",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/log-update/-/log-update-1.0.2.tgz",
+    "hash": "19929f64c4093d2d2e7075a1dad8af59c296b8d1",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "19929f64c4093d2d2e7075a1dad8af59c296b8d1"
+}

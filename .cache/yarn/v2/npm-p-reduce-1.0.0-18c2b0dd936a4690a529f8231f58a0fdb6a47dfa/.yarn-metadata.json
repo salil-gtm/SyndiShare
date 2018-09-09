@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "name": "p-reduce",
+    "version": "1.0.0",
+    "description": "Reduce a list of values using promises into a promise for a value",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/p-reduce.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "promise",
+      "reduce",
+      "collection",
+      "iterable",
+      "iterator",
+      "async",
+      "await",
+      "promises",
+      "accumulate",
+      "bluebird"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "delay": "^1.3.1",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-p-reduce-1.0.0-18c2b0dd936a4690a529f8231f58a0fdb6a47dfa/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# p-reduce [![Build Status](https://travis-ci.org/sindresorhus/p-reduce.svg?branch=master)](https://travis-ci.org/sindresorhus/p-reduce)\n\n> Reduce a list of values using promises into a promise for a value\n\nUseful when you need to calculate some accumulated value based on async resources.\n\n\n## Install\n\n```\n$ npm install --save p-reduce\n```\n\n\n## Usage\n\n```js\nconst pReduce = require('p-reduce');\nconst humanInfo = require('human-info'); // not a real module\n\nconst names = [\n\tgetUser('sindresorhus').then(info => info.name),\n\t'Addy Osmani',\n\t'Pascal Hartig',\n\t'Stephen Sawchuk'\n];\n\npReduce(names, (total, name) => {\n\treturn humanInfo(name).then(info => total + info.age);\n}, 0).then(totalAge => {\n\tconsole.log(totalAge);\n\t//=> 125\n});\n```\n\n\n## API\n\n### pReduce(input, reducer, [initialValue])\n\nReturns a `Promise` that is fulfilled when all promises in `input` and ones returned from `reducer` are fulfilled, or rejects if any of the promises reject. The fulfilled value is the result of the reduction.\n\n#### input\n\nType: `Iterable<Promise|any>`\n\nIterated over serially in the `reducer` function.\n\n#### reducer(previousValue, currentValue, index)\n\nType: `Function`\n\nExpected to return a value. If a `Promise` is returned, it's awaited before continuing with the next iteration.\n\n#### initialValue\n\nType: `any`\n\nValue to use as `previousValue` in the first `reducer` invocation.\n\n\n## Related\n\n- [p-each-series](https://github.com/sindresorhus/p-each-series) - Iterate over promises serially\n- [p-map-series](https://github.com/sindresorhus/p-map-series) - Map over promises serially\n- [p-map](https://github.com/sindresorhus/p-map) - Map over promises concurrently\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/p-reduce/-/p-reduce-1.0.0.tgz",
+    "hash": "18c2b0dd936a4690a529f8231f58a0fdb6a47dfa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
+}

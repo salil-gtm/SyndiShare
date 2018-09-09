@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "name": "babel-plugin-transform-flow-strip-types",
+    "version": "6.22.0",
+    "description": "Strip flow type annotations from your output code.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-flow-strip-types"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-plugin-syntax-flow": "^6.18.0"
+    },
+    "devDependencies": {
+      "babel-helper-plugin-test-runner": "^6.22.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-transform-flow-strip-types-6.22.0-84cb672935d43714fdc32bce84568d87441cf7cf/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-transform-flow-strip-types\n\n> Strip all [flow](http://flowtype.org) type annotations and declarations from your output code.\n\n## Example\n\n**In**\n\n```javascript\nfunction foo(one: any, two: number, three?): string {}\n```\n\n**Out**\n\n```javascript\nfunction foo(one, two, three) {}\n```\n\n[Try in REPL](http://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=react&code=function%20foo(one%3A%20any%2C%20two%3A%20number%2C%20three%3F)%3A%20string%20%7B%7D&experimental=false&loose=false&spec=false&playground=false&stage=0\n)\n\n## Installation\n\n```sh\nnpm install --save-dev babel-plugin-transform-flow-strip-types\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"transform-flow-strip-types\"]\n}\n```\n\n### Via CLI\n\n```sh\nbabel --plugins transform-flow-strip-types script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"transform-flow-strip-types\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz#84cb672935d43714fdc32bce84568d87441cf7cf",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz",
+    "hash": "84cb672935d43714fdc32bce84568d87441cf7cf",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "84cb672935d43714fdc32bce84568d87441cf7cf"
+}

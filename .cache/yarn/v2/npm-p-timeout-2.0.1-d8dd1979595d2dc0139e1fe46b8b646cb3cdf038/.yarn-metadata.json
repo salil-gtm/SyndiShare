@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "p-timeout",
+    "version": "2.0.1",
+    "description": "Timeout a promise after a specified amount of time",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/p-timeout.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "promise",
+      "timeout",
+      "error",
+      "invalidate",
+      "async",
+      "await",
+      "promises",
+      "time",
+      "out",
+      "cancel",
+      "bluebird"
+    ],
+    "dependencies": {
+      "p-finally": "^1.0.0"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "delay": "^2.0.0",
+      "p-cancelable": "^0.3.0",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-p-timeout-2.0.1-d8dd1979595d2dc0139e1fe46b8b646cb3cdf038/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# p-timeout [![Build Status](https://travis-ci.org/sindresorhus/p-timeout.svg?branch=master)](https://travis-ci.org/sindresorhus/p-timeout)\n\n> Timeout a promise after a specified amount of time\n\n\n## Install\n\n```\n$ npm install p-timeout\n```\n\n\n## Usage\n\n```js\nconst delay = require('delay');\nconst pTimeout = require('p-timeout');\n\nconst delayedPromise = delay(200);\n\npTimeout(delayedPromise, 50).then(() => 'foo');\n//=> [TimeoutError: Promise timed out after 50 milliseconds]\n```\n\n\n## API\n\n### pTimeout(input, ms, [message | fallback])\n\nReturns a decorated `input` that times out after `ms` time.\n\nIf you pass in a cancelable promise, specifically a promise with a `.cancel()` method, that method will be called when the `pTimeout` promise times out.\n\n#### input\n\nType: `Promise`\n\nPromise to decorate.\n\n#### ms\n\nType: `number`\n\nMilliseconds before timing out.\n\n#### message\n\nType: `string` `Error`<br>\nDefault: `'Promise timed out after 50 milliseconds'`\n\nSpecify a custom error message or error.\n\nIf you do a custom error, it's recommended to sub-class `pTimeout.TimeoutError`.\n\n#### fallback\n\nType: `Function`\n\nDo something other than rejecting with an error on timeout.\n\nYou could for example retry:\n\n```js\nconst delay = require('delay');\nconst pTimeout = require('p-timeout');\n\nconst delayedPromise = () => delay(200);\n\npTimeout(delayedPromise(), 50, () => {\n\treturn pTimeout(delayedPromise(), 300);\n});\n```\n\n### pTimeout.TimeoutError\n\nExposed for instance checking and sub-classing.\n\n\n## Related\n\n- [delay](https://github.com/sindresorhus/delay) - Delay a promise a specified amount of time\n- [p-min-delay](https://github.com/sindresorhus/p-min-delay) - Delay a promise a minimum amount of time\n- [p-retry](https://github.com/sindresorhus/p-retry) - Retry a promise-returning function\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/p-timeout/-/p-timeout-2.0.1.tgz#d8dd1979595d2dc0139e1fe46b8b646cb3cdf038",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/p-timeout/-/p-timeout-2.0.1.tgz",
+    "hash": "d8dd1979595d2dc0139e1fe46b8b646cb3cdf038",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d8dd1979595d2dc0139e1fe46b8b646cb3cdf038"
+}

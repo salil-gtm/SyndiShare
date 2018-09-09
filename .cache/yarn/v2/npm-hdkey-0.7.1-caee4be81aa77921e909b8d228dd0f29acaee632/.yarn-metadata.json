@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "hdkey",
+    "version": "0.7.1",
+    "description": "Bitcoin BIP32 hierarchical deterministic keys",
+    "main": "lib/hdkey.js",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/cryptocoinjs/hdkey"
+    },
+    "license": "MIT",
+    "keywords": [
+      "bitcoin",
+      "bip32",
+      "bip",
+      "key",
+      "hierarchical",
+      "deterministic",
+      "crypto"
+    ],
+    "bugs": {
+      "url": "https://github.com/cryptocoinjs/hdkey/issues"
+    },
+    "homepage": "https://github.com/cryptocoinjs/hdkey",
+    "devDependencies": {
+      "bigi": "^1.1.0",
+      "coveralls": "^2.10.0",
+      "ecurve": "^1.0.0",
+      "istanbul": "^0.3.17",
+      "mocha": "^2.2.5",
+      "mocha-lcov-reporter": "0.0.1",
+      "mochify": "^2.10.0",
+      "secure-random": "^1.0.0",
+      "standard": "^7.1.1"
+    },
+    "dependencies": {
+      "coinstring": "^2.0.0",
+      "secp256k1": "^3.0.1"
+    },
+    "scripts": {
+      "lint": "standard",
+      "browser-test": "mochify --wd -R spec",
+      "test": "standard && mocha",
+      "unit": "mocha",
+      "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+      "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-hdkey-0.7.1-caee4be81aa77921e909b8d228dd0f29acaee632/package.json",
+    "readmeFilename": "README.md",
+    "readme": "hdkey\n=====\n\n[![NPM Package](https://img.shields.io/npm/v/hdkey.svg?style=flat-square)](https://www.npmjs.org/package/hdkey)\n[![build status](https://secure.travis-ci.org/cryptocoinjs/hdkey.svg)](http://travis-ci.org/cryptocoinjs/hdkey)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)\n\nA JavaScript component for [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)(hierarchical deterministic keys).\n\n\nInstallation\n------------\n\n    npm i --save hdkey\n\n\nUsage\n-----\n\n**example:**\n\n```js\nvar HDKey = require('hdkey')\nvar seed = 'a0c42a9c3ac6abf2ba6a9946ae83af18f51bf1c9fa7dacc4c92513cc4dd015834341c775dcd4c0fac73547c5662d81a9e9361a0aac604a73a321bd9103bce8af'\nvar hdkey = HDKey.fromMasterSeed(new Buffer(seed, 'hex'))\nconsole.log(mk.privateExtendedKey)\n// => 'xprv9s21ZrQH143K2SKJK9EYRW3Vsg8tWVHRS54hAJasj1eGsQXeWDHLeuu5hpLHRbeKedDJM4Wj9wHHMmuhPF8dQ3bzyup6R7qmMQ1i1FtzNEW'\nconsole.log(mk.publicExtendedKey)\n// => 'xpub661MyMwAqRbcEvPmRAmYndzERhyNux1GoHzHxgzVHMBFkCro3kbbCiDZZ5XabZDyXPj5mH3hktvkjhhUdCQxie5e1g4t2GuAWNbPmsSfDp2'\n```\n\n\nReferences\n----------\n- https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/hdnode.js\n- http://bip32.org/\n- http://blog.richardkiss.com/?p=313\n- https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\n- http://bitcoinmagazine.com/8396/deterministic-wallets-advantages-flaw/\n\n\nLicense\n-------\n\nMIT\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hdkey/-/hdkey-0.7.1.tgz#caee4be81aa77921e909b8d228dd0f29acaee632",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hdkey/-/hdkey-0.7.1.tgz",
+    "hash": "caee4be81aa77921e909b8d228dd0f29acaee632",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "caee4be81aa77921e909b8d228dd0f29acaee632"
+}

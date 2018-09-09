@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "isurl",
+    "description": "Checks whether a value is a WHATWG URL.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+      "name": "Steven Vachon",
+      "email": "contact@svachon.com",
+      "url": "https://www.svachon.com/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/stevenvachon/isurl.git"
+    },
+    "dependencies": {
+      "has-to-string-tag-x": "^1.2.0",
+      "is-object": "^1.0.1"
+    },
+    "devDependencies": {
+      "chai": "^4.0.2",
+      "mocha": "^3.4.2",
+      "semver": "^5.3.0",
+      "universal-url": "^1.0.0"
+    },
+    "engines": {
+      "node": ">= 4"
+    },
+    "scripts": {
+      "test": "mocha test --check-leaks --bail"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "uri",
+      "url",
+      "whatwg"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-isurl-1.0.0-b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# isurl [![NPM Version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]\n\n> Checks whether a value is a WHATWG [`URL`](https://developer.mozilla.org/en/docs/Web/API/URL).\n\n\nWorks cross-realm/iframe and despite @@toStringTag.\n\n\n## Installation\n\n[Node.js](http://nodejs.org/) `>= 4` is required. To install, type this at the command line:\n```shell\nnpm install isurl\n```\n\n\n## Usage\n\n```js\nconst isURL = require('isurl');\n\nisURL('http://domain/');  //-> false\nisURL(new URL('http://domain/'));  //-> true\n```\n\nOptionally, acceptance can be extended to incomplete `URL` implementations that lack `searchParams` (which are common in many modern web browsers):\n```js\nconst url = new URL('http://domain/?query');\n\nconsole.log(url.searchParams);  //-> undefined\n\nisURL.lenient(url);  //-> true\n```\n\n\n[npm-image]: https://img.shields.io/npm/v/isurl.svg\n[npm-url]: https://npmjs.org/package/isurl\n[travis-image]: https://img.shields.io/travis/stevenvachon/isurl.svg\n[travis-url]: https://travis-ci.org/stevenvachon/isurl\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 Steven Vachon\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/isurl/-/isurl-1.0.0.tgz#b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/isurl/-/isurl-1.0.0.tgz",
+    "hash": "b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67"
+}

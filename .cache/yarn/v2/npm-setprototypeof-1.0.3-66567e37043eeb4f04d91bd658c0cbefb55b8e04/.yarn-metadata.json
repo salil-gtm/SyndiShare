@@ -1,0 +1,43 @@
+{
+  "manifest": {
+    "name": "setprototypeof",
+    "version": "1.0.3",
+    "description": "A small polyfill for Object.setprototypeof",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/wesleytodd/setprototypeof.git"
+    },
+    "keywords": [
+      "polyfill",
+      "object",
+      "setprototypeof"
+    ],
+    "author": {
+      "name": "Wes Todd"
+    },
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/wesleytodd/setprototypeof/issues"
+    },
+    "homepage": "https://github.com/wesleytodd/setprototypeof",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-setprototypeof-1.0.3-66567e37043eeb4f04d91bd658c0cbefb55b8e04/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Polyfill for `Object.setPrototypeOf`\n\nA simple cross platform implementation to set the prototype of an instianted object.  Supports all modern browsers and at least back to IE8.\n\n## Usage:\n\n```\n$ npm install --save setprototypeof\n```\n\n```javascript\nvar setPrototypeOf = require('setprototypeof');\n\nvar obj = {};\nsetPrototypeOf(obj, {\n\tfoo: function() {\n\t\treturn 'bar';\n\t}\n});\nobj.foo(); // bar\n```\n",
+    "licenseText": "Copyright (c) 2015, Wes Todd\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nSPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION\nOF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN\nCONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz",
+    "hash": "66567e37043eeb4f04d91bd658c0cbefb55b8e04",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "66567e37043eeb4f04d91bd658c0cbefb55b8e04"
+}

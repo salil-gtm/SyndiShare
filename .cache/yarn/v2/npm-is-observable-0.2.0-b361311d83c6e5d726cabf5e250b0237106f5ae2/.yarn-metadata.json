@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "name": "is-observable",
+    "version": "0.2.0",
+    "description": "Check if a value is an Observable",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/is-observable.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "observable",
+      "observables",
+      "is",
+      "check",
+      "detect",
+      "type"
+    ],
+    "dependencies": {
+      "symbol-observable": "^0.2.2"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*",
+      "zen-observable": "^0.2.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-is-observable-0.2.0-b361311d83c6e5d726cabf5e250b0237106f5ae2/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# is-observable [![Build Status](https://travis-ci.org/sindresorhus/is-observable.svg?branch=master)](https://travis-ci.org/sindresorhus/is-observable)\n\n> Check if a value is an [Observable](https://github.com/zenparsing/es-observable)\n\n\n## Install\n\n```\n$ npm install --save is-observable\n```\n\n\n## Usage\n\n```js\nconst isObservable = require('is-observable');\n\nisObservable(Observable.of(1, 2));\n//=> true\n```\n\n\n## Related\n\n- [observable-to-promise](https://github.com/sindresorhus/observable-to-promise) - Convert an Observable to a Promise\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-observable/-/is-observable-0.2.0.tgz#b361311d83c6e5d726cabf5e250b0237106f5ae2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-observable/-/is-observable-0.2.0.tgz",
+    "hash": "b361311d83c6e5d726cabf5e250b0237106f5ae2",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b361311d83c6e5d726cabf5e250b0237106f5ae2"
+}

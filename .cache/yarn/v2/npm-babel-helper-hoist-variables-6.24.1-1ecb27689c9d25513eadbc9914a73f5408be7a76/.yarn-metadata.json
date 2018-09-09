@@ -1,0 +1,31 @@
+{
+  "manifest": {
+    "name": "babel-helper-hoist-variables",
+    "version": "6.24.1",
+    "description": "Helper function to hoist variables",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-hoist-variables"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "dependencies": {
+      "babel-runtime": "^6.22.0",
+      "babel-types": "^6.24.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-helper-hoist-variables-6.24.1-1ecb27689c9d25513eadbc9914a73f5408be7a76/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-helper-hoist-variables\n\n## Usage\n\nTODO\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-helper-hoist-variables/-/babel-helper-hoist-variables-6.24.1.tgz#1ecb27689c9d25513eadbc9914a73f5408be7a76",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-helper-hoist-variables/-/babel-helper-hoist-variables-6.24.1.tgz",
+    "hash": "1ecb27689c9d25513eadbc9914a73f5408be7a76",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1ecb27689c9d25513eadbc9914a73f5408be7a76"
+}

@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "name": "clone-response",
+    "version": "1.0.2",
+    "description": "Clone a Node.js HTTP response stream",
+    "main": "src/index.js",
+    "scripts": {
+      "test": "xo && nyc ava",
+      "coverage": "nyc report --reporter=text-lcov | coveralls"
+    },
+    "xo": {
+      "extends": "xo-lukechilds"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lukechilds/clone-response.git"
+    },
+    "keywords": [
+      "clone",
+      "duplicate",
+      "copy",
+      "response",
+      "HTTP",
+      "stream"
+    ],
+    "author": {
+      "name": "Luke Childs",
+      "email": "lukechilds123@gmail.com",
+      "url": "http://lukechilds.co.uk"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/lukechilds/clone-response/issues"
+    },
+    "homepage": "https://github.com/lukechilds/clone-response",
+    "dependencies": {
+      "mimic-response": "^1.0.0"
+    },
+    "devDependencies": {
+      "ava": "^0.22.0",
+      "coveralls": "^2.13.1",
+      "create-test-server": "^2.0.1",
+      "eslint-config-xo-lukechilds": "^1.0.0",
+      "get-stream": "^3.0.0",
+      "nyc": "^11.0.2",
+      "pify": "^3.0.0",
+      "xo": "^0.19.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-clone-response-1.0.2-d1dc973920314df67fbeb94223b4ee350239e96b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# clone-response\n\n> Clone a Node.js HTTP response stream\n\n[![Build Status](https://travis-ci.org/lukechilds/clone-response.svg?branch=master)](https://travis-ci.org/lukechilds/clone-response)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/clone-response/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/clone-response?branch=master)\n[![npm](https://img.shields.io/npm/dm/clone-response.svg)](https://www.npmjs.com/package/clone-response)\n[![npm](https://img.shields.io/npm/v/clone-response.svg)](https://www.npmjs.com/package/clone-response)\n\nReturns a new stream and copies over all properties and methods from the original response giving you a complete duplicate.\n\nThis is useful in situations where you need to consume the response stream but also want to pass an unconsumed stream somewhere else to be consumed later.\n\n## Install\n\n```shell\nnpm install --save clone-response\n```\n\n## Usage\n\n```js\nconst http = require('http');\nconst cloneResponse = require('clone-response');\n\nhttp.get('http://example.com', response => {\n  const clonedResponse = cloneResponse(response);\n  response.pipe(process.stdout);\n\n  setImmediate(() => {\n    // The response stream has already been consumed by the time this executes,\n    // however the cloned response stream is still available.\n    doSomethingWithResponse(clonedResponse);\n  });\n});\n```\n\nPlease bear in mind that the process of cloning a stream consumes it. However, you can consume a stream multiple times in the same tick, therefore allowing you to create multiple clones. e.g:\n\n```js\nconst clone1 = cloneResponse(response);\nconst clone2 = cloneResponse(response);\n// response can still be consumed in this tick but cannot be consumed if passed\n// into any async callbacks. clone1 and clone2 can be passed around and be\n// consumed in the future.\n```\n\n## API\n\n### cloneResponse(response)\n\nReturns a clone of the passed in response.\n\n#### response\n\nType: `stream`\n\nA [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage) to clone.\n\n## License\n\nMIT © Luke Childs\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 Luke Childs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/clone-response/-/clone-response-1.0.2.tgz#d1dc973920314df67fbeb94223b4ee350239e96b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/clone-response/-/clone-response-1.0.2.tgz",
+    "hash": "d1dc973920314df67fbeb94223b4ee350239e96b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d1dc973920314df67fbeb94223b4ee350239e96b"
+}

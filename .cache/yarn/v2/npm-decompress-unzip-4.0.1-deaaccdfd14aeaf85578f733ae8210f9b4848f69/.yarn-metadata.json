@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "name": "decompress-unzip",
+    "version": "4.0.1",
+    "description": "decompress zip plugin",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kevva/decompress-unzip.git"
+    },
+    "author": {
+      "name": "Kevin Mårtensson",
+      "email": "kevinmartensson@gmail.com",
+      "url": "https://github.com/kevva"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "decompress",
+      "decompressplugin",
+      "extract",
+      "zip"
+    ],
+    "dependencies": {
+      "file-type": "^3.8.0",
+      "get-stream": "^2.2.0",
+      "pify": "^2.3.0",
+      "yauzl": "^2.4.2"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "is-jpg": "^1.0.0",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-decompress-unzip-4.0.1-deaaccdfd14aeaf85578f733ae8210f9b4848f69/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# decompress-unzip [![Build Status](https://travis-ci.org/kevva/decompress-unzip.svg?branch=master)](https://travis-ci.org/kevva/decompress-unzip)\n\n> zip decompress plugin\n\n\n## Install\n\n```\n$ npm install --save decompress-unzip\n```\n\n\n## Usage\n\n```js\nconst decompress = require('decompress');\nconst decompressUnzip = require('decompress-unzip');\n\ndecompress('unicorn.zip', 'dist', {\n\tplugins: [\n\t\tdecompressUnzip()\n\t]\n}).then(() => {\n\tconsole.log('Files decompressed');\n});\n```\n\n\n## API\n\n### decompressUnzip()(buf)\n\n#### buf\n\nType: `Buffer`\n\nBuffer to decompress.\n\n\n## License\n\nMIT © [Kevin Mårtensson](https://github.com/kevva)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Kevin Mårtensson <kevinmartensson@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/decompress-unzip/-/decompress-unzip-4.0.1.tgz#deaaccdfd14aeaf85578f733ae8210f9b4848f69",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/decompress-unzip/-/decompress-unzip-4.0.1.tgz",
+    "hash": "deaaccdfd14aeaf85578f733ae8210f9b4848f69",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "deaaccdfd14aeaf85578f733ae8210f9b4848f69"
+}

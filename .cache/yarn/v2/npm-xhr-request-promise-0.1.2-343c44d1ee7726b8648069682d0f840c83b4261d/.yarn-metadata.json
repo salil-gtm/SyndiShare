@@ -1,0 +1,40 @@
+{
+  "manifest": {
+    "name": "xhr-request-promise",
+    "version": "0.1.2",
+    "description": "Thin wrapper on top of [this](https://www.npmjs.com/package/xhr-request) to use Promise instead of callbacks.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/maiavictor/xhr-request-promise.git"
+    },
+    "author": {
+      "name": "Victor Maia"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/maiavictor/xhr-request-promise/issues"
+    },
+    "homepage": "https://github.com/maiavictor/xhr-request-promise#readme",
+    "dependencies": {
+      "xhr-request": "^1.0.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-xhr-request-promise-0.1.2-343c44d1ee7726b8648069682d0f840c83b4261d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "## xhr-request-promise\n\nThin wrapper on top of [this](https://www.npmjs.com/package/xhr-request) to use Promise instead of callbacks.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/xhr-request-promise/-/xhr-request-promise-0.1.2.tgz#343c44d1ee7726b8648069682d0f840c83b4261d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/xhr-request-promise/-/xhr-request-promise-0.1.2.tgz",
+    "hash": "343c44d1ee7726b8648069682d0f840c83b4261d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "343c44d1ee7726b8648069682d0f840c83b4261d"
+}

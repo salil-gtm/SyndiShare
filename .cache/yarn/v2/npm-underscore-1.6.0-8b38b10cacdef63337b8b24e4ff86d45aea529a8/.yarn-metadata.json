@@ -1,0 +1,61 @@
+{
+  "manifest": {
+    "name": "underscore",
+    "description": "JavaScript's functional programming helper library.",
+    "homepage": "http://underscorejs.org/",
+    "keywords": [
+      "util",
+      "functional",
+      "server",
+      "client",
+      "browser"
+    ],
+    "author": {
+      "name": "Jeremy Ashkenas",
+      "email": "jeremy@documentcloud.org"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/jashkenas/underscore.git"
+    },
+    "main": "underscore.js",
+    "version": "1.6.0",
+    "devDependencies": {
+      "docco": "0.6.x",
+      "phantomjs": "1.9.0-1",
+      "uglify-js": "2.4.x"
+    },
+    "scripts": {
+      "test": "phantomjs test/vendor/runner.js test/index.html?noglobals=true",
+      "build": "uglifyjs underscore.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map underscore-min.map -o underscore-min.js",
+      "doc": "docco underscore.js"
+    },
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "https://raw.github.com/jashkenas/underscore/master/LICENSE"
+      }
+    ],
+    "files": [
+      "underscore.js",
+      "underscore-min.js",
+      "LICENSE"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-underscore-1.6.0-8b38b10cacdef63337b8b24e4ff86d45aea529a8/package.json",
+    "readmeFilename": "README.md",
+    "readme": "                       __\n                      /\\ \\                                                         __\n     __  __    ___    \\_\\ \\     __   _ __   ____    ___    ___   _ __    __       /\\_\\    ____\n    /\\ \\/\\ \\ /' _ `\\  /'_  \\  /'__`\\/\\  __\\/ ,__\\  / ___\\ / __`\\/\\  __\\/'__`\\     \\/\\ \\  /',__\\\n    \\ \\ \\_\\ \\/\\ \\/\\ \\/\\ \\ \\ \\/\\  __/\\ \\ \\//\\__, `\\/\\ \\__//\\ \\ \\ \\ \\ \\//\\  __/  __  \\ \\ \\/\\__, `\\\n     \\ \\____/\\ \\_\\ \\_\\ \\___,_\\ \\____\\\\ \\_\\\\/\\____/\\ \\____\\ \\____/\\ \\_\\\\ \\____\\/\\_\\ _\\ \\ \\/\\____/\n      \\/___/  \\/_/\\/_/\\/__,_ /\\/____/ \\/_/ \\/___/  \\/____/\\/___/  \\/_/ \\/____/\\/_//\\ \\_\\ \\/___/\n                                                                                  \\ \\____/\n                                                                                   \\/___/\n\nUnderscore.js is a utility-belt library for JavaScript that provides\nsupport for the usual functional suspects (each, map, reduce, filter...)\nwithout extending any core JavaScript objects.\n\nFor Docs, License, Tests, and pre-packed downloads, see:\nhttp://underscorejs.org\n\nUnderscore is an open-sourced component of DocumentCloud:\nhttps://github.com/documentcloud\n\nMany thanks to our contributors:\nhttps://github.com/jashkenas/underscore/contributors\n",
+    "license": "MIT",
+    "licenseText": "Copyright (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative\nReporters & Editors\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz",
+    "hash": "8b38b10cacdef63337b8b24e4ff86d45aea529a8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "8b38b10cacdef63337b8b24e4ff86d45aea529a8"
+}

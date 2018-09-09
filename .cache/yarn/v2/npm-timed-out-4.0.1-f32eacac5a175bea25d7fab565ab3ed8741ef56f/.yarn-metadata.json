@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "timed-out",
+    "version": "4.0.1",
+    "description": "Emit `ETIMEDOUT` or `ESOCKETTIMEDOUT` when ClientRequest is hanged",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/floatdrop/timed-out.git"
+    },
+    "author": {
+      "name": "Vsevolod Strukchinsky",
+      "email": "floatdrop@gmail.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && mocha"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "http",
+      "https",
+      "get",
+      "got",
+      "url",
+      "uri",
+      "request",
+      "util",
+      "utility",
+      "simple"
+    ],
+    "devDependencies": {
+      "mocha": "*",
+      "xo": "^0.16.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-timed-out-4.0.1-f32eacac5a175bea25d7fab565ab3ed8741ef56f/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# timed-out [![Build Status](https://travis-ci.org/floatdrop/timed-out.svg?branch=master)](https://travis-ci.org/floatdrop/timed-out)\n\n> Timeout HTTP/HTTPS requests\n\nEmit Error object with `code` property equal `ETIMEDOUT` or `ESOCKETTIMEDOUT` when ClientRequest is hanged.\n\n## Usage\n\n```js\nvar get = require('http').get;\nvar timeout = require('timed-out');\n\nvar req = get('http://www.google.ru');\ntimeout(req, 2000); // Set 2 seconds limit\n```\n\n### API\n\n#### timedout(request, time)\n\n##### request\n\n*Required*  \nType: [`ClientRequest`](http://nodejs.org/api/http.html#http_class_http_clientrequest)\n\nThe request to watch on.\n\n##### time\n\n*Required*  \nType: `number` or `object`\n\nTime in milliseconds to wait for `connect` event on socket and also time to wait on inactive socket.\n\nOr you can pass Object with following fields:\n\n- `connect` - time to wait for connection\n- `socket`  - time to wait for activity on socket\n\n## License\n\nMIT © [Vsevolod Strukchinsky](floatdrop@gmail.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Vsevolod Strukchinsky <floatdrop@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz",
+    "hash": "f32eacac5a175bea25d7fab565ab3ed8741ef56f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f32eacac5a175bea25d7fab565ab3ed8741ef56f"
+}

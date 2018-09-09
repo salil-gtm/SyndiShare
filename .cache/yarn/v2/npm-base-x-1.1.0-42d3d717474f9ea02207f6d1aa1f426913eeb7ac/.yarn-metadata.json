@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "name": "base-x",
+    "version": "1.1.0",
+    "description": "Fast base encoding / decoding of any given alphabet",
+    "keywords": [
+      "base-x",
+      "base58",
+      "base62",
+      "base64",
+      "crypto",
+      "crytography",
+      "decode",
+      "decoding",
+      "encode",
+      "encoding"
+    ],
+    "homepage": "https://github.com/cryptocoinjs/base-x",
+    "bugs": {
+      "url": "https://github.com/cryptocoinjs/base-x/issues"
+    },
+    "license": "MIT",
+    "author": {
+      "name": "Daniel Cousens"
+    },
+    "files": [
+      "index.js"
+    ],
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/cryptocoinjs/base-x.git"
+    },
+    "scripts": {
+      "standard": "standard",
+      "test": "npm run unit && npm run standard",
+      "unit": "tape test/*.js"
+    },
+    "devDependencies": {
+      "standard": "^6.0.8",
+      "tape": "^4.5.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-base-x-1.1.0-42d3d717474f9ea02207f6d1aa1f426913eeb7ac/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# base-x\n\n[![NPM Package](https://img.shields.io/npm/v/base-x.svg?style=flat-square)](https://www.npmjs.org/package/base-x)\n[![Build Status](https://img.shields.io/travis/cryptocoinjs/base-x.svg?branch=master&style=flat-square)](https://travis-ci.org/cryptocoinjs/base-x)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nFast base encoding / decoding of any given alphabet using bitcoin style leading\nzero compression.\n\n## Example\n\nBase58\n\n``` javascript\nvar BASE58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'\nvar bs58 = require('base-x')(BASE58)\n\nvar decoded = bs58.decode('5Kd3NBUAdUnhyzenEwVLy9pBKxSwXvE9FMPyR4UKZvpe6E3AgLr')\n\nconsole.log(decoded)\n// => [128,237,219,220,17,104,241,218,234,219,211,228,76,10,106,249,133,131,164,153,222,91,25,19,164,248,99]\n\nconsole.log(Buffer.from(decoded))\n// => <Buffer 80 ed db dc 11 68 f1 da ea db d3 e4 4c 1e 3f 8f 5a 28 4c 20 29 f7 8a d2 6a f9 85 83 a4 99 de 5b 19>\n\nconsole.log(bs58.encode(decoded))\n// => 5Kd3NBUAdUnhyzenEwVLy9pBKxSwXvE9FMPyR4UKZvpe6E3AgLr\n```\n\n### Alphabets\n\nSee below for a list of commonly recognized alphabets, and their respective base.\n\nBase | Alphabet\n------------- | -------------\n2 | `01`\n8 | `01234567`\n11 | `0123456789a`\n16 | `0123456789abcdef`\n32 | `0123456789ABCDEFGHJKMNPQRSTVWXYZ`\n36 | `0123456789abcdefghijklmnopqrstuvwxyz`\n58 | `123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz`\n62 | `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`\n64 | `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/`\n66 | `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.!~`\n\n\n## How it works\n\nIt encodes octet arrays by doing long divisions on all significant digits in the\narray, creating a representation of that number in the new base. Then for every\nleading zero in the input (not significant as a number) it will encode as a\nsingle leader character. This is the first in the alphabet and will decode as 8\nbits. The other characters depend upon the base. For example, a base58 alphabet\npacks roughly 5.858 bits per character.\n\nThis means the encoded string 000f (using a 0-f alphabet) will actually decode\nto 4 bytes unlike a typical hex codec which uniformly packs 4 bits into each\ncharacter.\n\nWhile unusual, this does mean that no padding is required and it works for bases\nlike 43. If you need standard hex encoding or base64 encoding you probably don't\nwant this.\n\nThe algorithm used to convert the base of the number is roughly this:\n\n```python\nsignificant =  12345\nbase = 16\ndigits = []\nwhile significant > base:\n  significant, remainder = divmod(significant, base)\n  digits.append(remainder)\ndigits.append(significant)\nassert list(reversed(digits)) == [3,0,3,9]\nassert hex(12345) == '0x3039'\n```\n\nOf course the input is actually an array of digits already :)\n\n## License\n\nThis library is free and open-source software released under the MIT license.\n\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright base-x contributors (c) 2016 \n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/base-x/-/base-x-1.1.0.tgz#42d3d717474f9ea02207f6d1aa1f426913eeb7ac",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/base-x/-/base-x-1.1.0.tgz",
+    "hash": "42d3d717474f9ea02207f6d1aa1f426913eeb7ac",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "42d3d717474f9ea02207f6d1aa1f426913eeb7ac"
+}

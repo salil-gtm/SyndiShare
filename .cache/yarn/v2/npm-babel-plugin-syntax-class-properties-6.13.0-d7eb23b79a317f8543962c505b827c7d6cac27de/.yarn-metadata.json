@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-plugin-syntax-class-properties",
+    "version": "6.13.0",
+    "description": "Allow parsing of class properties",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-class-properties"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-syntax-class-properties-6.13.0-d7eb23b79a317f8543962c505b827c7d6cac27de/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-syntax-class-properties\n\nAllow parsing of class properties.\n\n## Installation\n\n```sh\n$ npm install babel-plugin-syntax-class-properties\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"syntax-class-properties\"]\n}\n```\n\n### Via CLI\n\n```sh\n$ babel --plugins syntax-class-properties script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"syntax-class-properties\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz",
+    "hash": "d7eb23b79a317f8543962c505b827c7d6cac27de",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d7eb23b79a317f8543962c505b827c7d6cac27de"
+}

@@ -1,0 +1,116 @@
+{
+  "manifest": {
+    "name": "yeoman-generator",
+    "version": "2.0.3",
+    "description": "Rails-inspired generator system that provides scaffolding for your apps",
+    "license": "BSD-2-Clause",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yeoman/generator.git"
+    },
+    "homepage": "http://yeoman.io/",
+    "author": {
+      "name": "Yeoman"
+    },
+    "main": "lib",
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "pretest": "xo",
+      "test": "nyc mocha",
+      "doc": "jsdoc -c jsdoc.json",
+      "prepublish": "nsp check",
+      "coverage": "nyc report --reporter=text-lcov | coveralls"
+    },
+    "files": [
+      "lib"
+    ],
+    "keywords": [
+      "development",
+      "dev",
+      "build",
+      "tool",
+      "cli",
+      "scaffold",
+      "scaffolding",
+      "generate",
+      "generator",
+      "yeoman",
+      "app"
+    ],
+    "dependencies": {
+      "async": "^2.6.0",
+      "chalk": "^2.3.0",
+      "cli-table": "^0.3.1",
+      "cross-spawn": "^5.1.0",
+      "dargs": "^5.1.0",
+      "dateformat": "^3.0.2",
+      "debug": "^3.1.0",
+      "detect-conflict": "^1.0.0",
+      "error": "^7.0.2",
+      "find-up": "^2.1.0",
+      "github-username": "^4.0.0",
+      "istextorbinary": "^2.1.0",
+      "lodash": "^4.17.4",
+      "make-dir": "^1.1.0",
+      "mem-fs-editor": "^3.0.2",
+      "minimist": "^1.2.0",
+      "pretty-bytes": "^4.0.2",
+      "read-chunk": "^2.1.0",
+      "read-pkg-up": "^3.0.0",
+      "rimraf": "^2.6.2",
+      "run-async": "^2.0.0",
+      "shelljs": "^0.8.0",
+      "text-table": "^0.2.0",
+      "through2": "^2.0.0",
+      "yeoman-environment": "^2.0.5"
+    },
+    "devDependencies": {
+      "coveralls": "^3.0.0",
+      "inquirer": "^4.0.1",
+      "jsdoc": "^3.5.5",
+      "mocha": "^4.0.1",
+      "mockery": "^2.1.0",
+      "nock": "^9.1.6",
+      "nsp": "^3.1.0",
+      "nyc": "^11.4.1",
+      "proxyquire": "^1.8.0",
+      "sinon": "^4.0.0",
+      "tui-jsdoc-template": "^1.2.2",
+      "xo": "^0.18.1",
+      "yeoman-assert": "^3.1.0",
+      "yeoman-test": "^1.7.0"
+    },
+    "xo": {
+      "space": true,
+      "rules": {
+        "promise/no-callback-in-promise": "off"
+      },
+      "overrides": [
+        {
+          "files": "test/**",
+          "envs": [
+            "node",
+            "mocha"
+          ]
+        }
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-yeoman-generator-2.0.3-19426ed22687ffe05d31526c3f1c2cf67ba768f3/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# Generator [![npm](https://badge.fury.io/js/yeoman-generator.svg)](http://badge.fury.io/js/yeoman-generator) [![Build Status](https://travis-ci.org/yeoman/generator.svg?branch=master)](https://travis-ci.org/yeoman/generator) [![Coverage Status](https://coveralls.io/repos/yeoman/generator/badge.svg)](https://coveralls.io/r/yeoman/generator) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_Yeoman_chat_%E2%86%92-00d06f.svg)](https://gitter.im/yeoman/yeoman)\n\n> Rails-inspired generator system that provides scaffolding for your apps\n\n![](https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-masthead.png)\n\n\n## Getting Started\n\nIf you're interested in writing your own Yeoman generator we recommend reading [the official getting started guide](http://yeoman.io/authoring/). The guide covers all the basics you need to get started.\n\nA generator can be as complex as you want it to be. It can simply copy a bunch of boilerplate files, or it can be more advanced asking the user's preferences to scaffold a tailor made project. This decision is up to you.\n\nThe fastest way to get started is to use  [generator-generator](https://github.com/yeoman/generator-generator), a Yeoman generator to generate a Yeoman generator.\n\nAfter reading the getting started guide, you might want to read the code source or visit our [API documentation](http://yeoman.io/generator/) for a list of all methods available.\n\n\n### Debugging\n\nSee the [debugging guide](http://yeoman.io/authoring/debugging.html).\n\n## Contributing\n\nWe love contributors! See our [contribution guideline](http://yeoman.io/contributing/) to get started.\n\n## Sponsors\nLove Yeoman work and community? Help us keep it alive by donating funds to cover project expenses! <br />\n[[Become a sponsor](https://opencollective.com/yeoman#support)]\n\n  <a href=\"https://opencollective.com/yeoman/backers/0/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/0/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/1/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/1/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/2/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/2/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/3/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/3/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/4/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/4/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/5/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/5/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/6/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/6/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/7/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/7/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/8/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/8/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/9/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/9/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/10/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/10/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/11/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/11/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/12/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/12/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/13/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/13/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/14/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/14/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/15/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/15/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/16/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/16/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/17/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/17/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/18/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/18/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/19/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/19/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/20/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/20/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/21/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/21/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/22/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/22/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/23/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/23/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/24/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/24/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/25/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/25/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/26/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/26/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/27/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/27/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/28/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/28/avatar\">\n  </a>\n  <a href=\"https://opencollective.com/yeoman/backers/29/website\" target=\"_blank\">\n    <img src=\"https://opencollective.com/yeoman/backers/29/avatar\">\n  </a>\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)\nCopyright (c) Google\n",
+    "licenseText": "Copyright (c) 2015, Google\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-2.0.3.tgz#19426ed22687ffe05d31526c3f1c2cf67ba768f3",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-2.0.3.tgz",
+    "hash": "19426ed22687ffe05d31526c3f1c2cf67ba768f3",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "19426ed22687ffe05d31526c3f1c2cf67ba768f3"
+}

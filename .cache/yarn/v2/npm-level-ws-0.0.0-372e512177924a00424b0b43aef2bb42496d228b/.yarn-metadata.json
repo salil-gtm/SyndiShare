@@ -1,0 +1,114 @@
+{
+  "manifest": {
+    "name": "level-ws",
+    "description": "A basic WriteStream implementation for LevelUP",
+    "version": "0.0.0",
+    "contributors": [
+      {
+        "name": "Rod Vagg",
+        "email": "r@va.gg",
+        "url": "https://github.com/rvagg"
+      },
+      {
+        "name": "John Chesley",
+        "email": "john@chesl.es",
+        "url": "https://github.com/chesles/"
+      },
+      {
+        "name": "Jake Verbaten",
+        "email": "raynos2@gmail.com",
+        "url": "https://github.com/raynos"
+      },
+      {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "https://github.com/dominictarr"
+      },
+      {
+        "name": "Max Ogden",
+        "email": "max@maxogden.com",
+        "url": "https://github.com/maxogden"
+      },
+      {
+        "name": "Lars-Magnus Skog",
+        "email": "lars.magnus.skog@gmail.com",
+        "url": "https://github.com/ralphtheninja"
+      },
+      {
+        "name": "David Björklund",
+        "email": "david.bjorklund@gmail.com",
+        "url": "https://github.com/kesla"
+      },
+      {
+        "name": "Julian Gruber",
+        "email": "julian@juliangruber.com",
+        "url": "https://github.com/juliangruber"
+      },
+      {
+        "name": "Paolo Fragomeni",
+        "email": "paolo@async.ly",
+        "url": "https://github.com/hij1nx"
+      },
+      {
+        "name": "Anton Whalley",
+        "email": "anton.whalley@nearform.com",
+        "url": "https://github.com/No9"
+      },
+      {
+        "name": "Matteo Collina",
+        "email": "matteo.collina@gmail.com",
+        "url": "https://github.com/mcollina"
+      },
+      {
+        "name": "Pedro Teixeira",
+        "email": "pedro.teixeira@gmail.com",
+        "url": "https://github.com/pgte"
+      },
+      {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "https://github.com/substack"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Level/level-ws.git"
+    },
+    "homepage": "https://github.com/Level/level-ws",
+    "keywords": [
+      "leveldb",
+      "stream",
+      "levelup"
+    ],
+    "main": "level-ws.js",
+    "dependencies": {
+      "readable-stream": "~1.0.15",
+      "xtend": "~2.1.1"
+    },
+    "devDependencies": {
+      "tape": "*",
+      "level": "*",
+      "after": "*",
+      "rimraf": "*"
+    },
+    "scripts": {
+      "test": "node test.js"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-level-ws-0.0.0-372e512177924a00424b0b43aef2bb42496d228b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "level-ws\n========\n\n![LevelDB Logo](https://twimg0-a.akamaihd.net/profile_images/3360574989/92fc472928b444980408147e5e5db2fa_bigger.png)\n\n**A basic WriteStream implementation for [LevelUP](https://github.com/rvagg/node-levelup)**\n\n[![NPM](https://nodei.co/npm/level-ws.png?downloads)](https://nodei.co/npm/level-ws/)\n\n**level-ws** provides the most basic general-case WriteStream for LevelUP. It was extracted from the core LevelUP at version 0.18.0 but is bundled with [level](https://github.com/Level/level) and similar packages as it provides a general symmetry to the ReadStream in LevelUP.\n\n**level-ws** is not a high-performance WriteStream, if your benchmarking shows that your particular usage pattern and data types do not perform well with this WriteStream then you should try one of the alternative WriteStreams available for LevelUP that are optimised for different use-cases.\n\n## Alternative WriteStream packages\n\n***TODO***\n\n## Usage\n\nTo use **level-ws** you simply need to wrap a LevelUP instance and you get a `createWriteStream()` method on it.\n\n```js\nvar level = require('level')\nvar levelws = require('level-ws')\nvar db = level('/path/to/db')\n\ndb = levelws(db)\ndb.createWriteStream() // ...\n```\n\n### db.createWriteStream([options])\n\nA **WriteStream** can be obtained by calling the `createWriteStream()` method. The resulting stream is a Node.js **streams2** [Writable](http://nodejs.org/docs/latest/api/stream.html#stream_class_stream_writable_1) which operates in **objectMode**, accepting objects with `'key'` and `'value'` pairs on its `write()` method.\n\nThe WriteStream will buffer writes and submit them as a `batch()` operations where writes occur *within the same tick*.\n\n```js\nvar ws = db.createWriteStream()\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ key: 'name', value: 'Yuri Irsenovich Kim' })\nws.write({ key: 'dob', value: '16 February 1941' })\nws.write({ key: 'spouse', value: 'Kim Young-sook' })\nws.write({ key: 'occupation', value: 'Clown' })\nws.end()\n```\n\nThe standard `write()`, `end()`, `destroy()` and `destroySoon()` methods are implemented on the WriteStream. `'drain'`, `'error'`, `'close'` and `'pipe'` events are emitted.\n\nYou can specify encodings both for the whole stream and individual entries:\n\nTo set the encoding for the whole stream, provide an options object as the first parameter to `createWriteStream()` with `'keyEncoding'` and/or `'valueEncoding'`.\n\nTo set the encoding for an individual entry:\n\n```js\nwriteStream.write({\n    key           : new Buffer([1, 2, 3])\n  , value         : { some: 'json' }\n  , keyEncoding   : 'binary'\n  , valueEncoding : 'json'\n})\n```\n\n#### write({ type: 'put' })\n\nIf individual `write()` operations are performed with a `'type'` property of `'del'`, they will be passed on as `'del'` operations to the batch.\n\n```js\nvar ws = db.createWriteStream()\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ type: 'del', key: 'name' })\nws.write({ type: 'del', key: 'dob' })\nws.write({ type: 'put', key: 'spouse' })\nws.write({ type: 'del', key: 'occupation' })\nws.end()\n```\n\n#### db.createWriteStream({ type: 'del' })\n\nIf the *WriteStream* is created with a `'type'` option of `'del'`, all `write()` operations will be interpreted as `'del'`, unless explicitly specified as `'put'`.\n\n```js\nvar ws = db.createWriteStream({ type: 'del' })\n\nws.on('error', function (err) {\n  console.log('Oh my!', err)\n})\nws.on('close', function () {\n  console.log('Stream closed')\n})\n\nws.write({ key: 'name' })\nws.write({ key: 'dob' })\n// but it can be overridden\nws.write({ type: 'put', key: 'spouse', value: 'Ri Sol-ju' })\nws.write({ key: 'occupation' })\nws.end()\n```\n\n\n### Contributors\n\n**level-ws** is only possible due to the excellent work of the following contributors:\n\n<table><tbody>\n<tr><th align=\"left\">Rod Vagg</th><td><a href=\"https://github.com/rvagg\">GitHub/rvagg</a></td><td><a href=\"http://twitter.com/rvagg\">Twitter/@rvagg</a></td></tr>\n<tr><th align=\"left\">John Chesley</th><td><a href=\"https://github.com/chesles/\">GitHub/chesles</a></td><td><a href=\"http://twitter.com/chesles\">Twitter/@chesles</a></td></tr>\n<tr><th align=\"left\">Jake Verbaten</th><td><a href=\"https://github.com/raynos\">GitHub/raynos</a></td><td><a href=\"http://twitter.com/raynos2\">Twitter/@raynos2</a></td></tr>\n<tr><th align=\"left\">Dominic Tarr</th><td><a href=\"https://github.com/dominictarr\">GitHub/dominictarr</a></td><td><a href=\"http://twitter.com/dominictarr\">Twitter/@dominictarr</a></td></tr>\n<tr><th align=\"left\">Max Ogden</th><td><a href=\"https://github.com/maxogden\">GitHub/maxogden</a></td><td><a href=\"http://twitter.com/maxogden\">Twitter/@maxogden</a></td></tr>\n<tr><th align=\"left\">Lars-Magnus Skog</th><td><a href=\"https://github.com/ralphtheninja\">GitHub/ralphtheninja</a></td><td><a href=\"http://twitter.com/ralphtheninja\">Twitter/@ralphtheninja</a></td></tr>\n<tr><th align=\"left\">David Björklund</th><td><a href=\"https://github.com/kesla\">GitHub/kesla</a></td><td><a href=\"http://twitter.com/david_bjorklund\">Twitter/@david_bjorklund</a></td></tr>\n<tr><th align=\"left\">Julian Gruber</th><td><a href=\"https://github.com/juliangruber\">GitHub/juliangruber</a></td><td><a href=\"http://twitter.com/juliangruber\">Twitter/@juliangruber</a></td></tr>\n<tr><th align=\"left\">Paolo Fragomeni</th><td><a href=\"https://github.com/hij1nx\">GitHub/hij1nx</a></td><td><a href=\"http://twitter.com/hij1nx\">Twitter/@hij1nx</a></td></tr>\n<tr><th align=\"left\">Anton Whalley</th><td><a href=\"https://github.com/No9\">GitHub/No9</a></td><td><a href=\"https://twitter.com/antonwhalley\">Twitter/@antonwhalley</a></td></tr>\n<tr><th align=\"left\">Matteo Collina</th><td><a href=\"https://github.com/mcollina\">GitHub/mcollina</a></td><td><a href=\"https://twitter.com/matteocollina\">Twitter/@matteocollina</a></td></tr>\n<tr><th align=\"left\">Pedro Teixeira</th><td><a href=\"https://github.com/pgte\">GitHub/pgte</a></td><td><a href=\"https://twitter.com/pgte\">Twitter/@pgte</a></td></tr>\n<tr><th align=\"left\">James Halliday</th><td><a href=\"https://github.com/substack\">GitHub/substack</a></td><td><a href=\"https://twitter.com/substack\">Twitter/@substack</a></td></tr>\n</tbody></table>\n\n<a name=\"licence\"></a>\nLicence &amp; copyright\n-------------------\n\nCopyright (c) 2012-2013 **level-ws** contributors (listed above).\n\n**level-ws** is licensed under an MIT +no-false-attribs license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.\n",
+    "licenseText": "Copyright 2012, Rod Vagg (the \"Original Author\")\nAll rights reserved.\n\nMIT +no-false-attribs License\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nDistributions of all or part of the Software intended to be used\nby the recipients as they would use the unmodified Software,\ncontaining modifications that substantially alter, remove, or\ndisable functionality of the Software, outside of the documented\nconfiguration mechanisms provided by the Software, shall be\nmodified such that the Original Author's bug reporting email\naddresses and urls are either replaced with the contact information\nof the parties responsible for the changes, or removed entirely.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\n\nExcept where noted, this license applies to any and all software\nprograms and associated documentation files created by the\nOriginal Author, when distributed with the Software."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/level-ws/-/level-ws-0.0.0.tgz#372e512177924a00424b0b43aef2bb42496d228b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/level-ws/-/level-ws-0.0.0.tgz",
+    "hash": "372e512177924a00424b0b43aef2bb42496d228b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "372e512177924a00424b0b43aef2bb42496d228b"
+}

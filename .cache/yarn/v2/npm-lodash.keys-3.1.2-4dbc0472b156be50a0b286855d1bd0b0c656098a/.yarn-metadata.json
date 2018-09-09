@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "name": "lodash.keys",
+    "version": "3.1.2",
+    "description": "The modern build of lodash’s `_.keys` as a module.",
+    "homepage": "https://lodash.com/",
+    "icon": "https://lodash.com/icon.svg",
+    "license": "MIT",
+    "keywords": [
+      "lodash,",
+      "lodash-modularized,",
+      "stdlib,",
+      "util"
+    ],
+    "author": {
+      "name": "John-David Dalton",
+      "email": "john.david.dalton@gmail.com",
+      "url": "http://allyoucanleet.com/"
+    },
+    "contributors": [
+      {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      {
+        "name": "Benjamin Tan",
+        "email": "demoneaux@gmail.com",
+        "url": "https://d10.github.io/"
+      },
+      {
+        "name": "Blaine Bublitz",
+        "email": "blaine@iceddev.com",
+        "url": "http://www.iceddev.com/"
+      },
+      {
+        "name": "Kit Cambridge",
+        "email": "github@kitcambridge.be",
+        "url": "http://kitcambridge.be/"
+      },
+      {
+        "name": "Mathias Bynens",
+        "email": "mathias@qiwi.be",
+        "url": "https://mathiasbynens.be/"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/lodash/lodash.git"
+    },
+    "scripts": {
+      "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+    },
+    "dependencies": {
+      "lodash._getnative": "^3.0.0",
+      "lodash.isarguments": "^3.0.0",
+      "lodash.isarray": "^3.0.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-lodash.keys-3.1.2-4dbc0472b156be50a0b286855d1bd0b0c656098a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# lodash.keys v3.1.2\n\nThe [modern build](https://github.com/lodash/lodash/wiki/Build-Differences) of [lodash’s](https://lodash.com/) `_.keys` exported as a [Node.js](http://nodejs.org/)/[io.js](https://iojs.org/) module.\n\n## Installation\n\nUsing npm:\n\n```bash\n$ {sudo -H} npm i -g npm\n$ npm i --save lodash.keys\n```\n\nIn Node.js/io.js:\n\n```js\nvar keys = require('lodash.keys');\n```\n\nSee the [documentation](https://lodash.com/docs#keys) or [package source](https://github.com/lodash/lodash/blob/3.1.2-npm-packages/lodash.keys) for more details.\n",
+    "licenseText": "Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>\nBased on Underscore.js, copyright 2009-2015 Jeremy Ashkenas,\nDocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz",
+    "hash": "4dbc0472b156be50a0b286855d1bd0b0c656098a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4dbc0472b156be50a0b286855d1bd0b0c656098a"
+}

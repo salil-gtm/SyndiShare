@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "name": "glob-all",
+    "version": "3.1.0",
+    "description": "Provide multiple patterns to node-glob",
+    "main": "glob-all.js",
+    "bin": {
+      "glob-all": "./bin/glob-all"
+    },
+    "scripts": {
+      "test": "node test/test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jpillora/node-glob-all.git"
+    },
+    "dependencies": {
+      "glob": "^7.0.5",
+      "yargs": "~1.2.6"
+    },
+    "devDependencies": {
+      "tape": "^4.5.1"
+    },
+    "keywords": [
+      "glob",
+      "multi",
+      "all",
+      "manifest",
+      "generation",
+      "file"
+    ],
+    "author": {
+      "name": "Jaime Pillora"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-glob-all-3.1.0-8913ddfb5ee1ac7812656241b03d5217c64b02ab/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# glob-all\n\nProvides a similar API to [glob](https://github.com/isaacs/node-glob), however instead of a single pattern, you may also use arrays of patterns.\n\n[![Version](https://img.shields.io/npm/v/glob-all.svg)](https://www.npmjs.com/package/glob-all)  [![Downloads](https://img.shields.io/npm/dm/glob-all.svg)](https://www.npmjs.com/package/glob-all) [![CircleCI](https://circleci.com/gh/jpillora/node-glob-all.svg?style=shield)](https://circleci.com/gh/jpillora/node-glob-all)\n\n### Install\n\n```\nnpm install --save glob-all\n```\n\n### Usage\n\nGiven files:\n```\nfiles\n├── a.txt\n├── b.txt\n├── c.txt\n└── x\n    ├── y.txt\n    └── z.txt\n```\n\nWe can:\n``` js\nvar glob = require('glob-all');\n\nvar files = glob.sync([\n  'files/**',      //include all     files/\n  '!files/x/**',   //then, exclude   files/x/\n  'files/x/z.txt'  //then, reinclude files/x/z.txt\n]);\n\nconsole.log(files);\n```\n\nResulting in:\n```\n[ 'files',\n  'files/a.txt',\n  'files/b.txt',\n  'files/c.txt',\n  'files/x/z.txt' ]\n```\n\n### CLI Usage\n\n`npm install -g glob-all`\n\nList all JavaScript files in `example/`\n\n```\n$ glob-all 'example/**/*.js'\nexample/async.js\nexample/events.js\nexample/order.js\nexample/perf.js\nexample/sync.js\n```\n\nOr list all JavaScript files but ignore 3rd-party modules:\n\n```\n$ glob-all '**/*.js' '!node_modules/**/*'\n```\n\n### API\n\n* Async - `glob(patterns[, options], callback)`\n  * Returns a `GlobAll` instance which emits:\n    * `match`\n    * `error`\n    * `end`\n\n* Sync - `glob.sync(patterns[, options])`\n  * Returns `[String]` or `null`\n\nSee [node-glob](https://github.com/isaacs/node-glob)\n\n### Notes\n\n#### Exclude Pattern\n\nSince [node-glob](https://github.com/isaacs/node-glob) only allows one pattern, there is no such thing as an exclude pattern (like in Grunt and Gulp). However, in `node-glob-all` we allow exclusion of the results of an entire pattern by prefixing the pattern with `!`.\n\n[node-glob](https://github.com/isaacs/node-glob) exclusions (`!` inside the pattern) to exclude a portion of the path will still work as expected.\n\n#### File Order\n\nIf a file occurs in more than once in the set, the one with the **more precise pattern** will be used and the other will be thrown away. So, if you'd like a file be in a certain position, you could do:\n\n``` js\nvar glob = require('glob-all');\n\nvar files = glob.sync([\n  'files/x/y.txt',\n  'files/**'\n]);\n\nconsole.log(files);\n```\n\nWhich will bring `files/x/y.txt` to the top:\n\n```\n[ 'files/x/y.txt',\n  'files',\n  'files/a.txt',\n  'files/b.txt',\n  'files/c.txt',\n  'files/x',\n  'files/x/z.txt' ]\n```\n\n#### Filtering out directories\n\nYou can use the `mark` option to mark directories with a `/`, then you can:\n``` js\nfiles.filter(function(f) { return !/\\/$/.test(f); });\n```\n\n#### Performance\n\nInternally, `glob-all` uses the `statCache` option to prevent repeat lookups across multiple patterns.\n\n#### Todo\n\n* Implement `abort()`\n* Add tests\n\n#### Contributing\n\n* edit `glob-all.js`\n* `npm test`\n\n#### MIT License\n\nCopyright &copy; 2014 Jaime Pillora &lt;dev@jpillora.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/glob-all/-/glob-all-3.1.0.tgz#8913ddfb5ee1ac7812656241b03d5217c64b02ab",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/glob-all/-/glob-all-3.1.0.tgz",
+    "hash": "8913ddfb5ee1ac7812656241b03d5217c64b02ab",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "8913ddfb5ee1ac7812656241b03d5217c64b02ab"
+}

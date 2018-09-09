@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "name": "webpack-addons",
+    "version": "1.1.5",
+    "description": "Utility suite for webpack-cli",
+    "main": "index.js",
+    "scripts": {
+      "lint": "eslint .",
+      "test": "jest --coverage"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/webpack-contrib/webpack-addons.git"
+    },
+    "keywords": [
+      "scaffold",
+      "cli",
+      "webpack",
+      "ast"
+    ],
+    "author": {},
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/webpack-contrib/webpack-addons/issues"
+    },
+    "homepage": "https://github.com/webpack-contrib/webpack-addons#readme",
+    "dependencies": {
+      "jscodeshift": "^0.4.0"
+    },
+    "devDependencies": {
+      "babel-jest": "^19.0.0",
+      "babel-eslint": "^7.2.3",
+      "eslint": "^3.19.0",
+      "eslint-plugin-node": "^4.2.2",
+      "jest": "^19.0.2"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-webpack-addons-1.1.5-2b178dfe873fb6e75e40a819fa5c26e4a9bc837a/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# webpack-addons\n\n[![Build Status](https://travis-ci.org/webpack-contrib/webpack-addons.svg?branch=master)](https://travis-ci.org/webpack-contrib/webpack-addons)\n\nThis is the utility suite for creating a webpack `addon`. It contains utility functions to assist with inquirer prompting and scaffolding.\n\n# API\n\n## parseValue  \n\nParam: `String`\n\nUsed when you cannot use regular conventions. Handy for examples like `RegExp` or `output.sourcePrefix`\n\n```js\nconst parseValue = require('webpack-addons').parseValue;\n\nthis.configuration.myScaffold.webpackOptions.output.sourcePrefix = parseValue('\\t')\n// sourcePrefix: '\\t'\n```\n## createArrowFunction\n\nParam: `String`\n\nGenerally used when dealing with an entry point as an arrow function.\n\n```js\nconst createArrowFunction = require('webpack-addons').createArrowFunction;\n\nthis.configuration.myScaffold.webpackOptions.entry = createArrowFunction('app.js')\n// entry: () => 'app.js'\n```\n\n## createRegularFunction\n\nParam: `String`\n\nUsed when creating a function that returns a single value.\n```js\nconst createRegularFunction = require('webpack-addons').createRegularFunction;\n\nthis.configuration.myScaffold.webpackOptions.entry = createRegularFunction('app.js')\n// entry: function() { return 'app.js' }\n```\n## createDynamicPromise\n\nParam: `Array` | `String`\n\nUsed to create an dynamic entry point.\n\n```js\nconst createDynamicPromise = require('webpack-addons').createDynamicPromise;\n\nthis.confguration.myScaffold.webpackOptions.entry = createDynamicPromise('app.js')\n// entry: () => new Promise((resolve) => resolve('app.js'))\n\nthis.configuration.myScaffold.webpackOptions.entry = createDynamicPromise(['app.js', 'index.js'])\n// entry: () => new Promise((resolve) => resolve(['app.js','index.js']))\n```\n\n## createAssetFilterFunction\n\nParam: `String`\n\nUsed to create an [assetFilterFunction](https://webpack.js.org/configuration/performance/#performance-assetfilter)\n\n```js\nconst createAssetFilterFunction = require('webpack-addons').createAssetFilterFunction;\n\nthis.configuration.myScaffold.webpackOptions.performance.assetFilter = createAssetFilterFunction('js')\n// assetFilter: function (assetFilename) { return assetFilename.endsWith('.js'); }\n```\n\n## createExternalFunction\n\nParam: `String`\n\nUsed to create an [general function from Externals](https://webpack.js.org/configuration/externals/#function)\n\n```js\nconst createExternalFunction = require('webpack-addons').createExternalFunction;\n\nthis.configuration.myScaffold.webpackOptions.externals = [createExternalFunction('^yourregex$')]\n/*\nexternals: [\n  function(context, request, callback) {\n    if (/^yourregex$/.test(request)){\n      return callback(null, 'commonjs ' + request);\n    }\n    callback();\n  }\n\n*/\n```\n## createCommonsChunkPlugin\n\nParam: `String`\n\nUsed to create a general [`CommonsChunkPlugin`](https://webpack.js.org/plugins/commons-chunk-plugin/).\n\n```js\nconst createCommonsChunkPlugin = require('webpack-addons').createCommonsChunkPlugin;\n\nthis.configuration.myScaffold.webpackOptions.plugins = [createCommonsChunkPlugin('vendor')]\n/*\nplugins: [\n new webpack.optimize.CommonsChunkPlugin({\n    name: 'vendor',\n    filename: 'vendor-[hash].min.js',\n  })\n*/\n```\n\n## createRequire\n\nParam: `String`\n\nUsed to create a module in `topScope`\n\n```js\nconst createRequire = require('webpack-addons').createRequire;\n\nthis.configuration.myScaffold.topScope = [createRequire('webpack')]\n// const webpack = require('webpack')\n```\n\n## [Inquirer](https://github.com/SBoudrias/Inquirer.js/#prompt-types)\n\n### List\n\nParam: `name<String>, message<String>, choices<Array>`\n\nCreates a List from Inquirer\n```js\nList('entry', 'what kind of entry do you want?', ['Array', 'Function'])\n```\n\n### RawList \n\nParam: `name<String>, message<String>, choices<Array>`\n\nCreates a RawList from Inquirer\n```js\nRawList('entry', 'what kind of entry do you want?', ['Array', 'Function'])\n```\n\n### CheckList\n\nParam: `name<String>, message<String>, choices<Array>`\n\nCreates a CheckList(`checkbox`) from Inquirer\n```js\nCheckList('entry', 'what kind of entry do you want?', ['Array', 'Function'])\n```\n\n### Input \n\nParam: `name<String>, message<String>`\n\nCreates an Input from Inquirer\n```js\nInput('entry', 'what is your entry point?')\n```\n\n### InputValidate\n\nParam: `name<String>, message<String>, validate<Function>`\n\nCreates an Input from Inquirer\n```js\nconst validation = (value) => {\n    if(value.length > 4) {\n        return true;\n    } else {\n        return 'Wow, that was short!'\n    }\n}\nInput('entry', 'what is your entry point?', validation)\n```\n\n### Confirm\n\nParam: `name<String>, message<String>`\n\nCreates an Input from Inquirer\n```js\nConfirm('contextConfirm', 'Is this your context?')\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/webpack-addons/-/webpack-addons-1.1.5.tgz#2b178dfe873fb6e75e40a819fa5c26e4a9bc837a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/webpack-addons/-/webpack-addons-1.1.5.tgz",
+    "hash": "2b178dfe873fb6e75e40a819fa5c26e4a9bc837a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2b178dfe873fb6e75e40a819fa5c26e4a9bc837a"
+}

@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "name": "lowercase-keys",
+    "version": "1.0.1",
+    "description": "Lowercase the keys of an object",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/lowercase-keys.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "object",
+      "assign",
+      "extend",
+      "properties",
+      "lowercase",
+      "lower-case",
+      "case",
+      "keys",
+      "key"
+    ],
+    "devDependencies": {
+      "ava": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-lowercase-keys-1.0.1-6f9e30b47084d971a7c820ff15a6c5167b74c26f/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# lowercase-keys [![Build Status](https://travis-ci.org/sindresorhus/lowercase-keys.svg?branch=master)](https://travis-ci.org/sindresorhus/lowercase-keys)\n\n> Lowercase the keys of an object\n\n\n## Install\n\n```\n$ npm install --save lowercase-keys\n```\n\n\n## Usage\n\n```js\nvar lowercaseKeys = require('lowercase-keys');\n\nlowercaseKeys({FOO: true, bAr: false});\n//=> {foo: true, bar: false}\n```\n\n\n## API\n\n### lowercaseKeys(object)\n\nLowercases the keys and returns a new object.\n\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.1.tgz",
+    "hash": "6f9e30b47084d971a7c820ff15a6c5167b74c26f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "6f9e30b47084d971a7c820ff15a6c5167b74c26f"
+}

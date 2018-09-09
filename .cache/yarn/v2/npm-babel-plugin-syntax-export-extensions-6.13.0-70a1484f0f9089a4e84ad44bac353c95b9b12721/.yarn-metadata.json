@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-plugin-syntax-export-extensions",
+    "version": "6.13.0",
+    "description": "Allow parsing of export extensions",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-export-extensions"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-syntax-export-extensions-6.13.0-70a1484f0f9089a4e84ad44bac353c95b9b12721/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-syntax-export-extensions\n\nAllow parsing of export extensions.\n\n## Installation\n\n```sh\n$ npm install babel-plugin-syntax-export-extensions\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"syntax-export-extensions\"]\n}\n```\n\n### Via CLI\n\n```sh\n$ babel --plugins syntax-export-extensions script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"syntax-export-extensions\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-syntax-export-extensions/-/babel-plugin-syntax-export-extensions-6.13.0.tgz#70a1484f0f9089a4e84ad44bac353c95b9b12721",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-syntax-export-extensions/-/babel-plugin-syntax-export-extensions-6.13.0.tgz",
+    "hash": "70a1484f0f9089a4e84ad44bac353c95b9b12721",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "70a1484f0f9089a4e84ad44bac353c95b9b12721"
+}

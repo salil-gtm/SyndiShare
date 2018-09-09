@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "name": "sntp",
+    "description": "SNTP Client",
+    "version": "2.1.0",
+    "author": {
+      "name": "Eran Hammer",
+      "email": "eran@hammer.io",
+      "url": "http://hueniverse.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/hueniverse/sntp"
+    },
+    "main": "lib/index.js",
+    "keywords": [
+      "sntp",
+      "ntp",
+      "time"
+    ],
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "dependencies": {
+      "hoek": "4.x.x"
+    },
+    "devDependencies": {
+      "code": "4.x.x",
+      "lab": "14.x.x"
+    },
+    "scripts": {
+      "test": "lab -a code -t 100 -L -m 20000",
+      "test-cov-html": "lab -a code -r html -o coverage.html -m 20000"
+    },
+    "license": "BSD-3-Clause",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-sntp-2.1.0-2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# sntp\n\nAn SNTP v4 client (RFC4330) for node. Simpy connects to the NTP or SNTP server requested and returns the server time\nalong with the roundtrip duration and clock offset. To adjust the local time to the NTP time, add the returned `t` offset\nto the local time.\n\n[![Build Status](https://secure.travis-ci.org/hueniverse/sntp.png)](http://travis-ci.org/hueniverse/sntp)\n\n# Usage\n\n```javascript\nvar Sntp = require('sntp');\n\n// All options are optional\n\nvar options = {\n    host: 'nist1-sj.ustiming.org',  // Defaults to pool.ntp.org\n    port: 123,                      // Defaults to 123 (NTP)\n    resolveReference: true,         // Default to false (not resolving)\n    timeout: 1000                   // Defaults to zero (no timeout)\n};\n\n// Request server time\n\nSntp.time(options, function (err, time) {\n\n    if (err) {\n        console.log('Failed: ' + err.message);\n        process.exit(1);\n    }\n\n    console.log('Local clock is off by: ' + time.t + ' milliseconds');\n    process.exit(0);\n});\n```\n\nIf an application needs to maintain continuous time synchronization, the module provides a stateful method for\nquerying the current offset only when the last one is too old (defaults to daily).\n\n```javascript\n// Request offset once\n\nSntp.offset(function (err, offset) {\n\n    console.log(offset);                    // New (served fresh)\n\n    // Request offset again\n\n    Sntp.offset(function (err, offset) {\n\n        console.log(offset);                // Identical (served from cache)\n    });\n});\n```\n\nTo set a background offset refresh, start the interval and use the provided now() method. If for any reason the\nclient fails to obtain an up-to-date offset, the current system clock is used.\n\n```javascript\nvar before = Sntp.now();                    // System time without offset\n\nSntp.start(function () {\n\n    var now = Sntp.now();                   // With offset\n    Sntp.stop();\n});\n```\n\n",
+    "licenseText": "Copyright (c) 2012-2016, Eran Hammer and Project contributors\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * The names of any contributors may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n                                  *   *   *\n\nThe complete list of contributors can be found at: https://github.com/hueniverse/sntp/graphs/contributors\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/sntp/-/sntp-2.1.0.tgz#2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/sntp/-/sntp-2.1.0.tgz",
+    "hash": "2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8"
+}

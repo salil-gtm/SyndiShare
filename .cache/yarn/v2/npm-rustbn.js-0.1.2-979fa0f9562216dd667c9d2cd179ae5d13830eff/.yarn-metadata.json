@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "name": "rustbn.js",
+    "version": "0.1.2",
+    "description": "Javascript bindings for https://github.com/paritytech/bn (using asm.js)",
+    "main": "index.js",
+    "scripts": {
+      "test": "tape ./tests/index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ethereumjs/rustbn.js.git"
+    },
+    "keywords": [
+      "ethereum",
+      "ecc",
+      "bn128",
+      "pairing"
+    ],
+    "author": {
+      "name": "cdetrio",
+      "email": "cdetrio@gmail.com"
+    },
+    "contributors": [
+      {
+        "name": "holgerd77",
+        "email": "Holger.Drewes@gmail.com"
+      }
+    ],
+    "license": "(MIT OR Apache-2.0)",
+    "bugs": {
+      "url": "https://github.com/ethereumjs/rustbn.js/issues"
+    },
+    "homepage": "https://github.com/ethereumjs/rustbn.js#readme",
+    "devDependencies": {
+      "tape": "^4.8.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-rustbn.js-0.1.2-979fa0f9562216dd667c9d2cd179ae5d13830eff/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# SYNOPSIS \n[![Build Status](https://img.shields.io/travis/ethereumjs/rustbn.js.svg?branch=master&style=flat-square)](https://travis-ci.org/ethereumjs/rustbn.js)\n[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode  \n\nRust to Javascript compile of the [Parity fork](https://github.com/paritytech/bn) of the [Zcash bn\npairing cryptography library](https://github.com/zcash/bn), implementing an efficient bilinear pairing on the Barreto-Naehrig (BN) curve. \n\n## Installation\n\n`npm install rustbn.js`\n\n## Usage\n\nRequire the module:\n\n```\nconst bn128Module = require('rustbn.js')\n```\n\nCurve Addition\n\n```\nconst ecAddPrecompile = bn128Module.cwrap('ec_add', 'string', ['string'])\nvar inputHexStr = '...'\nlet result = ecAddPrecompile(inputHexStr)\n```\n\nCurve Multiplication\n\n```\nconst ecMulPrecompile = bn128Module.cwrap('ec_mul', 'string', ['string'])\nvar inputHexStr = '...'\nlet result = ecMulPrecompile(inputHexStr)\n```\n\nCurve Pairing\n```\nconst ecPairingPrecompile = bn128Module.cwrap('ec_pairing', 'string', ['string'])\nvar inputHexStr = '...'\nlet result = ecPairingPrecompile(inputHexStr)\n```\n\n## Developer\n\n### Compilation\n\nCompilation process is based on [this tutorial](http://asquera.de/blog/2017-04-10/the-path-to-rust-on-the-web/) using [Emscripten](http://kripken.github.io/emscripten-site/) to compile the original Rust sources to [asm.js](http://asmjs.org/) ([Wikipedia](https://en.wikipedia.org/wiki/Asm.js)). This might be extended in the future to also include a ``WASM`` compiled version to choose from.\n\nFor basic setup follow the \"Installing the Tools\" section of the tutorial (make sure to use the ``incoming`` branch of ``emsdk``).\n\nFor ``asm.js`` compilation ``asmjs-unknown-emscripten`` target has to be added with ``rustup``:\n\n```\nrustup target add asmjs-unknown-emscripten\n```\n\nCompilation steps can be found in the ``makefile`` in the main directory and executed simply by\nrunning:\n\n```\nmake\n```\n\n\n### WASM (Experimental)\n\nWASM files can be compiled with ``make wasm`` to the ``exp``. This is just intended for experimentation\nworking in browser only (not with Node.js) and not ready for production use!\n\nStart a server with ``python -m SimpleHTTPServer`` and browse to http://localhost:8000/. You might have\nto modify the ``exp/index.html`` file to get things to work.\n\n### Testing\n\nUnit tests can be found in the ``tests`` directory. Run the tests with:\n\n```\nnpm run test\n```\n\n## Additional Resources\n\n- Another [compilation tutorial](https://medium.com/@ianjsikes/get-started-with-rust-webassembly-and-webpack-58d28e219635) using ``Webpack``\n- [Talk](https://rreverser.com/rust-javascript-interop/) on ``Emscripten`` and ``Rust``\n- [Compiling Rust to your Browser](https://www.hellorust.com/emscripten/)\n\n\n## License\n\nLicensed under either of\n\n * MIT license, ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)\n * Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)\n\nat your option.\n\nCopyright 2016 [Zcash Electric Coin Company](https://z.cash/). The Zcash Company promises to maintain the \"bn\" crate on crates.io under this MIT/Apache-2.0 dual license.\n\n "
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/rustbn.js/-/rustbn.js-0.1.2.tgz#979fa0f9562216dd667c9d2cd179ae5d13830eff",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/rustbn.js/-/rustbn.js-0.1.2.tgz",
+    "hash": "979fa0f9562216dd667c9d2cd179ae5d13830eff",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "979fa0f9562216dd667c9d2cd179ae5d13830eff"
+}

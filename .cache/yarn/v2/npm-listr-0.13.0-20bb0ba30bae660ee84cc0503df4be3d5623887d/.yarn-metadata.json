@@ -1,0 +1,96 @@
+{
+  "manifest": {
+    "name": "listr",
+    "version": "0.13.0",
+    "description": "Terminal task list",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SamVerschueren/listr.git"
+    },
+    "author": {
+      "name": "Sam Verschueren",
+      "email": "sam.verschueren@gmail.com",
+      "url": "github.com/SamVerschueren"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "clinton && xo && nyc ava",
+      "lint:staged": "lint-staged"
+    },
+    "files": [
+      "index.js",
+      "lib"
+    ],
+    "keywords": [
+      "cli",
+      "task",
+      "list",
+      "tasklist",
+      "terminal",
+      "term",
+      "console",
+      "ascii",
+      "unicode",
+      "loading",
+      "indicator",
+      "progress",
+      "busy",
+      "wait",
+      "idle"
+    ],
+    "dependencies": {
+      "chalk": "^1.1.3",
+      "cli-truncate": "^0.2.1",
+      "figures": "^1.7.0",
+      "indent-string": "^2.1.0",
+      "is-observable": "^0.2.0",
+      "is-promise": "^2.1.0",
+      "is-stream": "^1.1.0",
+      "listr-silent-renderer": "^1.1.1",
+      "listr-update-renderer": "^0.4.0",
+      "listr-verbose-renderer": "^0.4.0",
+      "log-symbols": "^1.0.2",
+      "log-update": "^1.0.2",
+      "ora": "^0.2.3",
+      "p-map": "^1.1.1",
+      "rxjs": "^5.4.2",
+      "stream-to-observable": "^0.2.0",
+      "strip-ansi": "^3.0.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "clinton": "*",
+      "codecov": "^3.0.0",
+      "delay": "^1.3.1",
+      "hook-std": "^0.2.0",
+      "lint-staged": "^3.3.1",
+      "nyc": "^8.3.2",
+      "pre-commit": "^1.2.2",
+      "split": "^1.0.1",
+      "xo": "*",
+      "zen-observable": "^0.3.0"
+    },
+    "lint-staged": {
+      "*.js": "xo"
+    },
+    "pre-commit": "lint:staged",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-listr-0.13.0-20bb0ba30bae660ee84cc0503df4be3d5623887d/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# listr\n\n[![Build Status Linux](https://travis-ci.org/SamVerschueren/listr.svg?branch=master)](https://travis-ci.org/SamVerschueren/listr) [![Build status Windows](https://ci.appveyor.com/api/projects/status/y8vhpwsb98b8o4cm?svg=true)](https://ci.appveyor.com/project/SamVerschueren/listr) [![Coverage Status](https://codecov.io/gh/SamVerschueren/listr/branch/master/graph/badge.svg)](https://codecov.io/gh/SamVerschueren/listr)\n\n> Terminal task list\n\n<img src=\"media/screenshot.gif\">\n\n## Install\n\n```\n$ npm install --save listr\n```\n\n\n## Usage\n\n```js\nconst execa = require('execa');\nconst Listr = require('listr');\n\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Git',\n\t\ttask: () => {\n\t\t\treturn new Listr([\n\t\t\t\t{\n\t\t\t\t\ttitle: 'Checking git status',\n\t\t\t\t\ttask: () => execa.stdout('git', ['status', '--porcelain']).then(result => {\n\t\t\t\t\t\tif (result !== '') {\n\t\t\t\t\t\t\tthrow new Error('Unclean working tree. Commit or stash changes first.');\n\t\t\t\t\t\t}\n\t\t\t\t\t})\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: 'Checking remote history',\n\t\t\t\t\ttask: () => execa.stdout('git', ['rev-list', '--count', '--left-only', '@{u}...HEAD']).then(result => {\n\t\t\t\t\t\tif (result !== '0') {\n\t\t\t\t\t\t\tthrow new Error('Remote history differ. Please pull changes.');\n\t\t\t\t\t\t}\n\t\t\t\t\t})\n\t\t\t\t}\n\t\t\t], {concurrent: true});\n\t\t}\n\t},\n\t{\n\t\ttitle: 'Install package dependencies with Yarn',\n\t\ttask: (ctx, task) => execa('yarn')\n\t\t\t.catch(() => {\n\t\t\t\tctx.yarn = false;\n\n\t\t\t\ttask.skip('Yarn not available, install it via `npm install -g yarn`');\n\t\t\t})\n\t},\n\t{\n\t\ttitle: 'Install package dependencies with npm',\n\t\tenabled: ctx => ctx.yarn === false,\n\t\ttask: () => execa('npm', ['install'])\n\t},\n\t{\n\t\ttitle: 'Run tests',\n\t\ttask: () => execa('npm', ['test'])\n\t},\n\t{\n\t\ttitle: 'Publish package',\n\t\ttask: () => execa('npm', ['publish'])\n\t}\n]);\n\ntasks.run().catch(err => {\n\tconsole.error(err);\n});\n```\n\n\n## Task\n\nA `task` can return different values. If a `task` returns, it means the task was completed successfully. If a task throws an error, the task failed.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Success',\n\t\ttask: () => 'Foo'\n\t},\n\t{\n\t\ttitle: 'Failure',\n\t\ttask: () => {\n\t\t\tthrow new Error('Bar')\n\t\t}\n\t}\n]);\n```\n\n\n### Promises\n\nA `task` can also be async by returning a `Promise`. If the promise resolves, the task completed successfully, if it rejects, the task failed.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Success',\n\t\ttask: () => Promise.resolve('Foo')\n\t},\n\t{\n\t\ttitle: 'Failure',\n\t\ttask: () => Promise.reject(new Error('Bar'))\n\t}\n]);\n```\n\n> Tip: Always reject a promise with some kind of `Error` object.\n\n### Observable\n\n<img src=\"media/observable.gif\" width=\"250\" align=\"right\">\n\nA `task` can also return an `Observable`. The thing about observables is that it can emit multiple values and can be used to show the output of the\ntask. Please note that only the last line of the output is rendered.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Success',\n\t\ttask: () => {\n\t\t\treturn new Observable(observer => {\n\t\t\t\tobserver.next('Foo');\n\n\t\t\t\tsetTimeout(() => {\n\t\t\t\t\tobserver.next('Bar');\n\t\t\t\t}, 2000);\n\n\t\t\t\tsetTimeout(() => {\n\t\t\t\t\tobserver.complete();\n\t\t\t\t}, 4000);\n\t\t\t});\n\t\t}\n\t},\n\t{\n\t\ttitle: 'Failure',\n\t\ttask: () => Promise.reject(new Error('Bar'))\n\t}\n]);\n```\n\n### Streams\n\nIt's also possible to return a [`ReadableStream`](https://nodejs.org/api/stream.html#stream_class_stream_readable). The stream will be converted to an `Observable` and handled as such.\n\n```js\nconst fs = require('fs');\nconst split = require('split');\n\nconst list = new Listr([\n\t{\n\t\ttitle: 'File',\n\t\ttask: () => fs.createReadStream('data.txt', 'utf8')\n\t\t\t.pipe(split(/\\r?\\n/, null, {trailing: false}))\n\t}\n]);\n```\n\n### Skipping tasks\n\n<img src=\"media/skipped.png\" width=\"250\" align=\"right\">\n\nOptionally specify a `skip` function to determine whether a task can be skipped.\n\n- If the `skip` function returns a truthy value or a `Promise` that resolves to a truthy value then the task will be skipped.\n- If the returned value is a string it will be displayed as the reason for skipping the task.\n- If the `skip` function returns a falsey value or a `Promise` that resolves to a falsey value then the task will be executed as normal.\n- If the `skip` function throws or returns a `Promise` that rejects, the task (and the whole build) will fail.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Task 1',\n\t\ttask: () => Promise.resolve('Foo')\n\t},\n\t{\n\t\ttitle: 'Can be skipped',\n\t\tskip: () => {\n\t\t\tif (Math.random() > 0.5) {\n\t\t\t\treturn 'Reason for skipping';\n\t\t\t}\n\t\t},\n\t\ttask: () => 'Bar'\n\t},\n\t{\n\t\ttitle: 'Task 3',\n\t\ttask: () => Promise.resolve('Bar')\n\t}\n]);\n```\n\n> Tip: You can still skip a task while already executing the `task` function with the [task object](#task-object).\n\n## Enabling tasks\n\nBy default, every task is enabled which means that every task will be executed. However, it's also possible to provide an `enabled` function that returns whether the task should be executed or not.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Install package dependencies with Yarn',\n\t\ttask: (ctx, task) => execa('yarn')\n\t\t\t.catch(() => {\n\t\t\t\tctx.yarn = false;\n\n\t\t\t\ttask.skip('Yarn not available, install it via `npm install -g yarn`');\n\t\t\t})\n\t},\n\t{\n\t\ttitle: 'Install package dependencies with npm',\n\t\tenabled: ctx => ctx.yarn === false,\n\t\ttask: () => execa('npm', ['install'])\n\t}\n]);\n```\n\nIn the above example, we try to run `yarn` first, if that fails we will fall back to `npm`. However, at first only the Yarn task will be visible. Because we set the `yarn` flag of the [context](https://github.com/SamVerschueren/listr#context) object to `false`, the second task will automatically be enabled and will be executed.\n\n> Note: This does not work in combination with [concurrent](https://github.com/SamVerschueren/listr#concurrent) tasks.\n\n\n## Context\n\nA context object is being passed as argument into every `skip` and `task` function. This allows you to create composable tasks and change the behaviour of your task depending on previous results.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Task 1',\n\t\tskip: ctx => ctx.foo === 'bar',\n\t\ttask: () => Promise.resolve('Foo')\n\t},\n\t{\n\t\ttitle: 'Can be skipped',\n\t\tskip: () => {\n\t\t\tif (Math.random() > 0.5) {\n\t\t\t\treturn 'Reason for skipping';\n\t\t\t}\n\t\t},\n\t\ttask: ctx => {\n\t\t\tctx.unicorn = 'rainbow';\n\t\t}\n\t},\n\t{\n\t\ttitle: 'Task 3',\n\t\ttask: ctx => Promise.resolve(`${ctx.foo} ${ctx.bar}`)\n\t}\n]);\n\ntasks.run({\n\tfoo: 'bar'\n}).then(ctx => {\n\tconsole.log(ctx);\n\t//=> {foo: 'bar', unicorn: 'rainbow'}\n});\n```\n\n\n## Task object\n\nA special task object is being passed as second argument into the `task` function. This task object lets you change the title while running your task, you can skip it depending on some results or you can update the task's output.\n\n```js\nconst tasks = new Listr([\n\t{\n\t\ttitle: 'Install package dependencies with Yarn',\n\t\ttask: (ctx, task) => execa('yarn')\n\t\t\t.catch(() => {\n\t\t\t\tctx.yarn = false;\n\n\t\t\t\ttask.title = `${task.title} (or not)`;\n\t\t\t\ttask.skip('Yarn not available');\n\t\t\t})\n\t},\n\t{\n\t\ttitle: 'Install package dependencies with npm',\n\t\tskip: ctx => ctx.yarn !== false && 'Dependencies already installed with Yarn'\n\t\ttask: (ctx, task) => {\n\t\t\ttask.output = 'Installing dependencies...';\n\n\t\t\treturn execa('npm', ['install'])\n\t\t}\n\t}\n]);\n\ntasks.run();\n```\n\n\n## Custom renderers\n\nIt's possible to write custom renderers for Listr. A renderer is an ES6 class that accepts the tasks that it should renderer, and the Listr options object. It has two methods, the `render` method which is called when it should start rendering, and the `end` method. The `end` method is called all the tasks are completed or if a task failed. If a task failed, the error object is passed in via an argument.\n\n```js\nclass CustomRenderer {\n\n\tconstructor(tasks, options) { }\n\n\tstatic get nonTTY() {\n\t\treturn false;\n\t}\n\n\trender() { }\n\n\tend(err) { }\n}\n\nmodule.exports = CustomRenderer;\n```\n\n> Note: A renderer is not passed through to the subtasks, only to the main task. It is up to you to handle that case.\n\nThe `nonTTY` property returns a boolean indicating if the renderer supports non-TTY environments. The default for this property is `false` if you do not implement it.\n\n### Observables\n\nEvery task is an observable. The task emits three different events and every event is an object with a `type` property.\n\n1. The state of the task has changed (`STATE`).\n2. The task outputted data (`DATA`).\n3. The task returns a subtask list (`SUBTASKS`).\n4. The task's title changed (`TITLE`).\n5. The task became enabled or disabled (`ENABLED`).\n\nThis allows you to flexibly build up your UI. Let's render every task that starts executing.\n\n```js\nclass CustomRenderer {\n\n\tconstructor(tasks, options) {\n\t\tthis._tasks = tasks;\n\t\tthis._options = Object.assign({}, options);\n\t}\n\n\tstatic get nonTTY() {\n\t\treturn true;\n\t}\n\n\trender() {\n\t\tfor (const task of this._tasks) {\n\t\t\ttask.subscribe(event => {\n\t\t\t\tif (event.type === 'STATE' && task.isPending()) {\n\t\t\t\t\tconsole.log(`${task.title} [started]`);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\n\tend(err) { }\n}\n\nmodule.exports = CustomRenderer;\n```\n\nIf you want more complex examples, take a look at the [update](https://github.com/SamVerschueren/listr-update-renderer) and [verbose](https://github.com/SamVerschueren/listr-verbose-renderer) renderers.\n\n\n## API\n\n### Listr([tasks], [options])\n\n#### tasks\n\nType: `object[]`\n\nList of tasks.\n\n##### title\n\nType: `string`\n\nTitle of the task.\n\n##### task\n\nType: `Function`\n\nTask function.\n\n##### skip\n\nType: `Function`\n\nSkip function. Read more about [skipping tasks](#skipping-tasks).\n\n#### options\n\nAny renderer specific options. For instance, when using the `update-renderer`, you can pass in all of its [options](https://github.com/SamVerschueren/listr-update-renderer#options).\n\n##### concurrent\n\nType: `boolean` `number`<br>\nDefault: `false`\n\nSet to `true` if you want to run tasks in parallel, set to a number to control the concurrency. By default it runs tasks sequentially.\n\n##### exitOnError\n\nType: `boolean`<br>\nDefault: `true`\n\nSet to `false` if you don't want to stop the execution of other tasks when one or more tasks fail.\n\n##### renderer\n\nType: `string` `object`<br>\nDefault: `default`<br>\nOptions: `default` `verbose` `silent`\n\nRenderer that should be used. You can either pass in the name of the known renderer, or a class of a custom renderer.\n\n##### nonTTYRenderer\n\nType: `string` `object`<br>\nDefault: `verbose`\n\nThe renderer that should be used if the main renderer does not support TTY environments. You can either pass in the name of the renderer, or a class of a custom renderer.\n\n### Instance\n\n#### add(task)\n\nReturns the instance.\n\n##### task\n\nType: `object` `object[]`\n\nTask object or multiple task objects.\n\n#### run([context])\n\nStart executing the tasks. Returns a `Promise` for the context object.\n\n##### context\n\nType: `object`<br>\nDefault: `Object.create(null)`\n\nInitial context object.\n\n\n## Related\n\n- [ora](https://github.com/sindresorhus/ora) - Elegant terminal spinner\n- [cli-spinners](https://github.com/sindresorhus/cli-spinners) - Spinners for use in the terminal\n\n\n## License\n\nMIT © [Sam Verschueren](https://github.com/SamVerschueren)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sam Verschueren <sam.verschueren@gmail.com> (github.com/SamVerschueren)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/listr/-/listr-0.13.0.tgz#20bb0ba30bae660ee84cc0503df4be3d5623887d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/listr/-/listr-0.13.0.tgz",
+    "hash": "20bb0ba30bae660ee84cc0503df4be3d5623887d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "20bb0ba30bae660ee84cc0503df4be3d5623887d"
+}

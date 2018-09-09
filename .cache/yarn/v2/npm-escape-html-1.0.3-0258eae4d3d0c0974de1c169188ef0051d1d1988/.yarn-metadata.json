@@ -1,0 +1,44 @@
+{
+  "manifest": {
+    "name": "escape-html",
+    "description": "Escape string for use in HTML",
+    "version": "1.0.3",
+    "license": "MIT",
+    "keywords": [
+      "escape",
+      "html",
+      "utility"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/component/escape-html.git"
+    },
+    "devDependencies": {
+      "benchmark": "1.0.0",
+      "beautify-benchmark": "0.2.4"
+    },
+    "files": [
+      "LICENSE",
+      "Readme.md",
+      "index.js"
+    ],
+    "scripts": {
+      "bench": "node benchmark/index.js"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-escape-html-1.0.3-0258eae4d3d0c0974de1c169188ef0051d1d1988/package.json",
+    "readmeFilename": "Readme.md",
+    "readme": "\n# escape-html\n\n  Escape string for use in HTML\n\n## Example\n\n```js\nvar escape = require('escape-html');\nvar html = escape('foo & bar');\n// -> foo &amp; bar\n```\n\n## Benchmark\n\n```\n$ npm run-script bench\n\n> escape-html@1.0.3 bench nodejs-escape-html\n> node benchmark/index.js\n\n\n  http_parser@1.0\n  node@0.10.33\n  v8@3.14.5.9\n  ares@1.9.0-DEV\n  uv@0.10.29\n  zlib@1.2.3\n  modules@11\n  openssl@1.0.1j\n\n  1 test completed.\n  2 tests completed.\n  3 tests completed.\n\n  no special characters    x 19,435,271 ops/sec ±0.85% (187 runs sampled)\n  single special character x  6,132,421 ops/sec ±0.67% (194 runs sampled)\n  many special characters  x  3,175,826 ops/sec ±0.65% (193 runs sampled)\n```\n\n## License\n\n  MIT",
+    "licenseText": "(The MIT License)\n\nCopyright (c) 2012-2013 TJ Holowaychuk\nCopyright (c) 2015 Andreas Lubbe\nCopyright (c) 2015 Tiancheng \"Timothy\" Gu\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz",
+    "hash": "0258eae4d3d0c0974de1c169188ef0051d1d1988",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0258eae4d3d0c0974de1c169188ef0051d1d1988"
+}

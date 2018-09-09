@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "indent-string",
+    "version": "3.2.0",
+    "description": "Indent each line in a string",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/indent-string.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "indent",
+      "string",
+      "str",
+      "pad",
+      "align",
+      "line",
+      "text",
+      "each",
+      "every"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-indent-string-3.2.0-4a5fd6d27cc332f37e5419a504dbb837105c9289/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# indent-string [![Build Status](https://travis-ci.org/sindresorhus/indent-string.svg?branch=master)](https://travis-ci.org/sindresorhus/indent-string)\n\n> Indent each line in a string\n\n\n## Install\n\n```\n$ npm install indent-string\n```\n\n\n## Usage\n\n```js\nconst indentString = require('indent-string');\n\nindentString('Unicorns\\nRainbows', 4);\n//=> '    Unicorns'\n//=> '    Rainbows'\n\nindentString('Unicorns\\nRainbows', 4, {indent: '♥'});\n//=> '♥♥♥♥Unicorns'\n//=> '♥♥♥♥Rainbows'\n```\n\n\n## API\n\n### indentString(input, [count], [options])\n\n#### input\n\nType: `string`\n\nString you want to indent.\n\n#### count\n\nType: `number`<br>\nDefault: `1`\n\nHow many times you want `indent` repeated.\n\n#### options\n\nType: `Object`<br>\n\n##### indent\n\nType: `string`<br>\nDefault: `' '`\n\nString to use for the indent.\n\n##### includeEmptyLines\n\nType: `boolean`<br>\nDefault: `false`\n\nAlso indent empty lines.\n\n\n## Related\n\n- [indent-string-cli](https://github.com/sindresorhus/indent-string-cli) - CLI for this module\n- [strip-indent](https://github.com/sindresorhus/strip-indent) - Strip leading whitespace from every line in a string\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "MIT License\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
+    "hash": "4a5fd6d27cc332f37e5419a504dbb837105c9289",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4a5fd6d27cc332f37e5419a504dbb837105c9289"
+}

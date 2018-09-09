@@ -1,0 +1,58 @@
+{
+  "manifest": {
+    "name": "cloneable-readable",
+    "version": "1.1.2",
+    "description": "Clone a Readable stream, safely",
+    "main": "index.js",
+    "scripts": {
+      "test": "standard && tape test.js | tap-spec"
+    },
+    "precommit": "test",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mcollina/cloneable-readable.git"
+    },
+    "keywords": [
+      "readable",
+      "stream",
+      "clone"
+    ],
+    "author": {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/mcollina/cloneable-readable/issues"
+    },
+    "homepage": "https://github.com/mcollina/cloneable-readable#readme",
+    "devDependencies": {
+      "flush-write-stream": "^1.0.0",
+      "from2": "^2.1.1",
+      "pre-commit": "^1.1.2",
+      "standard": "^11.0.0",
+      "tap-spec": "^4.1.1",
+      "tape": "^4.9.0"
+    },
+    "dependencies": {
+      "inherits": "^2.0.1",
+      "process-nextick-args": "^2.0.0",
+      "readable-stream": "^2.3.5"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-cloneable-readable-1.1.2-d591dee4a8f8bc15da43ce97dceeba13d43e2a65/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# cloneable-readable\n\n[![Build Status](https://travis-ci.org/mcollina/cloneable-readable.svg?branch=master)](https://travis-ci.org/mcollina/cloneable-readable)\n\nClone a Readable stream, safely.\n\n```js\n'use strict'\n\nvar cloneable = require('cloneable-readable')\nvar fs = require('fs')\nvar pump = require('pump')\n\nvar stream = cloneable(fs.createReadStream('./package.json'))\n\npump(stream.clone(), fs.createWriteStream('./out1'))\n\n// simulate some asynchronicity\nsetImmediate(function () {\n  pump(stream, fs.createWriteStream('./out2'))\n})\n```\n\n**cloneable-readable** automatically handles `objectMode: true`.\n\nThis module comes out of an healthy discussion on the 'right' way to\nclone a Readable in https://github.com/gulpjs/vinyl/issues/85\nand https://github.com/nodejs/readable-stream/issues/202. This is my take.\n\n**YOU MUST PIPE ALL CLONES TO START THE FLOW**\n\nYou can also attach `'data'` and `'readable'` events to them.\n\n## API\n\n### cloneable(stream)\n\nCreate a `Cloneable` stream.\nA Cloneable has a `clone()` method to create more clones.\nAll clones must be resumed/piped to start the flow.\n\n### cloneable.isCloneable(stream)\n\nCheck if `stream` needs to be wrapped in a `Cloneable` or not.\n\n## Acknowledgements\n\nThis project was kindly sponsored by [nearForm](http://nearform.com).\n\n## License\n\nMIT\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2016 Matteo Collina\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cloneable-readable/-/cloneable-readable-1.1.2.tgz#d591dee4a8f8bc15da43ce97dceeba13d43e2a65",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cloneable-readable/-/cloneable-readable-1.1.2.tgz",
+    "hash": "d591dee4a8f8bc15da43ce97dceeba13d43e2a65",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d591dee4a8f8bc15da43ce97dceeba13d43e2a65"
+}

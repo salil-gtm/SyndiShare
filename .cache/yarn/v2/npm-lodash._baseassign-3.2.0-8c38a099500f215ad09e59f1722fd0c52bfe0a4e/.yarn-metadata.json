@@ -1,0 +1,68 @@
+{
+  "manifest": {
+    "name": "lodash._baseassign",
+    "version": "3.2.0",
+    "description": "The modern build of lodash’s internal `baseAssign` as a module.",
+    "homepage": "https://lodash.com/",
+    "icon": "https://lodash.com/icon.svg",
+    "license": "MIT",
+    "author": {
+      "name": "John-David Dalton",
+      "email": "john.david.dalton@gmail.com",
+      "url": "http://allyoucanleet.com/"
+    },
+    "contributors": [
+      {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      {
+        "name": "Benjamin Tan",
+        "email": "demoneaux@gmail.com",
+        "url": "https://d10.github.io/"
+      },
+      {
+        "name": "Blaine Bublitz",
+        "email": "blaine@iceddev.com",
+        "url": "http://www.iceddev.com/"
+      },
+      {
+        "name": "Kit Cambridge",
+        "email": "github@kitcambridge.be",
+        "url": "http://kitcambridge.be/"
+      },
+      {
+        "name": "Mathias Bynens",
+        "email": "mathias@qiwi.be",
+        "url": "https://mathiasbynens.be/"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/lodash/lodash.git"
+    },
+    "scripts": {
+      "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+    },
+    "dependencies": {
+      "lodash._basecopy": "^3.0.0",
+      "lodash.keys": "^3.0.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-lodash._baseassign-3.2.0-8c38a099500f215ad09e59f1722fd0c52bfe0a4e/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# lodash._baseassign v3.2.0\n\nThe [modern build](https://github.com/lodash/lodash/wiki/Build-Differences) of [lodash’s](https://lodash.com/) internal `baseAssign` exported as a [Node.js](http://nodejs.org/)/[io.js](https://iojs.org/) module.\n\n## Installation\n\nUsing npm:\n\n```bash\n$ {sudo -H} npm i -g npm\n$ npm i --save lodash._baseassign\n```\n\nIn Node.js/io.js:\n\n```js\nvar baseAssign = require('lodash._baseassign');\n```\n\nSee the [package source](https://github.com/lodash/lodash/blob/3.2.0-npm-packages/lodash._baseassign) for more details.\n",
+    "licenseText": "Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>\nBased on Underscore.js, copyright 2009-2015 Jeremy Ashkenas,\nDocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lodash._baseassign/-/lodash._baseassign-3.2.0.tgz#8c38a099500f215ad09e59f1722fd0c52bfe0a4e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lodash._baseassign/-/lodash._baseassign-3.2.0.tgz",
+    "hash": "8c38a099500f215ad09e59f1722fd0c52bfe0a4e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "8c38a099500f215ad09e59f1722fd0c52bfe0a4e"
+}

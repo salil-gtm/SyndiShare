@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "name": "nano-json-stream-parser",
+    "version": "0.1.2",
+    "description": "Lightweight, streamed JSON parser in 748 bytes",
+    "main": "dist/index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/maiavictor/nano-json-stream-parser.git"
+    },
+    "keywords": [
+      "json",
+      "parse"
+    ],
+    "author": {
+      "name": "Victor Maia"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/maiavictor/nano-json-stream-parser/issues"
+    },
+    "homepage": "https://github.com/maiavictor/nano-json-stream-parser#readme",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-nano-json-stream-parser-0.1.2-0cc8f6d0e2b622b479c40d499c46d64b755c6f5f/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# nano-json-stream-parser\n\nA complete, pure JavaScript, streamed JSON parser in about `750 bytes` (gzipped). It is similar to [Oboe.js](https://github.com/jimhigson/oboe.js/), a streaming JSON micro-library with a size of `4.8kb` (gzipped). While that alone isn't much, sizes add up quickly when you stack many libs. This lib achieves a 85% size reduction, while still offering the same main functionality. Uses ES6 arrows.\n\n## Install\n\n    npm i nano-json-stream-parser\n\n## Usage\n\nUsage is self explanatory:\n\n```javascript\nconst njsp = require(\"nano-json-stream-parser\");\n\n// Callback is called when there is a complete JSON\nconst parse = njsp((json) => console.log(json));\n\nparse('[1,2,3,4]');\n\nparse('[1,2');\nparse(',3,4]');\n\nparse(\"[::invalid_json_is_ignored::]\");\n\nparse('{\"pos\": {\"x\":');\nparse('1.70, \"y\": 2.');\nparse('49, \"z\": 2e3}}');\n\nparse('[ \"aaaa\\\\\"abcd\\\\u0123\\\\\\\\aa\\\\/aa\" ]')\n```\n\nOutput:\n\n```\n[ 1, 2, 3, 4 ]\n[ 1, 2, 3, 4 ]\n{ pos: { x: 1.7, y: 2.49, z: 2000 } }\n[ 'aaaa\"abcdģ\\\\aa/aa' ]\n```\n\n## Disclaimer\n\nThis library has no tests yet and could contain buggy edge-cases.\n",
+    "licenseText": "Copyright (c) 2017 Victor Hernandes Silva Maia\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/nano-json-stream-parser/-/nano-json-stream-parser-0.1.2.tgz#0cc8f6d0e2b622b479c40d499c46d64b755c6f5f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/nano-json-stream-parser/-/nano-json-stream-parser-0.1.2.tgz",
+    "hash": "0cc8f6d0e2b622b479c40d499c46d64b755c6f5f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0cc8f6d0e2b622b479c40d499c46d64b755c6f5f"
+}

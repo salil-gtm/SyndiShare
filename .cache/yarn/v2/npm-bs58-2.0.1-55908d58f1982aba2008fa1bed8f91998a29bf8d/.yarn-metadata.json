@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "name": "bs58",
+    "version": "2.0.1",
+    "description": "Base 58 encoding / decoding",
+    "keywords": [
+      "base58",
+      "bitcoin",
+      "crypto",
+      "crytography",
+      "decode",
+      "decoding",
+      "encode",
+      "encoding",
+      "litecoin"
+    ],
+    "devDependencies": {
+      "coveralls": "^2.11.2",
+      "istanbul": "^0.2.10",
+      "jshint": "2.5.1",
+      "mocha": "^1.21.4",
+      "mocha-lcov-reporter": "0.0.1",
+      "mochify": "^2.1.0"
+    },
+    "repository": {
+      "url": "http://github.com/cryptocoinjs/bs58",
+      "type": "git"
+    },
+    "main": "./lib/bs58.js",
+    "scripts": {
+      "browser-test": "./node_modules/.bin/mochify --wd -R spec",
+      "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+      "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info",
+      "jshint": "./node_modules/.bin/jshint --config jshint.json lib/*.js ; true",
+      "test": "npm run-script unit",
+      "unit": "./node_modules/.bin/mocha"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-bs58-2.0.1-55908d58f1982aba2008fa1bed8f91998a29bf8d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "\n[![build status](https://secure.travis-ci.org/cryptocoinjs/bs58.png)](http://travis-ci.org/cryptocoinjs/bs58)\n[![Coverage Status](https://img.shields.io/coveralls/cryptocoinjs/bs58.svg)](https://coveralls.io/r/cryptocoinjs/bs58)\n\nbs58\n====\n\nJavaScript component to compute base 58 encoding. This encoding is typically used for crypto currencies such as Bitcoin.\n\n### Documentation\n\nhttp://cryptocoinjs.com/modules/misc/bs58/\n\n\nCredits\n-------\n- [Mike Hearn](https://github.com/mikehearn) for original Java implementation\n- [Stefan Thomas](https://github.com/justmoon) for porting to JavaScript\n- [Stephan Pair](https://github.com/gasteve) for buffer improvements\n- [Daniel Cousens](https://github.com/dcousens) for cleanup and merging improvements from bitcoinjs-lib\n- [Jared Deckard](https://github.com/deckar01) for killing `bigi` as a dependency\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/bs58/-/bs58-2.0.1.tgz#55908d58f1982aba2008fa1bed8f91998a29bf8d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/bs58/-/bs58-2.0.1.tgz",
+    "hash": "55908d58f1982aba2008fa1bed8f91998a29bf8d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "55908d58f1982aba2008fa1bed8f91998a29bf8d"
+}

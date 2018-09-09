@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "name": "path-parse",
+    "version": "1.0.5",
+    "description": "Node.js path.parse() ponyfill",
+    "main": "index.js",
+    "scripts": {
+      "test": "node test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jbgutierrez/path-parse.git"
+    },
+    "keywords": [
+      "path",
+      "paths",
+      "file",
+      "dir",
+      "parse",
+      "built-in",
+      "util",
+      "utils",
+      "core",
+      "ponyfill",
+      "polyfill",
+      "shim"
+    ],
+    "author": {
+      "name": "Javier Blanco",
+      "email": "http://jbgutierrez.info"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/jbgutierrez/path-parse/issues"
+    },
+    "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-path-parse-1.0.5-3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# path-parse [![Build Status](https://travis-ci.org/jbgutierrez/path-parse.svg?branch=master)](https://travis-ci.org/jbgutierrez/path-parse)\n\n> Node.js [`path.parse(pathString)`](https://nodejs.org/api/path.html#path_path_parse_pathstring) ponyfill.\n\n> Ponyfill: A polyfill that doesn't overwrite the native method\n\n## Install\n\n```\n$ npm install --save path-parse\n```\n\n## Usage\n\n```js\nvar pathParse = require('path-parse');\n\npathParse('/home/user/dir/file.txt');\n//=> {\n//       root : \"/\",\n//       dir : \"/home/user/dir\",\n//       base : \"file.txt\",\n//       ext : \".txt\",\n//       name : \"file\"\n//   }\n```\n\n## API\n\nSee [`path.parse(pathString)`](https://nodejs.org/api/path.html#path_path_parse_pathstring) docs.\n\n### pathParse(path)\n\n### pathParse.posix(path)\n\nThe Posix specific version.\n\n### pathParse.win32(path)\n\nThe Windows specific version.\n\n## License\n\nMIT © [Javier Blanco](http://jbgutierrez.info)\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz",
+    "hash": "3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
+}

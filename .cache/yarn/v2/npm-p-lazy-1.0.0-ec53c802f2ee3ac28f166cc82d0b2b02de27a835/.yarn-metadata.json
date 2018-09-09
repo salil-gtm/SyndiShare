@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "p-lazy",
+    "version": "1.0.0",
+    "description": "Create a lazy promise that defers execution until `.then()` or `.catch()` is called",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/p-lazy.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "promise",
+      "lazy",
+      "defer",
+      "deferred",
+      "then",
+      "catch",
+      "fulfilled",
+      "async",
+      "function",
+      "await",
+      "promises",
+      "bluebird"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "delay": "^1.3.1",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-p-lazy-1.0.0-ec53c802f2ee3ac28f166cc82d0b2b02de27a835/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# p-lazy [![Build Status](https://travis-ci.org/sindresorhus/p-lazy.svg?branch=master)](https://travis-ci.org/sindresorhus/p-lazy)\n\n> Create a lazy promise that defers execution until `.then()` or `.catch()` is called\n\nUseful if you're doing some heavy operations and would like to only do it when the promise is actually used.\n\n\n## Install\n\n```\n$ npm install --save p-lazy\n```\n\n\n## Usage\n\n```js\nconst PLazy = require('p-lazy');\n\nconst lazyPromise = new PLazy(resolve => {\n\tsomeHeavyOperation(resolve);\n});\n\n// `someHeavyOperation` is not yet called\n\ndoSomethingFun.then(() => {\n\t// `someHeavyOperation` is called\n\tlazyPromise.then(console.log);\n});\n```\n\n\n## API\n\n### new PLazy(executor)\n\nSame as the [`Promise` constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise). `PLazy` is a subclass of `Promise`.\n\n### PLazy.from(fn)\n\nCreate a `PLazy` promise from a promise-returning or async function.\n\n\n## Related\n\n- [p-defer](https://github.com/sindresorhus/p-defer) - Create a deferred promise\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/p-lazy/-/p-lazy-1.0.0.tgz#ec53c802f2ee3ac28f166cc82d0b2b02de27a835",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/p-lazy/-/p-lazy-1.0.0.tgz",
+    "hash": "ec53c802f2ee3ac28f166cc82d0b2b02de27a835",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "ec53c802f2ee3ac28f166cc82d0b2b02de27a835"
+}

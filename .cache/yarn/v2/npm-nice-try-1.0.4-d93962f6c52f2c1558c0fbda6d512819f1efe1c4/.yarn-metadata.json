@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "name": "nice-try",
+    "version": "1.0.4",
+    "authors": [
+      "Tobias Reich <tobias@electerious.com>"
+    ],
+    "description": "Tries to execute a function and discards any error that occurs",
+    "main": "src/index.js",
+    "keywords": [
+      "try",
+      "catch",
+      "error"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/electerious/nice-try",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/electerious/nice-try.git"
+    },
+    "files": [
+      "src"
+    ],
+    "scripts": {
+      "coveralls": "nyc report --reporter=text-lcov | coveralls",
+      "test": "nyc node_modules/mocha/bin/_mocha",
+      "prepublish": "npm test"
+    },
+    "devDependencies": {
+      "chai": "^4.1.1",
+      "coveralls": "^2.13.1",
+      "nyc": "^11.1.0",
+      "mocha": "^3.5.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-nice-try-1.0.4-d93962f6c52f2c1558c0fbda6d512819f1efe1c4/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# nice-try\n\n[![Travis Build Status](https://travis-ci.org/electerious/nice-try.svg?branch=master)](https://travis-ci.org/electerious/nice-try) [![AppVeyor Status](https://ci.appveyor.com/api/projects/status/8tqb09wrwci3xf8l?svg=true)](https://ci.appveyor.com/project/electerious/nice-try) [![Coverage Status](https://coveralls.io/repos/github/electerious/nice-try/badge.svg?branch=master)](https://coveralls.io/github/electerious/nice-try?branch=master) [![Dependencies](https://david-dm.org/electerious/nice-try.svg)](https://david-dm.org/electerious/nice-try#info=dependencies)\n\nA function that tries to execute a function and discards any error that occurs.\n\n## Install\n\n```\nnpm install nice-try\n```\n\n## Usage\n\n```js\nconst niceTry = require('nice-try')\n\nniceTry(() => JSON.parse('true')) // true\nniceTry(() => JSON.parse('truee')) // undefined\nniceTry() // undefined\nniceTry(true) // undefined\n```\n\n## API\n\n### Parameters\n\n- `fn` `{Function}` Function that might or might not throw an error.\n\n### Returns\n\n- `{?*}` Return-value of the function when no error occurred.",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2017 Tobias Reich\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.4.tgz#d93962f6c52f2c1558c0fbda6d512819f1efe1c4",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.4.tgz",
+    "hash": "d93962f6c52f2c1558c0fbda6d512819f1efe1c4",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d93962f6c52f2c1558c0fbda6d512819f1efe1c4"
+}

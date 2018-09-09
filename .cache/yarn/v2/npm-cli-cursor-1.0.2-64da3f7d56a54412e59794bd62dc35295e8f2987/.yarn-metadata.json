@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "cli-cursor",
+    "version": "1.0.2",
+    "description": "Toggle the CLI cursor",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/cli-cursor.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "cli",
+      "cursor",
+      "ansi",
+      "toggle",
+      "display",
+      "show",
+      "hide",
+      "term",
+      "terminal",
+      "console",
+      "tty",
+      "shell",
+      "command-line"
+    ],
+    "dependencies": {
+      "restore-cursor": "^1.0.1"
+    },
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-cli-cursor-1.0.2-64da3f7d56a54412e59794bd62dc35295e8f2987/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# cli-cursor [![Build Status](https://travis-ci.org/sindresorhus/cli-cursor.svg?branch=master)](https://travis-ci.org/sindresorhus/cli-cursor)\n\n> Toggle the CLI cursor\n\nThe cursor is [gracefully restored](https://github.com/sindresorhus/restore-cursor) if the process exits.\n\n\n## Install\n\n```\n$ npm install --save cli-cursor\n```\n\n\n## Usage\n\n```js\nconst cliCursor = require('cli-cursor');\n\ncliCursor.hide();\n\nconst unicornsAreAwesome = true;\ncliCursor.toggle(unicornsAreAwesome);\n```\n\n\n## API\n\n### .show()\n\n### .hide()\n\n### .toggle(force)\n\n`force` is useful to show or hide the cursor based an a boolean.\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-1.0.2.tgz#64da3f7d56a54412e59794bd62dc35295e8f2987",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-1.0.2.tgz",
+    "hash": "64da3f7d56a54412e59794bd62dc35295e8f2987",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "64da3f7d56a54412e59794bd62dc35295e8f2987"
+}

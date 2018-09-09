@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "name": "tapable",
+    "version": "1.0.0",
+    "author": {
+      "name": "Tobias Koppers @sokra"
+    },
+    "description": "Just a little module for plugins.",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "http://github.com/webpack/tapable.git"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-jest": "^21.0.2",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-env": "^1.6.0",
+      "codecov": "^2.3.0",
+      "jest": "^21.0.4"
+    },
+    "engines": {
+      "node": ">=6"
+    },
+    "files": [
+      "lib"
+    ],
+    "homepage": "https://github.com/webpack/tapable",
+    "main": "lib/index.js",
+    "scripts": {
+      "test": "jest",
+      "travis": "jest --coverage && codecov"
+    },
+    "jest": {
+      "transform": {
+        "__tests__[\\\\/].+\\.js$": "babel-jest"
+      }
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-tapable-1.0.0-cbb639d9002eed9c6b5975eb20598d7936f1f9f2/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Tapable\n\nThe tapable packages exposes many Hook classes, which can be used to create hooks for plugins.\n\n``` javascript\nconst {\n\tSyncHook,\n\tSyncBailHook,\n\tSyncWaterfallHook,\n\tSyncLoopHook,\n\tAsyncParallelHook,\n\tAsyncParallelBailHook,\n\tAsyncSeriesHook,\n\tAsyncSeriesBailHook,\n\tAsyncSeriesWaterfallHook\n } = require(\"tapable\");\n```\n\n## Usage\n\nAll Hook constructors take one optional argument, which is a list of argument names as strings.\n\n``` js\nconst hook = new SyncHook([\"arg1\", \"arg2\", \"arg3\"]);\n```\n\nThe best practice is to expose all hooks of a class in a `hooks` property:\n\n``` js\nclass Car {\n\tconstructor() {\n\t\tthis.hooks = {\n\t\t\taccelerate: new SyncHook([\"newSpeed\"]),\n\t\t\tbreak: new SyncHook(),\n\t\t\tcalculateRoutes: new AsyncParallelHook([\"source\", \"target\", \"routesList\"])\n\t\t};\n\t}\n\n\t/* ... */\n}\n```\n\nOther people can now use these hooks:\n\n``` js\nconst myCar = new Car();\n\n// Use the tap method to add a consument\nmyCar.hooks.break.tap(\"WarningLampPlugin\", () => warningLamp.on());\n```\n\nIt's required to pass a name to identify the plugin/reason.\n\nYou may receive arguments:\n\n``` js\nmyCar.hooks.accelerate.tap(\"LoggerPlugin\", newSpeed => console.log(`Accelerating to ${newSpeed}`));\n```\n\nFor sync hooks `tap` is the only valid method to add a plugin. Async hooks also support async plugins:\n\n``` js\nmyCar.hooks.calculateRoutes.tapPromise(\"GoogleMapsPlugin\", (source, target, routesList) => {\n\t// return a promise\n\treturn google.maps.findRoute(source, target).then(route => {\n\t\troutesList.add(route);\n\t});\n});\nmyCar.hooks.calculateRoutes.tapAsync(\"BingMapsPlugin\", (source, target, routesList, callback) => {\n\tbing.findRoute(source, target, (err, route) => {\n\t\tif(err) return callback(err);\n\t\troutesList.add(route);\n\t\t// call the callback\n\t\tcallback();\n\t});\n});\n\n// You can still use sync plugins\nmyCar.hooks.calculateRoutes.tap(\"CachedRoutesPlugin\", (source, target, routesList) => {\n\tconst cachedRoute = cache.get(source, target);\n\tif(cachedRoute)\n\t\troutesList.add(cachedRoute);\n})\n```\n\nThe class declaring these hooks need to call them:\n\n``` js\nclass Car {\n\t/* ... */\n\n\tsetSpeed(newSpeed) {\n\t\tthis.hooks.accelerate.call(newSpeed);\n\t}\n\n\tuseNavigationSystemPromise(source, target) {\n\t\tconst routesList = new List();\n\t\treturn this.hooks.calculateRoutes.promise(source, target, routesList).then(() => {\n\t\t\treturn routesList.getRoutes();\n\t\t});\n\t}\n\n\tuseNavigationSystemAsync(source, target, callback) {\n\t\tconst routesList = new List();\n\t\tthis.hooks.calculateRoutes.callAsync(source, target, routesList, err => {\n\t\t\tif(err) return callback(err);\n\t\t\tcallback(null, routesList.getRoutes());\n\t\t});\n\t}\n}\n```\n\nThe Hook will compile a method with the most efficient way of running your plugins. It generates code depending on:\n* The number of registered plugins (none, one, many)\n* The kind of registered plugins (sync, async, promise)\n* The used call method (sync, async, promise)\n* The number of arguments\n* Whether interception is used\n\nThis ensures fastest possible execution.\n\n## Interception\n\nAll Hooks offer an additional interception API:\n\n``` js\nmyCar.hooks.calculateRoutes.intercept({\n\tcall: (source, target, routesList) => {\n\t\tconsole.log(\"Starting to calculate routes\");\n\t},\n\ttap: (tapInfo) => {\n\t\t// tapInfo = { type: \"promise\", name: \"GoogleMapsPlugin\", fn: ... }\n\t\tconsole.log(`${tapInfo.name} is doing it's job`);\n\t\treturn tapInfo; // may return a new tapInfo object\n\t}\n})\n```\n\n**call**: `(...args) => void` Adding `call` to your interceptor will trigger when hooks are triggered. You have access to the hooks arguments.\n\n**tap**: `(tap: Tap) => void` Adding `tap` to your interceptor will trigger when a plugin taps into a hook. Provided is the `Tap` object. `Tap` object can't be changed.\n\n**loop**: `(...args) => void` Adding `loop` to your interceptor will trigger for each loop of a looping hook.\n\n**register**: `(tap: Tap) => Tap | undefined` Adding `register` to your interceptor will trigger for each added `Tap` and allows to modify it.\n\n\n## HookMap\n\nA HookMap is a helper class for a Map with Hooks\n\n``` js\nconst keyedHook = new HookMap(key => new SyncHook([\"arg\"]))\n```\n\n``` js\nkeyedHook.tap(\"some-key\", \"MyPlugin\", (arg) => { /* ... */ });\nkeyedHook.tapAsync(\"some-key\", \"MyPlugin\", (arg, callback) => { /* ... */ });\nkeyedHook.tapPromise(\"some-key\", \"MyPlugin\", (arg) => { /* ... */ });\n```\n\n``` js\nconst hook = keyedHook.get(\"some-key\");\nif(hook !== undefined) {\n\thook.callAsync(\"arg\", err => { /* ... */ });\n}\n```\n\n## Hook/HookMap interface\n\nPublic:\n\n``` ts\ninterface Hook {\n\ttap: (name: string | Tap, fn: (context?, ...args) => Result) => void,\n\ttapAsync: (name: string | Tap, fn: (context?, ...args, callback: (err, result: Result) => void) => void) => void,\n\ttapPromise: (name: string | Tap, fn: (context?, ...args) => Promise<Result>) => void,\n\tintercept: (interceptor: HookInterceptor) => void\n}\n\ninterface HookInterceptor {\n\tcall: (context?, ...args) => void,\n\tloop: (context?, ...args) => void,\n\ttap: (context?, tap: Tap) => void,\n\tregister: (tap: Tap) => Tap,\n\tcontext: boolean\n}\n\ninterface HookMap {\n\tfor: (key: any) => Hook,\n\ttap: (key: any, name: string | Tap, fn: (context?, ...args) => Result) => void,\n\ttapAsync: (key: any, name: string | Tap, fn: (context?, ...args, callback: (err, result: Result) => void) => void) => void,\n\ttapPromise: (key: any, name: string | Tap, fn: (context?, ...args) => Promise<Result>) => void,\n\tintercept: (interceptor: HookMapInterceptor) => void\n}\n\ninterface HookMapInterceptor {\n\tfactory: (key: any, hook: Hook) => Hook\n}\n\ninterface Tap {\n\tname: string,\n\ttype: string\n\tfn: Function,\n\tstage: number,\n\tcontext: boolean\n}\n```\n\nProtected (only for the class containing the hook):\n\n``` ts\ninterface Hook {\n\tisUsed: () => boolean,\n\tcall: (...args) => Result,\n\tpromise: (...args) => Promise<Result>,\n\tcallAsync: (...args, callback: (err, result: Result) => void) => void,\n}\n\ninterface HookMap {\n\tget: (key: any) => Hook | undefined,\n\tfor: (key: any) => Hook\n}\n```\n\n## MultiHook\n\nA helper Hook-like class to redirect taps to multiple other hooks:\n\n``` js\nconst { MultiHook } = require(\"tapable\");\n\nthis.hooks.allHooks = new MultiHook([this.hooks.hookA, this.hooks.hookB]);\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/tapable/-/tapable-1.0.0.tgz#cbb639d9002eed9c6b5975eb20598d7936f1f9f2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/tapable/-/tapable-1.0.0.tgz",
+    "hash": "cbb639d9002eed9c6b5975eb20598d7936f1f9f2",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "cbb639d9002eed9c6b5975eb20598d7936f1f9f2"
+}

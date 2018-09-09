@@ -1,0 +1,32 @@
+{
+  "manifest": {
+    "name": "babel-plugin-syntax-flow",
+    "version": "6.18.0",
+    "description": "Allow parsing of the flow syntax",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-flow"
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "keywords": [
+      "babel-plugin"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-babel-plugin-syntax-flow-6.18.0-4c3ab20a2af26aa20cd25995c398c4eb70310c8d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# babel-plugin-syntax-flow\n\n\n\n## Installation\n\n```sh\n$ npm install babel-plugin-syntax-flow\n```\n\n## Usage\n\n### Via `.babelrc` (Recommended)\n\n**.babelrc**\n\n```json\n{\n  \"plugins\": [\"syntax-flow\"]\n}\n```\n\n### Via CLI\n\n```sh\n$ babel --plugins syntax-flow script.js\n```\n\n### Via Node API\n\n```javascript\nrequire(\"babel-core\").transform(\"code\", {\n  plugins: [\"syntax-flow\"]\n});\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz",
+    "hash": "4c3ab20a2af26aa20cd25995c398c4eb70310c8d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
+}

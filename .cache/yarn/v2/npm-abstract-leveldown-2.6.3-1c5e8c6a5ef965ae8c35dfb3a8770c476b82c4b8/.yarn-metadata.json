@@ -1,0 +1,120 @@
+{
+  "manifest": {
+    "name": "abstract-leveldown",
+    "description": "An abstract prototype matching the LevelDOWN API",
+    "version": "2.6.3",
+    "contributors": [
+      {
+        "name": "Rod Vagg",
+        "email": "r@va.gg",
+        "url": "https://github.com/rvagg"
+      },
+      {
+        "name": "John Chesley",
+        "email": "john@chesl.es",
+        "url": "https://github.com/chesles/"
+      },
+      {
+        "name": "Jake Verbaten",
+        "email": "raynos2@gmail.com",
+        "url": "https://github.com/raynos"
+      },
+      {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "https://github.com/dominictarr"
+      },
+      {
+        "name": "Max Ogden",
+        "email": "max@maxogden.com",
+        "url": "https://github.com/maxogden"
+      },
+      {
+        "name": "Lars-Magnus Skog",
+        "email": "ralphtheninja@riseup.net",
+        "url": "https://github.com/ralphtheninja"
+      },
+      {
+        "name": "David Björklund",
+        "email": "david.bjorklund@gmail.com",
+        "url": "https://github.com/kesla"
+      },
+      {
+        "name": "Julian Gruber",
+        "email": "julian@juliangruber.com",
+        "url": "https://github.com/juliangruber"
+      },
+      {
+        "name": "Paolo Fragomeni",
+        "email": "paolo@async.ly",
+        "url": "https://github.com/hij1nx"
+      },
+      {
+        "name": "Anton Whalley",
+        "email": "anton.whalley@nearform.com",
+        "url": "https://github.com/No9"
+      },
+      {
+        "name": "Matteo Collina",
+        "email": "matteo.collina@gmail.com",
+        "url": "https://github.com/mcollina"
+      },
+      {
+        "name": "Pedro Teixeira",
+        "email": "pedro.teixeira@gmail.com",
+        "url": "https://github.com/pgte"
+      },
+      {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "https://github.com/substack"
+      },
+      {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://github.com/watson"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/level/abstract-leveldown.git"
+    },
+    "homepage": "https://github.com/level/abstract-leveldown",
+    "keywords": [
+      "leveldb",
+      "leveldown",
+      "levelup"
+    ],
+    "main": "index.js",
+    "dependencies": {
+      "xtend": "~4.0.0"
+    },
+    "devDependencies": {
+      "rimraf": "^2.6.1",
+      "sinon": "^3.2.0",
+      "tape": "^4.7.0"
+    },
+    "browser": {
+      "rimraf": false
+    },
+    "scripts": {
+      "test": "node test.js"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-abstract-leveldown-2.6.3-1c5e8c6a5ef965ae8c35dfb3a8770c476b82c4b8/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Abstract LevelDOWN\n\n<img alt=\"LevelDB Logo\" height=\"100\" src=\"http://leveldb.org/img/logo.svg\">\n\n[![Build Status](https://travis-ci.org/Level/abstract-leveldown.svg?branch=master)](http://travis-ci.org/Level/abstract-leveldown)\n[![dependencies](https://david-dm.org/Level/abstract-leveldown.svg)](https://david-dm.org/level/abstract-leveldown)\n[![Greenkeeper badge](https://badges.greenkeeper.io/Level/abstract-leveldown.svg)](https://greenkeeper.io/)\n\n[![NPM](https://nodei.co/npm/abstract-leveldown.png?downloads=true&downloadRank=true)](https://nodei.co/npm/abstract-leveldown/)\n[![NPM](https://nodei.co/npm-dl/abstract-leveldown.png?months=6&height=3)](https://nodei.co/npm/abstract-leveldown/)\n\nAn abstract prototype matching the **[LevelDOWN](https://github.com/level/leveldown/)** API. Useful for extending **[LevelUP](https://github.com/level/levelup)** functionality by providing a replacement to LevelDOWN.\n\nAs of version 0.7, LevelUP allows you to pass a `'db'` option when you create a new instance. This will override the default LevelDOWN store with a LevelDOWN API compatible object.\n\n**Abstract LevelDOWN** provides a simple, operational *noop* base prototype that's ready for extending. By default, all operations have sensible \"noops\" (operations that essentially do nothing). For example, simple operations such as `.open(callback)` and `.close(callback)` will simply invoke the callback (on a *next tick*). More complex operations  perform sensible actions, for example: `.get(key, callback)` will always return a `'NotFound'` `Error` on the callback.\n\nYou add functionality by implementing the underscore versions of the operations. For example, to implement a `put()` operation you add a `_put()` method to your object. Each of these underscore methods override the default *noop* operations and are always provided with **consistent arguments**, regardless of what is passed in by the client.\n\nAdditionally, all methods provide argument checking and sensible defaults for optional arguments. All bad-argument errors are compatible with LevelDOWN (they pass the LevelDOWN method arguments tests). For example, if you call `.open()` without a callback argument you'll get an `Error('open() requires a callback argument')`. Where optional arguments are involved, your underscore methods will receive sensible defaults. A `.get(key, callback)` will pass through to a `._get(key, options, callback)` where the `options` argument is an empty object.\n\n## Example\n\nA simplistic in-memory LevelDOWN replacement\n\n```js\nvar util = require('util')\n  , AbstractLevelDOWN = require('./').AbstractLevelDOWN\n\n// constructor, passes through the 'location' argument to the AbstractLevelDOWN constructor\nfunction FakeLevelDOWN (location) {\n  AbstractLevelDOWN.call(this, location)\n}\n\n// our new prototype inherits from AbstractLevelDOWN\nutil.inherits(FakeLevelDOWN, AbstractLevelDOWN)\n\n// implement some methods\n\nFakeLevelDOWN.prototype._open = function (options, callback) {\n  // initialise a memory storage object\n  this._store = {}\n  // optional use of nextTick to be a nice async citizen\n  process.nextTick(function () { callback(null, this) }.bind(this))\n}\n\nFakeLevelDOWN.prototype._put = function (key, value, options, callback) {\n  key = '_' + key // safety, to avoid key='__proto__'-type skullduggery \n  this._store[key] = value\n  process.nextTick(callback)\n}\n\nFakeLevelDOWN.prototype._get = function (key, options, callback) {\n  var value = this._store['_' + key]\n  if (value === undefined) {\n    // 'NotFound' error, consistent with LevelDOWN API\n    return process.nextTick(function () { callback(new Error('NotFound')) })\n  }\n  process.nextTick(function () {\n    callback(null, value)\n  })\n}\n\nFakeLevelDOWN.prototype._del = function (key, options, callback) {\n  delete this._store['_' + key]\n  process.nextTick(callback)\n}\n\n// now use it in LevelUP\n\nvar levelup = require('levelup')\n\nvar db = levelup('/who/cares/', {\n  // the 'db' option replaces LevelDOWN\n  db: function (location) { return new FakeLevelDOWN(location) }\n})\n\ndb.put('foo', 'bar', function (err) {\n  if (err) throw err\n  db.get('foo', function (err, value) {\n    if (err) throw err\n    console.log('Got foo =', value)\n  })\n})\n```\n\nSee [MemDOWN](https://github.com/Level/memdown/) if you are looking for a complete in-memory replacement for LevelDOWN.\n\n## Extensible API\n\nRemember that each of these methods, if you implement them, will receive exactly the number and order of arguments described. Optional arguments will be converted to sensible defaults.\n\n### AbstractLevelDOWN(location)\n### AbstractLevelDOWN#status\n\nAn `AbstractLevelDOWN` based database can be in one of the following states:\n\n* `'new'` - newly created, not opened or closed\n* `'opening'` - waiting for the database to be opened\n* `'open'` - successfully opened the database, available for use\n* `'closing'` - waiting for the database to be closed\n* `'closed'` - database has been successfully closed, should not be used\n\n### AbstractLevelDOWN#_open(options, callback)\n### AbstractLevelDOWN#_close(callback)\n### AbstractLevelDOWN#_get(key, options, callback)\n### AbstractLevelDOWN#_put(key, value, options, callback)\n### AbstractLevelDOWN#_del(key, options, callback)\n### AbstractLevelDOWN#_batch(array, options, callback)\n\nIf `batch()` is called without arguments or with only an options object then it should return a `Batch` object with chainable methods. Otherwise it will invoke a classic batch operation.\n\n### AbstractLevelDOWN#_chainedBatch()\n\nBy default a `batch()` operation without arguments returns a blank `AbstractChainedBatch` object. The prototype is available on the main exports for you to extend. If you want to implement chainable batch operations then you should extend the `AbstractChaindBatch` and return your object in the `_chainedBatch()` method.\n\n### AbstractLevelDOWN#_approximateSize(start, end, callback)\n### AbstractLevelDOWN#_serializeKey(key)\n### AbstractLevelDOWN#_serializeValue(value)\n### AbstractLevelDOWN#_iterator(options)\n\nBy default an `iterator()` operation returns a blank `AbstractIterator` object. The prototype is available on the main exports for you to extend. If you want to implement iterator operations then you should extend the `AbstractIterator` and return your object in the `_iterator(options)` method.\n\n`AbstractIterator` implements the basic state management found in LevelDOWN. It keeps track of when a `next()` is in progress and when an `end()` has been called so it doesn't allow concurrent `next()` calls, it does allow `end()` while a `next()` is in progress and it doesn't allow either `next()` or `end()` after `end()` has been called.\n\n### AbstractIterator(db)\n\nProvided with the current instance of `AbstractLevelDOWN` by default.\n\n### AbstractIterator#_next(callback)\n### AbstractIterator#_end(callback)\n\n### AbstractChainedBatch\nProvided with the current instance of `AbstractLevelDOWN` by default.\n\n### AbstractChainedBatch#_put(key, value)\n### AbstractChainedBatch#_del(key)\n### AbstractChainedBatch#_clear()\n### AbstractChainedBatch#_write(options, callback)\n### AbstractChainedBatch#_serializeKey(key)\n### AbstractChainedBatch#_serializeValue(value)\n\n### isLevelDown(db)\n\nReturns `true` if `db` has the same public api as `AbstractLevelDOWN`, otherwise `false`. This is a utility function and it's not part of the extensible api.\n\n<a name=\"contributing\"></a>\nContributing\n------------\n\nAbstractLevelDOWN is an **OPEN Open Source Project**. This means that:\n\n> Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.\n\nSee the [contribution guide](https://github.com/Level/community/blob/master/CONTRIBUTING.md) for more details.\n\n<a name=\"license\"></a>\nLicense &amp; Copyright\n-------------------\n\nCopyright &copy; 2013-2017 **AbstractLevelDOWN** [contributors](https://github.com/level/community#contributors).\n\n**AbstractLevelDOWN** is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.\n",
+    "licenseText": "The MIT License (MIT)\n=====================\n\nCopyright (c) 2013-2017 Rod Vagg\n---------------------------\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/abstract-leveldown/-/abstract-leveldown-2.6.3.tgz#1c5e8c6a5ef965ae8c35dfb3a8770c476b82c4b8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/abstract-leveldown/-/abstract-leveldown-2.6.3.tgz",
+    "hash": "1c5e8c6a5ef965ae8c35dfb3a8770c476b82c4b8",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1c5e8c6a5ef965ae8c35dfb3a8770c476b82c4b8"
+}

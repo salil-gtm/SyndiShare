@@ -1,0 +1,43 @@
+{
+  "manifest": {
+    "name": "hoek",
+    "description": "General purpose node utilities",
+    "version": "4.2.1",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/hapijs/hoek"
+    },
+    "main": "lib/index.js",
+    "keywords": [
+      "utilities"
+    ],
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "code": "4.x.x",
+      "lab": "13.x.x"
+    },
+    "scripts": {
+      "test": "lab -a code -t 100 -L",
+      "test-cov-html": "lab -a code -t 100 -L -r html -o coverage.html"
+    },
+    "license": "BSD-3-Clause",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-hoek-4.2.1-9634502aa12c445dd5a7c5734b572bb8738aacbb/package.json",
+    "readmeFilename": "README.md",
+    "readme": "![hoek Logo](https://raw.github.com/hapijs/hoek/master/images/hoek.png)\n\nUtility methods for the hapi ecosystem. This module is not intended to solve every problem for everyone, but rather as a central place to store hapi-specific methods. If you're looking for a general purpose utility module, check out [lodash](https://github.com/lodash/lodash) or [underscore](https://github.com/jashkenas/underscore).\n\n[![Build Status](https://secure.travis-ci.org/hapijs/hoek.svg)](http://travis-ci.org/hapijs/hoek)\n\n<a href=\"https://andyet.com\"><img src=\"https://s3.amazonaws.com/static.andyet.com/images/%26yet-logo.svg\" align=\"right\" /></a>\n\nLead Maintainer: [Nathan LaFreniere](https://github.com/nlf)\n\n**hoek** is sponsored by [&yet](https://andyet.com)\n\n## Usage\n\nThe *Hoek* library contains some common functions used within the hapi ecosystem. It comes with useful methods for Arrays (clone, merge, applyToDefaults), Objects (removeKeys, copy), Asserting and more.\n\nFor example, to use Hoek to set configuration with default options:\n```javascript\nconst Hoek = require('hoek');\n\nconst default = {url : \"www.github.com\", port : \"8000\", debug : true};\n\nconst config = Hoek.applyToDefaults(default, {port : \"3000\", admin : true});\n\n// In this case, config would be { url: 'www.github.com', port: '3000', debug: true, admin: true }\n```\n\n## Documentation\n\n[**API Reference**](API.md)\n",
+    "licenseText": "Copyright (c) 2011-2016, Project contributors\nCopyright (c) 2011-2014, Walmart\nCopyright (c) 2011, Yahoo Inc.\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * The names of any contributors may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n                                  *   *   *\n\nThe complete list of contributors can be found at: https://github.com/hapijs/hapi/graphs/contributors\nPortions of this project were initially based on the Yahoo! Inc. Postmile project,\npublished at https://github.com/yahoo/postmile.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz",
+    "hash": "9634502aa12c445dd5a7c5734b572bb8738aacbb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9634502aa12c445dd5a7c5734b572bb8738aacbb"
+}

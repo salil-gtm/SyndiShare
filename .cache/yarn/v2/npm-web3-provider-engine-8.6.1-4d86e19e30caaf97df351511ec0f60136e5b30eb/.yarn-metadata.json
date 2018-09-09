@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "web3-provider-engine",
+    "version": "8.6.1",
+    "description": "Web3 ProviderEngine is a tool for composing your own [web3 providers](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3).",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/MetaMask/provider-engine"
+    },
+    "main": "index.js",
+    "scripts": {
+      "test": "node test/index.js",
+      "bundle-zero": "browserify -s ZeroClientProvider -e zero.js > dist/ZeroClientProvider.js",
+      "bundle-engine": "browserify -s ProviderEngine -e index.js > dist/ProviderEngine.js",
+      "bundle": "mkdir -p ./dist && npm run bundle-engine && npm run bundle-zero"
+    },
+    "author": {},
+    "license": "ISC",
+    "dependencies": {
+      "async": "^2.1.2",
+      "clone": "^2.0.0",
+      "ethereumjs-block": "^1.2.2",
+      "ethereumjs-util": "^5.0.1",
+      "ethereumjs-vm": "^2.0.2",
+      "ethereumjs-tx": "^1.2.0",
+      "isomorphic-fetch": "^2.2.0",
+      "request": "^2.67.0",
+      "semaphore": "^1.0.3",
+      "solc": "^0.4.2",
+      "tape": "^4.4.0",
+      "web3": "^0.16.0",
+      "xhr": "^2.2.0",
+      "xtend": "^4.0.1"
+    },
+    "devDependencies": {
+      "browserify": "^13.1.1"
+    },
+    "browser": {
+      "request": false
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-web3-provider-engine-8.6.1-4d86e19e30caaf97df351511ec0f60136e5b30eb/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Web3 ProviderEngine\n\nWeb3 ProviderEngine is a tool for composing your own [web3 providers](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3).\n\nStatus: WIP - expect breaking changes and strange behaviour\n\n### Composable\n\nBuilt to be modular - works via a stack of 'sub-providers' which are like normal web3 providers but only handle a subset of rpc methods.\n\nThe subproviders can emit new rpc requests in order to handle their own;  e.g. `eth_call` may trigger `eth_getAccountBalance`, `eth_getCode`, and others.\nThe provider engine also handles caching of rpc request results.\n\n```js\nconst ProviderEngine = require('web3-provider-engine')\nconst CacheSubprovider = require('web3-provider-engine/subproviders/cache.js')\nconst FixtureSubprovider = require('web3-provider-engine/subproviders/fixture.js')\nconst FilterSubprovider = require('web3-provider-engine/subproviders/filters.js')\nconst VmSubprovider = require('web3-provider-engine/subproviders/vm.js')\nconst HookedWalletSubprovider = require('web3-provider-engine/subproviders/hooked-wallet.js')\nconst NonceSubprovider = require('web3-provider-engine/subproviders/nonce-tracker.js')\nconst RpcSubprovider = require('web3-provider-engine/subproviders/rpc.js')\n\nvar engine = new ProviderEngine()\nvar web3 = new Web3(engine)\n\n// static results\nengine.addProvider(new FixtureSubprovider({\n  web3_clientVersion: 'ProviderEngine/v0.0.0/javascript',\n  net_listening: true,\n  eth_hashrate: '0x00',\n  eth_mining: false,\n  eth_syncing: true,\n})\n\n// cache layer\nengine.addProvider(new CacheSubprovider())\n\n// filters\nengine.addProvider(new FilterSubprovider())\n\n// pending nonce\nengine.addProvider(new NonceSubprovider())\n\n// vm\nengine.addProvider(new VmSubprovider())\n\n// id mgmt\nengine.addProvider(new HookedWalletSubprovider({\n  getAccounts: function(cb){ ... },\n  approveTransaction: function(cb){ ... },\n  signTransaction: function(cb){ ... },\n}))\n\n// data source\nengine.addProvider(new RpcSubprovider({\n  rpcUrl: 'https://testrpc.metamask.io/',\n}))\n\n// log new blocks\nengine.on('block', function(block){\n  console.log('================================')\n  console.log('BLOCK CHANGED:', '#'+block.number.toString('hex'), '0x'+block.hash.toString('hex'))\n  console.log('================================')\n})\n\n// network connectivity error\nengine.on('error', function(err){\n  // report connectivity errors\n  console.error(err.stack)\n})\n\n// start polling for blocks\nengine.start()\n\n```\n\n### Built For Zero-Clients\n\nThe [Ethereum JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) was not designed to have one node service many clients.\nHowever a smaller, lighter subset of the JSON RPC can be used to provide the blockchain data that an Ethereum 'zero-client' node would need to function.\nWe handle as many types of requests locally as possible, and just let data lookups fallback to some data source ( hosted rpc, blockchain api, etc ).\nCategorically, we don’t want / can’t have the following types of RPC calls go to the network:\n* id mgmt + tx signing (requires private data)\n* filters (requires a stateful data api)\n* vm (expensive, hard to scale)\n\n\n### Current RPC method support:\n\n##### static\n- [x] web3_clientVersion\n- [x] net_version\n- [x] net_listening\n- [x] net_peerCount\n- [x] eth_protocolVersion\n- [x] eth_hashrate\n- [x] eth_mining\n- [x] eth_syncing\n\n##### filters\n- [x] eth_newBlockFilter\n- [x] eth_newPendingTransactionFilter\n- [x] eth_newFilter\n- [x] eth_uninstallFilter\n- [x] eth_getFilterLogs\n- [x] eth_getFilterChanges\n\n##### accounts manager\n- [x] eth_coinbase\n- [x] eth_accounts\n- [x] eth_sendTransaction\n- [x] eth_sign\n\n##### vm\n- [x] eth_call\n- [x] eth_estimateGas\n\n##### db source\n- [ ] db_putString\n- [ ] db_getString\n- [ ] db_putHex\n- [ ] db_getHex\n\n##### compiler\n- [ ] eth_getCompilers\n- [ ] eth_compileLLL\n- [ ] eth_compileSerpent\n- [ ] eth_compileSolidity\n\n##### shh gateway\n- [ ] shh_version\n- [ ] shh_post\n- [ ] shh_newIdentity\n- [ ] shh_hasIdentity\n- [ ] shh_newGroup\n- [ ] shh_addToGroup\n\n##### data source ( fallback to rpc )\n* eth_gasPrice\n* eth_blockNumber\n* eth_getBalance\n* eth_getBlockByHash\n* eth_getBlockByNumber\n* eth_getBlockTransactionCountByHash\n* eth_getBlockTransactionCountByNumber\n* eth_getCode\n* eth_getStorageAt\n* eth_getTransactionByBlockHashAndIndex\n* eth_getTransactionByBlockNumberAndIndex\n* eth_getTransactionByHash\n* eth_getTransactionCount\n* eth_getTransactionReceipt\n* eth_getUncleByBlockHashAndIndex\n* eth_getUncleByBlockNumberAndIndex\n* eth_getUncleCountByBlockHash\n* eth_getUncleCountByBlockNumber\n* eth_sendRawTransaction\n* eth_getLogs ( not used in web3.js )\n\n##### ( not supported )\n* eth_getWork\n* eth_submitWork\n* eth_submitHashrate ( not used in web3.js )\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/web3-provider-engine/-/web3-provider-engine-8.6.1.tgz#4d86e19e30caaf97df351511ec0f60136e5b30eb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/web3-provider-engine/-/web3-provider-engine-8.6.1.tgz",
+    "hash": "4d86e19e30caaf97df351511ec0f60136e5b30eb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "4d86e19e30caaf97df351511ec0f60136e5b30eb"
+}

@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "listr-silent-renderer",
+    "version": "1.1.1",
+    "description": "Supress Listr rendering output",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SamVerschueren/listr-silent-renderer.git"
+    },
+    "author": {
+      "name": "Sam Verschueren",
+      "email": "sam.verschueren@gmail.com",
+      "url": "github.com/SamVerschueren"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "listr",
+      "silent",
+      "renderer",
+      "render",
+      "supress",
+      "nooutput"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-listr-silent-renderer-1.1.1-924b5a3757153770bf1a8e3fbf74b8bbf3f9242e/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# listr-silent-renderer [![Build Status](https://travis-ci.org/SamVerschueren/listr-silent-renderer.svg?branch=master)](https://travis-ci.org/SamVerschueren/listr-silent-renderer)\n\n> Suppress [Listr](https://github.com/SamVerschueren/listr) rendering output\n\n\n## Install\n\n```\n$ npm install --save listr-silent-renderer\n```\n\n\n## Usage\n\n```js\nconst SilentRenderer = require('listr-silent-renderer');\nconst Listr = require('listr');\n\nconst list = new Listr([\n    {\n        title: 'foo',\n        task: () => Promise.resolve('bar')\n    }\n], {\n    renderer: SilentRenderer\n});\n\nlist.run();\n```\n\n\n## Related\n\n- [listr](https://github.com/SamVerschueren/listr) - Terminal task list\n- [listr-update-renderer](https://github.com/SamVerschueren/listr-update-renderer) - Listr update renderer\n- [listr-verbose-renderer](https://github.com/SamVerschueren/listr-verbose-renderer) - Listr verbose renderer\n\n\n## License\n\nMIT © [Sam Verschueren](https://github.com/SamVerschueren)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sam Verschueren <sam.verschueren@gmail.com> (github.com/SamVerschueren)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/listr-silent-renderer/-/listr-silent-renderer-1.1.1.tgz#924b5a3757153770bf1a8e3fbf74b8bbf3f9242e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/listr-silent-renderer/-/listr-silent-renderer-1.1.1.tgz",
+    "hash": "924b5a3757153770bf1a8e3fbf74b8bbf3f9242e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "924b5a3757153770bf1a8e3fbf74b8bbf3f9242e"
+}

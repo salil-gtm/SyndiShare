@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "name": "rx-lite-aggregates",
+    "title": "Reactive Extensions for JavaScript (RxJS) Aggregates",
+    "description": "Lightweight library with aggregate functions for composing asynchronous and event-based operations in JavaScript",
+    "version": "4.0.8",
+    "homepage": "https://github.com/Reactive-Extensions/RxJS",
+    "author": {
+      "name": "Cloud Programmability Team",
+      "url": "https://github.com/Reactive-Extensions/RxJS/blob/master/authors.txt"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Reactive-Extensions/RxJS.git"
+    },
+    "licenses": [
+      {
+        "type": "Apache License, Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    ],
+    "bugs": {
+      "url": "https://github.com/Reactive-Extensions/RxJS/issues"
+    },
+    "jam": {
+      "main": "rx.lite.aggregates.js"
+    },
+    "browser": {
+      "index.js": "rx.lite.aggregates.js"
+    },
+    "dependencies": {
+      "rx-lite": "*"
+    },
+    "devDependencies": {},
+    "keywords": [
+      "React",
+      "Reactive",
+      "Events",
+      "Rx",
+      "RxJS"
+    ],
+    "main": "rx.lite.aggregates.js",
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-rx-lite-aggregates-4.0.8-753b87a89a11c95467c4ac1626c4efc4e05c67be/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# RxJS Aggregates Module #\n\nThe Reactive Extensions for JavaScript has a number of aggregation operators including those you might already know from the Array#extras and the upcoming ES6 standard such as `reduce`, `find` and `findIndex`.  This module is used exclusively for aggregation operations used on finite observable sequences.  In addition to the aforementioned operators, there are many useful operators such as `count`, `sum`, `average` and determining whether two sequences are equal via the `sequenceEqual` method.  This requires `rx.lite.js` from the [`rx-lite`](https://www.npmjs.com/package/rx-lite) NPM module.\n\n## Getting Started\n\nThere are a number of ways to get started with RxJS.\n\n### Installing with [NPM](https://npmjs.org/)\n\n```bash`\n$ npm install rx-lite-aggregates\n$ npm install -g rx-lite-aggregates\n```\n\n### Using with Node.js and Ringo.js\n\n```js\nvar Rx = require('rx-lite-aggregates');\n```\n\n### In a Browser:\n\n```html\n<!-- Just the core RxJS -->\n<script src=\"path/to/rx.lite.js\"></script>\n<script src=\"path/to/rx.lite.aggregates.js\"></script>\n```\n\n## Included Observable Operators ##\n\n### `Observable Instance Methods`\n- [`aggregate`](../../doc/api/core/operators/reduce.md)\n- [`all`](../../doc/api/core/operators/every.md)\n- [`any`](../../doc/api/core/operators/some.md)\n- [`average`](../../doc/api/core/operators/average.md)\n- [`includes`](../../doc/api/core/operators/includes.md)\n- [`count`](../../doc/api/core/operators/count.md)\n- [`elementAt`](../../doc/api/core/operators/elementat.md)\n- [`elementAtOrDefault`](../../doc/api/core/operators/elementatordefault.md)\n- [`every`](../../doc/api/core/operators/every.md)\n- [`find`](../../doc/api/core/operators/find.md)\n- [`findIndex`](../../doc/api/core/operators/findindex.md)\n- [`first`](../../doc/api/core/operators/first.md)\n- [`firstOrDefault`](../../doc/api/core/operators/firstordefault.md)\n- [`indexOf`](../../doc/api/core/operators/indexof.md)\n- [`isEmpty`](../../doc/api/core/operators/isempty.md)\n- [`last`](../../doc/api/core/operators/last.md)\n- [`lastOrDefault`](../../doc/api/core/operators/lastordefault.md)\n- [`max`](../../doc/api/core/operators/max.md)\n- [`maxBy`](../../doc/api/core/operators/maxby.md)\n- [`min`](../../doc/api/core/operators/min.md)\n- [`minBy`](../../doc/api/core/operators/minby.md)\n- [`reduce`](../../doc/api/core/operators/reduce.md)\n- [`sequenceEqual`](../../doc/api/core/operators/sequenceequal.md)\n- [`single`](../../doc/api/core/operators/single.md)\n- [`singleOrDefault`](../../doc/api/core/operators/singleordefault.md)\n- [`some`](../../doc/api/core/operators/some.md)\n- [`sum`](../../doc/api/core/operators/sum.md)\n- [`toMap`](../../doc/api/core/operators/tomap.md)\n- [`toSet`](../../doc/api/core/operators/toset.md)\n\n## Contributing ##\n\nThere are lots of ways to contribute to the project, and we appreciate our [contributors](https://github.com/Reactive-Extensions/RxJS/wiki/Contributors).  If you wish to contribute, check out our [style guide]((https://github.com/Reactive-Extensions/RxJS/tree/master/doc/contributing)).\n\nYou can contribute by reviewing and sending feedback on code checkins, suggesting and trying out new features as they are implemented, submit bugs and help us verify fixes as they are checked in, as well as submit code fixes or code contributions of your own. Note that all code submissions will be rigorously reviewed and tested by the Rx Team, and only those that meet an extremely high bar for both quality and design/roadmap appropriateness will be merged into the source.\n\n## License ##\n\nCopyright (c) Microsoft Open Technologies, Inc.  All rights reserved.\nMicrosoft Open Technologies would like to thank its contributors, a list\nof whom are at https://github.com/Reactive-Extensions/RxJS/wiki/Contributors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you\nmay not use this file except in compliance with the License. You may\nobtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\nimplied. See the License for the specific language governing permissions\nand limitations under the License.\n",
+    "license": "Apache-2.0"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz#753b87a89a11c95467c4ac1626c4efc4e05c67be",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz",
+    "hash": "753b87a89a11c95467c4ac1626c4efc4e05c67be",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "753b87a89a11c95467c4ac1626c4efc4e05c67be"
+}

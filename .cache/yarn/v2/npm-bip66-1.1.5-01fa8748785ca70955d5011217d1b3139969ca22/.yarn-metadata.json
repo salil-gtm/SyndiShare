@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "name": "bip66",
+    "version": "1.1.5",
+    "description": "Strict DER signature encoding/decoding.",
+    "keywords": [
+      "bip66",
+      "bitcoin"
+    ],
+    "homepage": "https://github.com/bitcoinjs/bip66",
+    "bugs": {
+      "url": "https://github.com/bitcoinjs/bip66/issues"
+    },
+    "license": "MIT",
+    "author": {
+      "name": "Daniel Cousens"
+    },
+    "files": [
+      "index.js"
+    ],
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bitcoinjs/bip66.git"
+    },
+    "scripts": {
+      "coverage": "nyc --check-coverage --branches 100 --functions 100 tape test/*.js",
+      "lint": "standard",
+      "test": "npm run lint && npm run unit",
+      "unit": "tape test/*.js"
+    },
+    "devDependencies": {
+      "nyc": "^6.4.0",
+      "standard": "^10.0.2",
+      "tape": "^4.5.1"
+    },
+    "dependencies": {
+      "safe-buffer": "^5.0.1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-bip66-1.1.5-01fa8748785ca70955d5011217d1b3139969ca22/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# bip66\n\n[![NPM Package](https://img.shields.io/npm/v/bip66.svg?style=flat-square)](https://www.npmjs.org/package/bip66)\n[![Build Status](https://img.shields.io/travis/bitcoinjs/bip66.svg?branch=master&style=flat-square)](https://travis-ci.org/bitcoinjs/bip66)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nStrict DER signature encoding/decoding.\n\nSee [bip66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki).\n\n- This module **works only with [two's complement](https://en.wikipedia.org/wiki/Two's_complement) numbers**.\n- BIP66 doesn't check that `r` or `s` are fully valid.\n  - `check`/`decode` doesn't check that `r` or `s` great than 33 bytes or that this number represent valid point on elliptic curve.\n  - `encode` doesn't check that `r`/`s` represent valid point on elliptic curve.\n\n## Example\n\n``` javascript\nvar bip66 = require('bip66')\nvar r = new Buffer('1ea1fdff81b3a271659df4aad19bc4ef83def389131a36358fe64b245632e777', 'hex')\nvar s = new Buffer('29e164658be9ce810921bf81d6b86694785a79ea1e52dbfa5105148d1f0bc1', 'hex')\n\nbip66.encode(r, s)\n// Buffer <30 43 02 20 1e a1 fd ff 81 b3 a2 71 65 9d f4 aa d1 9b c4 ef 83 de f3 89 13 1a 36 35 8f e6 4b 24 56 32 e7 77 02 1f 29 e1 64 65 8b e9 ce 81 09 21 bf 81 d6 b8 66 94 78 5a 79 ea 1e 52 db fa 51 05 14 8d 1f 0b c1>\n\nvar signature = new Buffer('304302201ea1fdff81b3a271659df4aad19bc4ef83def389131a36358fe64b245632e777021f29e164658be9ce810921bf81d6b86694785a79ea1e52dbfa5105148d1f0bc1', 'hex')\nbip66.decode(signature)\n// => {\n//\tr: Buffer <1e a1 fd ff 81 b3 a2 71 65 9d f4 aa d1 9b c4 ef 83 de f3 89 13 1a 36 35 8f e6 4b 24 56 32 e7 77>,\n//\ts: Buffer <29 e1 64 65 8b e9 ce 81 09 21 bf 81 d6 b8 66 94 78 5a 79 ea 1e 52 db fa 51 05 14 8d 1f 0b c1>\n// }\n```\n\nA catch-all exception regex:\n``` javascript\n/Expected DER (integer|sequence)|(R|S) value (excessively padded|is negative)|(R|S|DER sequence) length is (zero|too short|too long|invalid)/\n```\n\n## LICENSE [MIT](LICENSE)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) 2015 Daniel Cousens\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/bip66/-/bip66-1.1.5.tgz#01fa8748785ca70955d5011217d1b3139969ca22",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/bip66/-/bip66-1.1.5.tgz",
+    "hash": "01fa8748785ca70955d5011217d1b3139969ca22",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "01fa8748785ca70955d5011217d1b3139969ca22"
+}

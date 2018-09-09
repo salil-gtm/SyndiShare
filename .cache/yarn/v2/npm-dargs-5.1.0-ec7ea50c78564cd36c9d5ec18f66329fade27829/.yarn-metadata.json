@@ -1,0 +1,71 @@
+{
+  "manifest": {
+    "name": "dargs",
+    "version": "5.1.0",
+    "description": "Reverse minimist. Convert an object of options into an array of command-line arguments.",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sindresorhus/dargs.git"
+    },
+    "author": {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    },
+    "engines": {
+      "node": ">=4"
+    },
+    "scripts": {
+      "test": "xo && ava"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "reverse",
+      "minimist",
+      "options",
+      "arguments",
+      "args",
+      "flags",
+      "cli",
+      "nopt",
+      "commander",
+      "bin",
+      "binary",
+      "command",
+      "cmd",
+      "inverse",
+      "opposite",
+      "invert",
+      "switch",
+      "construct",
+      "parse",
+      "parser",
+      "argv"
+    ],
+    "devDependencies": {
+      "ava": "*",
+      "xo": "*"
+    },
+    "xo": {
+      "esnext": true
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-dargs-5.1.0-ec7ea50c78564cd36c9d5ec18f66329fade27829/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# dargs [![Build Status](https://travis-ci.org/sindresorhus/dargs.svg?branch=master)](https://travis-ci.org/sindresorhus/dargs)\n\n> Reverse [`minimist`](https://github.com/substack/minimist). Convert an object of options into an array of command-line arguments.\n\nUseful when spawning command-line tools.\n\n\n## Install\n\n```\n$ npm install --save dargs\n```\n\n\n## Usage\n\n```js\nconst dargs = require('dargs');\n\nconst input = {\n\t_: ['some', 'option'],          // values in '_' will be appended to the end of the generated argument list\n\tfoo: 'bar',\n\thello: true,                    // results in only the key being used\n\tcake: false,                    // prepends `no-` before the key\n\tcamelCase: 5,                   // camelCase is slugged to `camel-case`\n\tmultiple: ['value', 'value2'],  // converted to multiple arguments\n\tpieKind: 'cherry',\n\tsad: ':('\n};\n\nconst excludes = ['sad', /.*Kind$/];  // excludes and includes accept regular expressions\nconst includes = ['camelCase', 'multiple', 'sad', /^pie.*/];\nconst aliases = {file: 'f'};\n\nconsole.log(dargs(input, {excludes}));\n/*\n[\n\t'--foo=bar',\n\t'--hello',\n\t'--no-cake',\n\t'--camel-case=5',\n\t'--multiple=value',\n\t'--multiple=value2',\n\t'some',\n\t'option'\n]\n*/\n\nconsole.log(dargs(input, {excludes, includes}));\n/*\n[\n\t'--camel-case=5',\n\t'--multiple=value',\n\t'--multiple=value2'\n]\n*/\n\n\nconsole.log(dargs(input, {includes}));\n/*\n[\n\t'--camel-case=5',\n\t'--multiple=value',\n\t'--multiple=value2',\n\t'--pie-kind=cherry',\n\t'--sad=:('\n]\n*/\n\n\nconsole.log(dargs({\n\tfoo: 'bar',\n\thello: true,\n\tfile: 'baz'\n}, {aliases}));\n/*\n[\n\t'--foo=bar',\n\t'--hello',\n\t'-f', 'baz'\n]\n*/\n```\n\n\n## API\n\n### dargs(input, [options])\n\n#### input\n\nType: `Object`\n\nObject to convert to command-line arguments.\n\n#### options\n\nType: `Object`\n\n##### excludes\n\nType: `Array`\n\nKeys or regex of keys to exclude. Takes precedence over `includes`.\n\n##### includes\n\nType: `Array`\n\nKeys or regex of keys to include.\n\n##### aliases\n\nType: `Object`\n\nMaps keys in `input` to an aliased name. Matching keys are converted to arguments with a single dash (`-`) in front of the aliased key and the value in a separate array item. Keys are still affected by `includes` and `excludes`.\n\n##### useEquals\n\nType: `boolean`<br>\nDefault: `true`\n\nSetting this to `false` makes it return the key and value as separate array items instead of using a `=` separator in one item. This can be useful for tools that doesn't support `--foo=bar` style flags.\n\n###### Example\n\n```js\nconsole.log(dargs({foo: 'bar'}, {useEquals: false}));\n/*\n[\n\t'--foo', 'bar'\n]\n*/\n```\n\n##### ignoreFalse\n\nType: `boolean`<br>\nDefault: `false`\n\nExclude `false` values. Can be useful when dealing with strict argument parsers that throw on unknown arguments like `--no-foo`.\n\n##### allowCamelCase\n\nType: `boolean`<br>\nDefault: `false`\n\nBy default, camelCased keys will be hyphenated. Enabling this will bypass the conversion process.\n\n###### Example\n\n```js\nconsole.log(dargs({fooBar: 'baz'}));\n//=> ['--foo-bar', 'baz']\n\nconsole.log(dargs({fooBar: 'baz'}, {allowCamelCase: true}));\n//=> ['--fooBar', 'baz']\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/dargs/-/dargs-5.1.0.tgz#ec7ea50c78564cd36c9d5ec18f66329fade27829",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/dargs/-/dargs-5.1.0.tgz",
+    "hash": "ec7ea50c78564cd36c9d5ec18f66329fade27829",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "ec7ea50c78564cd36c9d5ec18f66329fade27829"
+}

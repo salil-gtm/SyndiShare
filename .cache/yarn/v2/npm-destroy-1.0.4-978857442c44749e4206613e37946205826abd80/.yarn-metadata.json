@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "name": "destroy",
+    "description": "destroy a stream if possible",
+    "version": "1.0.4",
+    "author": {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    },
+    "contributors": [
+      {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      }
+    ],
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/stream-utils/destroy.git"
+    },
+    "devDependencies": {
+      "istanbul": "0.4.2",
+      "mocha": "2.3.4"
+    },
+    "scripts": {
+      "test": "mocha --reporter spec",
+      "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+      "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+    },
+    "files": [
+      "index.js",
+      "LICENSE"
+    ],
+    "keywords": [
+      "stream",
+      "streams",
+      "destroy",
+      "cleanup",
+      "leak",
+      "fd"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-destroy-1.0.4-978857442c44749e4206613e37946205826abd80/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Destroy\n\n[![NPM version][npm-image]][npm-url]\n[![Build status][travis-image]][travis-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n[![Gittip][gittip-image]][gittip-url]\n\nDestroy a stream.\n\nThis module is meant to ensure a stream gets destroyed, handling different APIs\nand Node.js bugs.\n\n## API\n\n```js\nvar destroy = require('destroy')\n```\n\n### destroy(stream)\n\nDestroy the given stream. In most cases, this is identical to a simple\n`stream.destroy()` call. The rules are as follows for a given stream:\n\n  1. If the `stream` is an instance of `ReadStream`, then call `stream.destroy()`\n     and add a listener to the `open` event to call `stream.close()` if it is\n     fired. This is for a Node.js bug that will leak a file descriptor if\n     `.destroy()` is called before `open`.\n  2. If the `stream` is not an instance of `Stream`, then nothing happens.\n  3. If the `stream` has a `.destroy()` method, then call it.\n\nThe function returns the `stream` passed in as the argument.\n\n## Example\n\n```js\nvar destroy = require('destroy')\n\nvar fs = require('fs')\nvar stream = fs.createReadStream('package.json')\n\n// ... and later\ndestroy(stream)\n```\n\n[npm-image]: https://img.shields.io/npm/v/destroy.svg?style=flat-square\n[npm-url]: https://npmjs.org/package/destroy\n[github-tag]: http://img.shields.io/github/tag/stream-utils/destroy.svg?style=flat-square\n[github-url]: https://github.com/stream-utils/destroy/tags\n[travis-image]: https://img.shields.io/travis/stream-utils/destroy.svg?style=flat-square\n[travis-url]: https://travis-ci.org/stream-utils/destroy\n[coveralls-image]: https://img.shields.io/coveralls/stream-utils/destroy.svg?style=flat-square\n[coveralls-url]: https://coveralls.io/r/stream-utils/destroy?branch=master\n[license-image]: http://img.shields.io/npm/l/destroy.svg?style=flat-square\n[license-url]: LICENSE.md\n[downloads-image]: http://img.shields.io/npm/dm/destroy.svg?style=flat-square\n[downloads-url]: https://npmjs.org/package/destroy\n[gittip-image]: https://img.shields.io/gittip/jonathanong.svg?style=flat-square\n[gittip-url]: https://www.gittip.com/jonathanong/\n",
+    "licenseText": "\nThe MIT License (MIT)\n\nCopyright (c) 2014 Jonathan Ong me@jongleberry.com\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz",
+    "hash": "978857442c44749e4206613e37946205826abd80",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "978857442c44749e4206613e37946205826abd80"
+}

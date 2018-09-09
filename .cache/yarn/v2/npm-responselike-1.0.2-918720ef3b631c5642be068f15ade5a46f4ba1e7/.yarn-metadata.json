@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "name": "responselike",
+    "version": "1.0.2",
+    "description": "A response-like object for mocking a Node.js HTTP response stream",
+    "main": "src/index.js",
+    "scripts": {
+      "test": "xo && nyc ava",
+      "coverage": "nyc report --reporter=text-lcov | coveralls"
+    },
+    "xo": {
+      "extends": "xo-lukechilds"
+    },
+    "keywords": [
+      "http",
+      "https",
+      "response",
+      "mock",
+      "request",
+      "responselike"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/lukechilds/responselike.git"
+    },
+    "author": {
+      "name": "lukechilds"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "ava": "^0.22.0",
+      "coveralls": "^2.13.1",
+      "eslint-config-xo-lukechilds": "^1.0.0",
+      "get-stream": "^3.0.0",
+      "nyc": "^11.1.0",
+      "xo": "^0.19.0"
+    },
+    "dependencies": {
+      "lowercase-keys": "^1.0.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/salil007/.cache/yarn/v2/npm-responselike-1.0.2-918720ef3b631c5642be068f15ade5a46f4ba1e7/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# responselike\n\n> A response-like object for mocking a Node.js HTTP response stream\n\n[![Build Status](https://travis-ci.org/lukechilds/responselike.svg?branch=master)](https://travis-ci.org/lukechilds/responselike)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/responselike/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/responselike?branch=master)\n[![npm](https://img.shields.io/npm/dm/responselike.svg)](https://www.npmjs.com/package/responselike)\n[![npm](https://img.shields.io/npm/v/responselike.svg)](https://www.npmjs.com/package/responselike)\n\nReturns a streamable response object similar to a [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage). Useful for formatting cached responses so they can be consumed by code expecting a real response.\n\n## Install\n\n```shell\nnpm install --save responselike\n```\n\nOr if you're just using for testing you'll want:\n\n```shell\nnpm install --save-dev responselike\n```\n\n## Usage\n\n```js\nconst Response = require('responselike');\n\nconst response = new Response(200, { foo: 'bar' }, Buffer.from('Hi!'), 'https://example.com');\n\nresponse.statusCode;\n// 200\nresponse.headers;\n// { foo: 'bar' }\nresponse.body;\n// <Buffer 48 69 21>\nresponse.url;\n// 'https://example.com'\n\nresponse.pipe(process.stdout);\n// Hi!\n```\n\n\n## API\n\n### new Response(statusCode, headers, body, url)\n\nReturns a streamable response object similar to a [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage).\n\n#### statusCode\n\nType: `number`\n\nHTTP response status code.\n\n#### headers\n\nType: `object`\n\nHTTP headers object. Keys will be automatically lowercased.\n\n#### body\n\nType: `buffer`\n\nA Buffer containing the response body. The Buffer contents will be streamable but is also exposed directly as `response.body`.\n\n#### url\n\nType: `string`\n\nRequest URL string.\n\n## License\n\nMIT © Luke Childs\n",
+    "licenseText": "Copyright (c) 2017 Luke Childs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/responselike/-/responselike-1.0.2.tgz#918720ef3b631c5642be068f15ade5a46f4ba1e7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/responselike/-/responselike-1.0.2.tgz",
+    "hash": "918720ef3b631c5642be068f15ade5a46f4ba1e7",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "918720ef3b631c5642be068f15ade5a46f4ba1e7"
+}
