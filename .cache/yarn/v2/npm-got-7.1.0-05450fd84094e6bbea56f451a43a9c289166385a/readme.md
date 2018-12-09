@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br>
-	<img width="360" src="https://rawgit.com/sindresorhus/got/master/media/logo.svg" alt="got">
+	<img width="360" src="https://cdn.jsdelivr.net/gh/sindresorhus/got@master/media/logo.svg" alt="got">
 	<br>
 	<br>
 	<br>

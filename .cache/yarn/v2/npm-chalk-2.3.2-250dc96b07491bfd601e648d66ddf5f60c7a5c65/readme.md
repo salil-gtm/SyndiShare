@@ -1,7 +1,7 @@
 <h1 align="center">
 	<br>
 	<br>
-	<img width="320" src="https://cdn.rawgit.com/chalk/chalk/19935d6484811c5e468817f846b7b3d417d7bf4a/logo.svg" alt="chalk">
+	<img width="320" src="https://cdn.jsdelivr.net/gh/chalk/chalk@19935d6484811c5e468817f846b7b3d417d7bf4a/logo.svg" alt="chalk">
 	<br>
 	<br>
 	<br>
@@ -13,7 +13,7 @@
 
 ### [See what's new in Chalk 2](https://github.com/chalk/chalk/releases/tag/v2.0.0)
 
-<img src="https://cdn.rawgit.com/chalk/ansi-styles/8261697c95bf34b6c7767e2cbe9941a851d59385/screenshot.svg" alt="" width="900">
+<img src="https://cdn.jsdelivr.net/gh/chalk/ansi-styles@8261697c95bf34b6c7767e2cbe9941a851d59385/screenshot.svg" alt="" width="900">
 
 
 ## Highlights
